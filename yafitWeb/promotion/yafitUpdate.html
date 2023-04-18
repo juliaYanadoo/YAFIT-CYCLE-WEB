@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>야핏 여행 쟁탈전</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<link rel="favicon" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico">
+	<link rel="shortcut icon" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico" />
+	<link rel="apple-touch-icon-precomposed" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico">
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="야핏 사이클 패키지"/>
+	<meta property="og:site_name" content="야핏"/>
+	<meta property="og:description" content="내가 가진 기기로 즐기는 실속 패키지"/>
+	<meta property="og:image" content="https://yafit.yanadoocdn.com/yanadoo/images/web/common/og_yafit_1.jpg"/>
+	<meta property="og:image:width" content="1200"/>
+	<meta property="og:image:height" content="630"/>
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="야핏 사이클 패키지">
+	<meta name="twitter:description" content="내가 가진 기기로 즐기는 실속 패키지ㅌ">
+	<meta name="twitter:image" content="https://yafit.yanadoocdn.com/yanadoo/images/web/common/og_yafit_1.jpg">
+	<meta name="nate:image" content="https://yafit.yanadoocdn.com/yanadoo/images/web/common/og_yafit_1.jpg" />
+	<meta name="naver-site-verification" content="dcf4d5cf8e610163fe7bbc07a29e21f98c503792"/>
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/reset_1.css" />
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/edu/common.css" />
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/edu/promotion.css" />
+	<link rel="stylesheet" href="https://yafit.yanadoocdn.com/yanadoo/library/swiper.min.css">
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/library/beusable.js"></script>
+	<script type="text/javascript" src="https://tenping.kr/scripts/cpa/tenping.cpa.V2_Domain.min.js"></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/env.js" ></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/common.js"></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/comm.js"></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/headscript.js"></script>
+	<script src="https://yafit.yanadoocdn.com/yanadoo/library/swiper-bundle.min.js"></script>
+</head>
+<style>
+	.page-wrap {overflow: hidden; max-width: 720px; margin: 0 auto;}
+	@keyframes bgGradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+	.btn-animation-gradient {font-size: 2rem;background-image: linear-gradient(to right, #34f938, #6edafa,#34f938, #6edafa,#34f938, #6edafa);background-size: 800%;animation: bgGradient 5s linear infinite;}
+	.display-pc {display: block;}
+	.display-m {display: none;}
+	.inner-col {width: 90%; margin: 0 auto;}
+	h3 {font-family: GmarketSans, 'sans-serif'; font-size: 67px; text-align: center; letter-spacing: -1px;}
+	h3 span, h4 span, h5 span  {display: block; font-family: NotoSansKR, 'sans-serif'; font-size: 38px; text-align: center;}
+	h4 {font-family: GmarketSans, 'sans-serif'; font-size: 62px; text-align: center; letter-spacing: -1px;}
+	h5 {font-family: GmarketSans, 'sans-serif'; font-size: 48px; text-align: center; letter-spacing: -1px;}
+	article {padding: 145px 0;}
+	.btn-submit {width: 100%; height: 104px; color: #fff; font-size: 34px; font-weight: 600; background-color: #000; border-radius: 10px;}
+
+	.key-visual {}
+	.animation-text__01, .animation-text__02 {display: none;}
+	.animation-text__01.active, .animation-text__02.active {display: inline-block;}
+
+	.count-motion-col {background-color: #000;}
+	.count-motion-col h4 {color: #fff;}
+	.count-motion-col h4 strong {display: inline-block; width: 280px; color: #6BD871;}
+	.count-motion-col button {color: #000;}
+
+	.sns-share-col .inner-col {display: flex; width: 75%; justify-content: space-between;}
+	.sns-share-col button {width: 130px}
+	
+	.notice {background-color: #040E27;}
+	.notice .notice-tit {display: block; margin-bottom: 20px; font-size: 35px; color: #fff;}
+	.notice ul li {position: relative; font-size: 25px; margin-bottom: 25px; padding-left: 25px; color: #A5A6AF;}
+	.notice ul li:before {position: absolute;left: 0;top: 0;content: "•";}
+
+	/* popup */
+	.modal-header strong{font-weight:400; font-size:1.9rem;}
+	.pop-ynd{display:none; position:fixed; width:100%; height:100%; top:0; left:0; z-index:5000;}
+	.pop-ynd .pop-ynd-bg{position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0, 0, 0, .7);}
+	.pop-ynd .pop-ynd-content{position:absolute; top:50%; left:50%; width:500px; margin-left: -250px; padding:0 0 1em 0; font-size:20px; transform: translateY(-50%); -webkit-transform: translateY(-50%);background-image: url(../assets/img/bg_apply_v2.png); background-size: cover;background-position: 50% 0;}
+	.pop-ynd .pop-ynd-close{display:inline-block; position:absolute; top:5px; right:-50px; width:35px; height:35px; background-image:url(https://english.yanadoocdn.com/upload/yanadoo/pc/common/ico/ico_close_30x30g.png); background-repeat:no-repeat; background-position:0 0; background-size:100%; background-color:transparent; text-indent:-9999em; z-index:2;}
+	.pop-ynd .pop-box{position:relative; width:100%; margin:0 auto; text-align:left;}
+	.pop-ynd .pop-box a{display:block;}
+	.pop-ynd .cookie{font-size:11pt; color:#fff;}
+	.pop-ynd .pop-close {position:absolute; top:5px; right:-40px; width:30px; height:30px; font-size:50px; font-weight:400; font-family:sans-serif; background-image:url(https://english.yanadoocdn.com/upload/yanadoo/pc/common/ico/ico_close_30x30g.png); background-repeat:no-repeat; background-position:0 0; background-size:100%; color:#fff; line-height:25px; text-indent:-9999em; z-index:5000;}
+	.pop-counseling div{position:relative; width:85%; padding:5em 1.5em 0; margin:0 auto; box-sizing:border-box; color:#000; text-align:left; line-height:1.3; letter-spacing:-1px;}
+	.pop-counseling div h3{font-size:170%; font-weight:700; color:#1e1e1e;}
+	.pop-counseling .desc{margin:0 0 .5em;}
+	.pop-counseling dl{margin:2em 0 1.5em; overflow:hidden;}
+	.pop-counseling dt, .pop-counseling dd{float:left; margin:0 0 .5em;}
+	.pop-counseling dt{width:25%; font-size:95%; line-height:3.1;}
+	.pop-counseling dd{width:75%;}
+	.pop-counseling dd select, .pop-counseling dd input{width:100%; padding:1.2em .5em; border:1px solid #dcdcdc; box-sizing:border-box; font-size:90%; letter-spacing:-1px;}
+
+	.pop-counseling input[name=hp2]{width:33.4%; border-left:0; border-right:0;}
+	.pop-counseling dl + p{margin:0 0 .25em 8em; font-size:80%;}
+	.pop-counseling dl + p:before{content:'-';}
+	.pop-counseling label{display: block; font-size:80%; margin: .5em 0;}
+	label a{display:inline-block; margin:0 .2rem; border-bottom:1px solid #3a66fb; color:#3a66fb !important;}
+	.pop-counseling button{display:block; width:80%; height: 3em; margin: 0 auto; outline:0; font-weight:500; font-size:110%; color:#fff; text-align:center; letter-spacing:-1px; background-color:#000;}
+
+	.pop-agree-marketing.pop-ynd {position: fixed;top: 0;left: 0;width: 100%;height: 100%;font-size: 14px;z-index: 5000;}
+	.pop-agree-marketing.pop-ynd .pop-ynd-bg {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: url(https://english.yanadoocdn.com/upload/yanadoo/pc/common/bg/mask_80.png);}
+	.pop-agree-marketing.pop-ynd h3 {width: 90%;margin: 20px auto 10px;padding-bottom: 5px;font-weight: 300;font-size: 100%;letter-spacing: -2px;color: #000;border-bottom: 2px solid #000;}
+	.pop-agree-marketing.pop-ynd .pop-ynd-content {position: absolute;top: 45%;left: 50%;width: 320px;height: 500px;margin-left: -160px;font-size: 140%;background-color: #fff;z-index: 5001; background-image: none;}
+	.pop-agree-marketing.pop-ynd .content-scroll {width: 90%;height: 24em;margin: auto;font-size: 80%;overflow-y: scroll;}
+	.pop-agree-marketing.pop-ynd .content-scroll p {font-size: 85%;line-height: 1.4;color: #3a3a3a;}
+	.pop-agree-marketing.pop-ynd .button-group {position: absolute;bottom: 0;left: 0;width: 100%;}
+	.pop-agree-marketing.pop-ynd .button-group button {width: 100%;padding: 1em 0;font-size: 85%;letter-spacing: -1px;color: #151515;background-color: #f0f0f0;border-top: 0;border-right: 1px solid #ddd;border-bottom: 0;border-left: 0;outline: none;z-index: 2;}
+
+	.apply-col .form-area {font-size: 120%;}
+	.apply-col .apply-form-box {width: 100%;padding: 160px 0 2.89em;background: url(../assets/img/bg_apply_v2.png) no-repeat 50% 0;background-size: 100%;}
+	.form-area {width: 72%;margin: 0 auto;}
+	.apply-col label {display: block; margin-top: 0.8em; font-size: 120%;}
+	.form-area li + li {margin-top: 1.3em;}
+	.form-area li span {display: block;width: 100%;padding-bottom: 0.55em; font-size: 25px; vertical-align: middle;}
+	.form-area::-webkit-scrollbar {display: none;}
+	.form-area li input[type="text"] {width: 100%;padding: 0.8em 0.45em !important;font-size: 25px; font-weight: 800;border: 1px solid #080e26;vertical-align: middle;}
+	.form-area li input[type="text"]::placeholder {font-weight: 500;}
+	input[type=checkbox]{width:0; padding:0; margin:0; border:0;}
+	input[type=checkbox] + em{display:inline-block; width:1.5em; height:1.5em; margin-right:.5em; vertical-align:middle; cursor:pointer; background-image:url(https://english.yanadoocdn.com/upload/yanadoo/pc/common/radio_box.png); background-repeat:no-repeat; background-position:0 0; background-size:100%;}
+	input[type=checkbox].active + em {background-position:0 -1.5em;}
+	.form-area.check-area label {font-size: 18px;}
+	.counsel_form_btn.submit {display: block;width: 76.4%;margin: 1.7em auto 0;padding: 1.1em 0;font-weight: 800;font-size: 30px;text-align: center;border-radius: 0.4em;background: #080e26;color: #fff;}
+
+
+	@media screen and (max-width:720px){
+
+		.display-pc {display: none;}
+		.display-m {display: block;}
+		h3 {font-size: 9.31vw;letter-spacing: -0.14vw;}
+		h4 {font-size: 8.61vw;letter-spacing: -0.14vw;}
+		h5 {font-size: 6.67vw;letter-spacing: -0.14vw;}
+		h3 span, h4 span, h5 span  {font-size: 5.28vw;}
+		article {padding: 20.14vw 0;}
+		.btn-submit {width: 100%; height: 14.44vw; color: #fff; font-size: 4.72vw; font-weight: 600; background-color: #000; border-radius: 1.39vw;}
+
+		.pop-ynd .pop-ynd-content {positßßion: absolute;top: inherit;bottom: 0;left: 0;width: 100%;transform: translate(0);margin-left: 0;padding: 0;background-image: url(../assets/img/bg_apply_v2_mo.png); background-size: 105%;background-repeat: no-repeat; background-color: #fff;}
+		.pop-counseling div {width: 100%;padding: 3.5em 1.5em 0;}
+		.pop-counseling button {width: 100%;height: 4.5em;}
+		.pop-counseling dt {font-size: 100%;}
+		.pop-counseling label {font-size: 3.8vw;}
+		.pop-counseling dd select, .pop-counseling dd input{padding:1em .5em; font-size:100%;}
+		.pop-agree-marketing.pop-ynd .pop-ynd-content {-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+
+		.apply-col .apply-form-box {padding: 22.22vw 0 2.89em;}
+		.form-area li span {font-size: 4.5vw;}
+		.form-area li input[type="text"] {font-size: 4.5vw;}
+		.form-area.check-area label {font-size: 3vw;}
+
+		.notice { }
+		.notice .notice-tit { margin-bottom: 2.78vw; font-size: 4.86vw}
+		.notice ul li { font-size: 3.47vw; margin-bottom: 3.47vw; padding-left: 3.47vw;}
+		.notice ul li:before {left: 0;top: 0;content: "•";}
+
+
+	}
+</style>
+<body>
+<header></header>
+<section class="page-wrap landing" id="yafitCycle">
+	<div class="key-visual">
+		<h2>
+			새로운 땅의 주인이 되어<br>
+			<strong class="animation-text animation-text__01 active">오사카</strong>
+			<strong class="animation-text animation-text__02">경주</strong>
+			로<br>떠나자!
+		</h2>
+		<div class="key-visual__slide swiper-container">
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide"><img src="../assets/img/key_visual_slide_01.png" alt=오사카"></li>
+				<li class="swiper-slide"><img src="../assets/img/key_visual_slide_02.png" alt="경주"></li>
+				<li class="swiper-slide"><img src="../assets/img/key_visual_slide_03.png" alt="comming soon"></li>
+				<li class="swiper-slide"><img src="../assets/img/key_visual_slide_04.png" alt="comming soon"></li>
+				<li class="swiper-slide"><img src="../assets/img/key_visual_slide_04.png" alt="comming soon"></li>
+			</ul>
+		</div>
+	</div>
+
+	<article class="hooking-msg-col">
+		<div class="inner-col">
+			<button class="btn-submit" type="button" onclick="$('.pop-counseling').show();">신청하기</button>
+		</div>
+	</article>
+
+	<article class="count-motion-col">
+		<h4><strong id="countMotion">36072</strong>명이<br>여행쟁탈전 참여 중!</h4>
+		<div class="inner-col">
+			<button class="btn-submit btn-animation-gradient" type="button" onclick="$('.pop-counseling').show();">지금 참여하기</button>
+		</div>
+	</article>
+
+	<article class="apply-col">
+		<div class="inner-col">
+			<div class="apply-form-box">
+				<form name="counselForm" method="post">
+					<ul class="form-area">
+						<li class="title">
+							<label>
+								<span>이름</span>
+								<input type="text" name="user_name"/>
+							</label>
+						</li>
+						<li>
+							<span>전화번호</span>
+							<input class="input-phone" type="text" name="phone" maxlength="11" required="" />
+						</li>
+					</ul>
+					<div class="form-area check-area">
+						<label>
+							<input type="checkbox" name="agree" onclick="$(this).toggleClass('active');" checked="checked" class="active" /><em></em>[필수] 개인정보 수집 및 마케팅 활용 동의
+							<a href="#none" onclick="$('.pop-agree-marketing').show(); return false">[약관보기]</a>
+						</label>
+						<label>
+							<input type="checkbox" onclick="$(this).toggleClass('active');" checked="checked" class="active" /><em></em>[선택] SMS 광고 및 마케팅 이용 동의
+						</label>
+					</div>
+					<button
+							type="button"
+							class="submit counsel_form_btn"
+							onclick="yafitCounsel('counselForm', '페이지');"
+					>
+						티켓팅 사전 알림 신청하기
+					</button>
+				</form>
+			</div>
+		</div>
+	</article>
+
+	<article class="sns-share-col">
+		<h5>
+			야, 지금 바로 여행 떠날래?
+			<span>이벤트 공유하고 선물받자!</span>
+		</h5>
+		<div class="inner-col">
+			<button type="button" id="shareTw" class="btn_comm"><img src="../assets/img/btn_twitter.png" alt="트위터로 공유하기"></button>
+			<button type="button" id="shareFb" class="btn_comm"><img src="../assets/img/btn_facebook.png" alt="페이스북으로 공유하기"></button>
+			<button type="button" id="shareLink" class="btn_comm"><img src="../assets/img/btn_share.png" alt="링크 복사하기"></button>
+		</div>
+	</article>
+
+	<article class="notice">
+		<div class="inner-col">
+			<strong class="notice-tit">유의사항</strong>
+			<ul>
+				<li>본 이벤트는 내부 사정에 의해 조기 종료 및 변경될 수 있습니다.</li>
+				<li>상담 신청만으로 이벤트 참여 인정 및 경품이 제공됩니다.</li>
+				<li>상담 신청자에게 야핏 상품 구매 관련 유선 상담이 진행되며, 이벤트 경품은 구매 여부와 무관하게 제공됩니다.</li>
+				<li>오사카/경주 여행지원금은 하나투어 50만원 상품권으로 제공됩니다.</li>
+				<li>이벤트 경품은 본인 외 타인에게 양도 불가합니다.</li>
+				<li>이벤트 경품 지급시 발생하는 제세공과금(상품 금액의 22%)은 당첨자 본인 부담입니다. 제세공과금 처리를 위한 자세한 정보는  당첨자에게 개별 안내해드릴 예정입니다.</li>
+				<li>부정한 방법으로 이벤트에 참여한 경우 당첨이 취소 될 수 있습니다.</li>
+				<li>이벤트에 참여한 내용은 당사의 홍보 목적으로 활용될 수 있습니다.</li>
+			</ul>
+		</div>
+	</article>
+
+	<!-- cs 모달 -->
+	<div class="pop-ynd pop-counseling">
+		<form name="counselFormPop" method="post">
+			<div class="pop-ynd-bg" onclick="$('.pop-counseling').hide();"></div>
+			<div class="pop-ynd-content">
+				<div>
+					<dl>
+						<dt>이름</dt>
+						<dd><input type="text" name="user_name"/></dd>
+						<dt>전화번호</dt>
+						<dd>
+							<input class="input-phone" type="text" name="phone" maxlength="11" required="" />
+						</dd>
+					<label>
+						<input type="checkbox" id="care_agree" name="agree" onclick="$(this).toggleClass('active');" checked="checked" class="active" /><em></em>[필수] 개인정보 수집 및 마케팅 활용 동의
+						<a href="#none" onclick="$('.pop-agree-marketing').show(); return false">[약관보기]</a>
+					</label>
+					<label>
+						<input type="checkbox" onclick="$(this).toggleClass('active');" checked="checked" class="active" /><em></em>[선택] SMS 광고 및 마케팅 이용 동의
+					</label>
+				</div>
+				<button type="button" class="btn-counsel-submit" onclick="yafitCounsel('counselFormPop', '모달');">상담 신청하기</button>
+			</div>
+		</form>
+	</div>
+	<div class="pop-ynd pop-agree-marketing" style="display: none">
+		<div class="pop-ynd-bg" onclick="$('.pop-agree-marketing').hide();"></div>
+		<div class="pop-ynd-content">
+			<h3>개인정보 수집 및 마케팅 활용 약관</h3>
+			<div class="content-scroll">
+				<p>
+					야나두는 귀하의 이벤트 및 문의에 대한 처리 및 회신을 위하여 귀하의 개인정보를 수집
+					및 처리하고자 합니다. 내용을 자세히 읽으신 후 동의여부를 결정하여 주시기
+					바랍니다.<br><br><br>
+					1. 개인정보 수집 이용목적<br>
+					- 상품 안내, 고객문의(상담신청) 처리 및 회신<br>
+					<br>
+					2. 개인정보 수집 항목<br>
+					- 이름, 휴대전화번호<br><br>
+					3. 개인정보 이용기간 및 보유기간<br>
+					- 1년 보관 후 파기<br><br>
+					4. 개인정보 취급위탁에 대한 고지<br>
+					- 수탁자 : (주)트랜스코스모스코리아<br>
+					- 취급위탁 업무 : 상품안내 및 마케팅 활동<br><br>
+					5. 동의를 거부할 권리 및 동의 거부에 따른 불이익<br>
+					- 귀하는 개인정보 수집 및 마케팅 활용에 대한 동의를 거부할 권리가 있으며, 동의를<br>
+					거부하는 경우 상담신청이 불가능합니다.
+				</p>
+			</div>
+			<div class="button-group">
+				<button type="button" onclick="$('.pop-agree-marketing').hide();">
+					닫기
+				</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div data-include-path="https://yafit.yanadoocdn.com/yanadoo/web/layout/footer.html"></div>
+</body>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		['keyup', 'input', 'change'].forEach(e => document.querySelector('.input-phone').addEventListener(e, function (event) { initInputNumber(event);}));
+
+		setInterval(animationsText, 1000);
+		keyVisualSwiper();
+	});
+	window.addEventListener("scroll", () => { onScrollWindow();});
+
+	let countFlag1 = false;
+	function onScrollWindow() {
+
+		const animation = document.querySelector('.count-motion-col');
+		const animationTop = animation.offsetTop;
+
+		if ( pageYOffset >= animationTop - 300) {
+			if (!countFlag1)
+			{
+				animateCountUp(document.querySelector("#countMotion"), 417456);
+				countFlag1 = true;
+			}
+		} else {
+			countFlag1 = false;
+			return;
+		}
+	}
+
+	document.querySelector('.btn-counsel-submit').addEventListener('click', function() {
+		if (innerWidth <= 720) {
+
+		} else {
+
+		}
+	});
+
+
+	// key visual text animation
+	function animationsText() {
+		const text01 = document.querySelector('.animation-text__01');
+		const text02 = document.querySelector('.animation-text__02');
+
+		if(!text01.classList.contains('active') ) {
+			text01.classList.add('active');
+			text02.classList.remove('active');
+		} else {
+			text01.classList.remove('active');
+			text02.classList.add('active')
+		}
+	}
+
+	// sns share
+	const btnShareFb = document.querySelector('#shareFb');
+	const btnShareTw = document.querySelector('#shareTw');
+	const btnShareLink = document.querySelector('#shareLink');
+	const pageUrl = 'yafitcdn.yanadoo.co.kr/yanadoo/promotion/yafitAllInOne.html';
+
+	btnShareFb.addEventListener('click', () => {window.open(`http://www.facebook.com/sharer/sharer.php?u=${pageUrl}`);})
+	btnShareTw.addEventListener('click', () => {
+		const sendText = '야핏 맵 쟁탈전';
+		window.open(`https://twitter.com/intent/tweet?text=${sendText}&url=${pageUrl}`);
+	})
+	btnShareLink.addEventListener('click', () => { copyEvent() });
+	//copy link
+	function copyEvent() {
+		let tmpTextarea = document.createElement('textarea');
+		tmpTextarea.value = window.location.href;
+		document.body.appendChild(tmpTextarea);
+		tmpTextarea.select();
+		tmpTextarea.setSelectionRange(0, 9999);
+		document.execCommand('copy');
+		document.body.removeChild(tmpTextarea);
+		alert("URL 복사가 완료되었습니다.");
+	}
+
+	function keyVisualSwiper() {
+		new Swiper(".key-visual__slide", {
+			slidesPerView: 3.5,
+			slidesPerGroup: 1,
+			autoplay: {
+				delay: 1500,
+				disableOnInteraction: false,
+			},
+			loop: false,
+		});
+	}
+
+	//오픈웰 광고 매체 포스트백
+	function openWellPostBack() {
+		const click_key = new URLSearchParams(location.search).get('click_key');
+		console.log(click_key);
+
+		if ((typeof click_key == "string") && (click_key.length > 0)) {
+			$.ajax({
+				type: 'get',
+				//url: `https://dev.yanadoo.co.kr/v2/post-back/yafit?click_key=${click_key}`,
+				url: `${API_HOST}/v2/post-back/yafit?click_key=${click_key}`,
+				contentType: 'application/json',
+				success: function (result) {
+					console.log(result)
+				},
+				error: function () {
+					console.log("postback failed");
+				},
+			});
+		}
+	}
+
+	//DB 수집
+	let counselCategory = 'yafit_promotion';
+	let counselButtonName = '';
+	function yafitCounsel(targetFormName, buttonName) {
+		if(typeof targetFormName === 'undefined') return false;
+		let targetForm = $('form[name=' + targetFormName + ']');
+		let regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
+
+		if($.trim(targetForm.find("input[name=user_name]").val()) == '') {
+			alert('이름을 입력해 주세요.');
+			targetForm.find("input[name=user_name]")[0].focus();
+			return false;
+		}
+		if($.trim(targetForm.find("input[name=phone]").val())==''){
+			alert('전화번호를 입력해 주세요.');
+			targetForm.find("input[name=phone]")[0].focus();
+			return false;
+		}
+
+		if(targetForm.find("input[name=agree]:checked").length == '0') {
+			alert('개인정보 수집에 동의해 주세요.');
+			targetForm.find("input[name=agree]")[0].focus();
+			return false;
+		}
+
+		let dataBody = {
+			"category": counselCategory,
+			"phone": targetForm.find('input[name=phone]').val(),
+			"userName": targetForm.find('input[name=user_name]').val(),
+			"utm": typeof getUtm === 'undefined' ? "" : getUtm()
+		};
+		$.ajax({
+			type: 'POST',
+			//url: `https://dev.yanadoo.co.kr/v2/inquiry/consultation/tel`,
+			url: `${API_HOST}/v2/inquiry/consultation/tel`,
+			data: JSON.stringify(dataBody),
+			contentType: 'application/json',
+			success: function (result) {
+				if(targetFormName === 'counselFormPopup'){
+					dataLayer.push({'event': 'Button_Popup'});
+				}
+				dataLayer.push({
+					'event': 'lead',
+					'product_name': '야핏_프로모션'
+				});
+				openWellPostBack();
+				alert('이벤트 참여가 완료되었습니다. \n 담당자 확인 후 연락드리겠습니다.');
+				TenpingScript.SendConversion();
+
+				setTimeout(function() {
+					location.reload();
+				}, 3000);
+			},
+			error: function(data) {
+				alert('통신장애가 발생되었습니다.');
+			}
+		});
+	}
+
+	// 숫자입력 인풋
+	function initInputNumber(event)
+	{
+		const inputValue = event.target.value;
+		const inputValueArr = inputValue.split("");
+		const inputLength = inputValueArr.length;
+		let respStr = '';
+		for (let i=0; i<inputLength; i++)
+		{
+			if (inputValueArr[0] == 1 || !isNumber(inputValueArr[0]))
+				inputValueArr[0] = '';
+			if (isNumber(inputValueArr[i]))
+				respStr += inputValueArr[i];
+		}
+		event.target.value = respStr;
+	}
+	function isNumber(param)
+	{
+		const regex = /^[0-9]*$/g;
+		return regex.test(param);
+	}
+
+
+	// 카운트 업
+	function numberWithCommas(num)
+	{
+		return isEmpty(num) ? 0 : num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	// An ease-out function that slows the count as it progresses
+	const easeOutQuad = t => t * ( 2 - t );
+
+	// The animation function, which takes an Element
+	function animateCountUp(targetEl, targetNumber)
+	{
+		const animationDuration = 1500;
+		const frameDuration = 1000 / 60;
+		const totalFrames = Math.round( animationDuration / frameDuration );
+
+		let frame = 0;
+		const countTo = parseInt( targetNumber, 10 );
+		const counter = setInterval( () => {
+			frame++;
+			const progress = easeOutQuad( frame / totalFrames );
+			const currentCount = Math.round( countTo * progress );
+			targetEl.textContent = `${numberWithCommas(currentCount)}`;
+			if ( frame === totalFrames ) {
+				clearInterval( counter );
+			}
+		}, frameDuration );
+	}
+</script>
+
+</html>

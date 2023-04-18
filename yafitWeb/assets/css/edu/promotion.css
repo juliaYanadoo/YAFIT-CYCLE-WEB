@@ -1,0 +1,1861 @@
+/* update 2022-03-30 / v1.1 */
+em {
+  font-style: normal;
+}
+.inner-col {
+  background-color: transparent;
+}
+nav .logo,
+nav .btn-app-download {
+  display: none;
+}
+header .nav-global .user-thumb-box {
+  display: block;
+  width: 3.6rem;
+  height: 3.6rem;
+  margin-top: 0.3rem;
+  background-color: #cfcfda;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+  nav .logo,
+  nav .btn-app-download {
+    display: block;
+  }
+  header .nav-global a:last-child {
+    margin-right: 0;
+  }
+  header .nav-global .user-thumb-box {
+    width: 5rem;
+    height: 5rem;
+    margin-top: 0;
+    background-color: #fff;
+  }
+  header.nav-mobile.active nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    padding: 16rem 0 8rem;
+    font-size: 3rem;
+    background-color: #fff;
+    border-right: 1px solid #e7e7f0;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    z-index: 4;
+  }
+  header.nav-mobile.active nav .logo {
+    position: absolute;
+    top: 7rem;
+    left: 4rem;
+    width: 14rem;
+    height: 4rem;
+  }
+  header.nav-mobile.active nav > ul > li {
+    display: block;
+    width: 100%;
+  }
+  header.nav-mobile.active nav > ul > li a {
+    text-align: left;
+  }
+  header.nav-mobile.active nav > ul > li.yafit > a::before {
+    top: 0.5rem;
+    left: 5rem;
+    width: 5rem;
+    height: 2.8rem;
+    background-size: 5rem auto;
+  }
+  header.nav-mobile.active nav .btn-join-group {
+    margin: 5rem 0 0;
+    padding: 0 4.2rem;
+  }
+  header.nav-mobile.active nav .btn-join-group button {
+    display: block;
+    width: 100%;
+    height: 9.6rem;
+    margin: 0 0 1.7rem;
+  }
+  header.nav-mobile.active nav .btn-app-download {
+    margin: 16.5rem 0 0;
+    padding: 0 4.2rem 0;
+  }
+  header.nav-mobile.active nav .btn-app-download .title {
+    display: block;
+    margin: 0 0 2.5rem;
+  }
+  header.nav-mobile.active nav .btn-app-download button {
+    width: 10rem;
+    height: 10rem;
+  }
+  header.nav-mobile.active .nav-close {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.7;
+    z-index: 3;
+  }
+  header.nav-mobile.active .nav-close span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 7rem;
+    height: 7rem;
+    background: #000
+      url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_close_201x201.png) no-repeat
+      right center/100%;
+  }
+
+  header nav li.active > a {
+    font-weight: 400;
+  }
+  header nav li.nav-main > a {
+    font-weight: 700;
+  }
+  header nav li.nav-main ul {
+    display: block;
+    position: static;
+    left: unset;
+    transform: unset;
+    width: 100%;
+    margin: 0;
+    padding: 2rem 7rem;
+    border: 0;
+    box-sizing: border-box;
+    background: #f7f7fc;
+  }
+  header nav li.active ul {
+    padding: 0;
+  }
+  header nav li.active li {
+    display: none;
+  }
+  header nav li.nav-main ul {
+    padding: 2rem 7rem;
+  }
+  header nav li.nav-main li,
+  header nav li.active.nav-main li {
+    display: block;
+  }
+  /* header nav li.nav-main li.new a::after{width:3.2rem; height:3.2rem; margin:0 0 0 1rem; font-size:1.8rem; line-height:1;} */
+  /* header nav li.active > a:after{content:''; display:block; position:absolute; top:50%; right:4rem; width:5rem; height:5rem; background:url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_arrow_50x50g.png) no-repeat 0 0/100%; transform:rotate(0deg) translateY(-50%);} */
+  /* header nav li.nav-main > a:after{left:unset; border:unset; transform:rotate(180deg) translateY(50%);} */
+}
+
+/* modal-open, modal-wrap common */
+.modal-open {
+  overflow: hidden;
+}
+.modal-wrap {
+  display: -webkit-flex;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  z-index: 999;
+}
+.modal-wrap .dimmed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal-content {
+  position: relative;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  max-height: 74rem;
+  overflow: auto;
+  -ms-overflow-style: none;
+  box-sizing: border-box;
+}
+.modal-wrap .modal-inner {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  width: 48rem;
+  max-height: 81rem;
+  min-height: 81rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* common-popup YU */
+.modal-wrap.course .modal-inner .btn-flex-form {
+  display: block;
+  margin-top: 6.7rem;
+}
+.modal-wrap.course .modal-inner {
+  background: #000 url(https://english.yanadoocdn.com/upload/yanadoo/new/common/bg_night.png) 50% 0/100%
+    auto no-repeat;
+  text-align: center;
+}
+.modal-wrap.course .modal-inner .course-txt strong {
+  display: block;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #fff;
+}
+.modal-wrap.course .modal-inner .course-txt strong span {
+  color: #ffb900;
+}
+.modal-wrap.course .modal-inner .course-txt p {
+  margin-top: 2.3rem;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: #fff;
+}
+.modal-wrap.course .modal-inner .course-txt p + p {
+  margin: 5rem 0 1.5rem;
+}
+.modal-wrap .modal-content p {
+  word-break: keep-all;
+}
+.modal-wrap.course .modal-inner .btn-modal-close {
+  top: 2.4rem;
+  right: 3.6rem;
+  width: 2rem;
+  height: 2rem;
+}
+.btn-modal-close.white {
+  top: -6rem;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_close_90x90w.png) 50%
+    50%/100% auto no-repeat;
+}
+.modal-content.type-fixed-button .btn-flex-form {
+  padding: 0 3rem;
+  background-color: inherit;
+}
+.btn-modal-close {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  width: 7rem;
+  height: 7rem;
+  z-index: 10;
+}
+.modal-wrap.course .modal-inner .course-txt {
+  padding: 38rem 0 6.4rem;
+}
+.modal-wrap.course .modal-inner .btn-flex-form a,
+.modal-wrap.course .modal-inner .btn-flex-form button {
+  display: block;
+  width: 100%;
+}
+.modal-wrap.course .modal-inner .btn-flex-form .btn-yta {
+  margin: 3.5rem 0 0;
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #fff;
+  text-decoration: underline;
+}
+.modal-wrap.course .modal-inner .month-price-txt {
+  display: block;
+  margin: 3rem 0 0;
+  font-size: 1.5rem;
+  color: #f7f7fc;
+}
+
+/* common-popup YU goods */
+.modal-wrap.modal-yu-goods .modal-inner {
+  position: relative;
+  width: 55rem;
+  height: 60rem;
+  max-height: auto;
+  min-height: auto;
+  margin: auto;
+  font-size: 1.5rem;
+  border-radius: 0;
+  overflow: visible;
+}
+.modal-wrap.modal-yu-goods .btn-modal-close {
+  top: -4rem;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_close_90x90w.png) 50%
+    50%/100% auto no-repeat;
+}
+.modal-wrap.modal-yu-goods .modal-inner .btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.8em 0;
+  font-weight: 700;
+  font-size: 140%;
+  background: #ffe400
+    url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_more_38x11b.png) no-repeat 95%
+    50%;
+}
+.modal-wrap.modal-yu-goods .modal-inner dt {
+  padding: 3.5em 0 1.1em;
+}
+.modal-wrap.modal-yu-goods .modal-inner dt > span {
+  display: inline-block;
+  padding-top: 0.2em;
+  width: 100%;
+  font-weight: 400;
+  font-size: 100%;
+  color: #b7b7b7;
+  text-align: center;
+  white-space: pre-wrap;
+}
+.modal-wrap.modal-yu-goods .modal-inner dt > span em {
+  display: inline-block;
+  margin-bottom: 0.4em;
+  font-weight: 700;
+  font-size: 120%;
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+.modal-wrap.modal-yu-goods .modal-inner dt strong {
+  display: block;
+  font-weight: 400;
+  font-size: 240%;
+  text-align: center;
+}
+.modal-wrap.modal-yu-goods .modal-inner dt strong span {
+  display: inline-block;
+  width: 100%;
+  height: 1.3em;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/bg_pop_yu_title.png)
+    no-repeat 50% 0 / 100% auto;
+  text-indent: -9999rem;
+}
+.modal-wrap.modal-yu-goods .modal-inner dt strong em {
+  font-weight: 700;
+}
+.modal-wrap.modal-yu-goods .modal-inner dt p {
+  margin: 1.2em 0 1.5em;
+  font-size: 120%;
+  line-height: 1.3;
+  text-align: center;
+  white-space: pre-wrap;
+}
+.modal-wrap.modal-yu-goods .modal-inner dt.type-02 {
+  padding-top: 4em;
+}
+.modal-wrap.modal-yu-goods .modal-inner dt.type-02 > span {
+  padding-top: 2em;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd {
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd label {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  font-size: 136%;
+  color: #fff;
+  cursor: pointer;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd label .goods-check-box {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: 0.5em 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal-wrap.modal-yu-goods .modal-inner dd label + label {
+  margin-left: 0.2em;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd label input[type='radio'] + .chk {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #ececf7
+    url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_check_38x30w.png) no-repeat 50%
+    50% / 1.5rem auto;
+  border: 0;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd label input[type='radio'] + .chk::before {
+  display: none;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd label input[type='radio']:checked + .chk {
+  background: #ffec13
+    url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_check_38x30b.png) no-repeat 50%
+    50% / 1.5rem auto;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd label input[type='radio'] + .chk + em {
+  position: relative;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd ul li {
+  position: relative;
+  flex: 0 1 auto;
+  width: 14.8em;
+  height: 13.7em;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd ul li + li {
+  margin-left: 0.7em;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd ul li.goods1 {
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/promotion/bestawards/2021/dec/new/pc/bg_pop_yu_goods_01.png)
+    no-repeat 50% 50% / 100%;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd ul li.goods2 {
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/promotion/bestawards/2021/dec/new/pc/bg_pop_yu_goods_02.png)
+    no-repeat 50% 50% / 100%;
+}
+.modal-wrap.modal-yu-goods .modal-inner dd > em {
+  display: inline-block;
+  padding-top: 1.5em;
+  color: #b7b7b7;
+}
+.modal-wrap.modal-yu-goods .modal-inner label img {
+  display: block;
+  margin: 0 auto 0.5em;
+}
+
+/* modal-wrap-media */
+.modal-wrap.modal-wrap-media .dimed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal-wrap.modal-wrap-media .modal-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 800px;
+  height: 478px;
+  margin: auto;
+  background-color: #000;
+  overflow: visible;
+  z-index: 3;
+}
+.modal-wrap.modal-wrap-media .btn-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  text-indent: -9999px;
+}
+.modal-wrap.modal-wrap-media .btn-close:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 40px;
+  margin: auto;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.modal-wrap.modal-wrap-media .btn-close:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 40px;
+  margin: auto;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+/* ynd-modal */
+.ynd-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+.locked-modal {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 11;
+}
+.locked-modal .ynd-bg {
+  display: block;
+}
+.ynd-modal {
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 550;
+}
+.ynd-modal .ynd-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.ynd-modal .ynd-modal-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: left;
+  z-index: 61;
+}
+.ynd-modal .ynd-modal-content a {
+  display: block;
+}
+.ynd-modal .ynd-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 50px;
+  font-weight: 400;
+  font-family: sans-serif;
+  background-image: url(https://english.yanadoocdn.com/upload/yanadoo/pc/common/ico/ico_close_30x30g.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100%;
+  color: #fff;
+  line-height: 25px;
+  text-indent: -9999em;
+  z-index: 5000;
+}
+.ynd-modal .ynd-today-close {
+  font-size: 140%;
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  /* common-popup YU */
+  .modal-content {
+    max-height: 100%;
+  }
+  .modal-wrap {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+  .modal-wrap.course .modal-inner .btn-modal-close {
+    top: 3.7rem;
+    right: 5.4rem;
+    width: 3.3rem;
+    height: 3.3rem;
+  }
+  .modal-wrap .modal-inner {
+    width: 100%;
+    min-height: calc(100% - 8.7rem);
+    max-height: calc(100% - 8.7rem);
+    height: auto;
+    border-radius: 2rem 2rem 0 0;
+  }
+  .modal-content.type-fixed-button .btn-flex-form {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 4rem 6rem;
+    z-index: 10;
+  }
+  .modal-wrap.course .modal-inner .course-txt {
+    padding-bottom: 8.1rem;
+  }
+  .modal-wrap.course .modal-inner .course-txt strong {
+    font-size: 4.8rem;
+  }
+  .modal-wrap.course .modal-inner .course-txt p {
+    margin-top: 3.9rem;
+    font-size: 3.2rem;
+  }
+  .modal-wrap.course .modal-inner .btn-flex-form {
+    margin-top: 6.7rem;
+  }
+  .modal-wrap.course .modal-inner .btn-flex-form .btn-yta {
+    margin-top: 4rem;
+    font-size: 3rem;
+  }
+
+  /* common-popup YU goods */
+  .modal-content {
+    max-height: 100%;
+  }
+  .modal-wrap {
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+  .modal-wrap.modal-yu-goods .modal-inner .btn-modal-close {
+    top: 0;
+    right: -4rem;
+  }
+  .modal-wrap .modal-inner {
+    width: 100%;
+    min-height: calc(100% - 8.7rem);
+    max-height: calc(100% - 8.7rem);
+    height: auto;
+    border-radius: 2rem 2rem 0 0;
+  }
+  .modal-content.type-fixed-button .btn-flex-form {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 0 4rem 6rem;
+  }
+  .modal-wrap.modal-yu-goods .modal-inner dt p {
+    margin-bottom: 1em;
+  }
+  .modal-wrap.modal-yu-goods .modal-inner dd ul li {
+    width: 13.5em;
+    height: 12.4em;
+  }
+  .modal-wrap.modal-yu-goods .modal-inner .btn {
+    padding: 0.8em 1em 0.8em 0;
+    font-size: 180%;
+    background: #ffb900
+      url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_more_38x11b.png) no-repeat
+      95% 50% / 1.5em auto;
+  }
+
+  /* modal-wrap-media */
+  .modal-wrap.modal-wrap-media .modal-content {
+    width: 300px;
+    height: 178px;
+  }
+  .modal-wrap.modal-wrap-media .btn-close {
+    top: -33px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+  }
+  .modal-wrap.modal-wrap-media .btn-close:before {
+    width: 1px;
+    height: 30px;
+  }
+  .modal-wrap.modal-wrap-media .btn-close:after {
+    width: 1px;
+    height: 30px;
+  }
+
+  /* ynd-modal */
+  .ynd-modal .ynd-modal-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px !important;
+    margin: auto;
+    text-align: left;
+    z-index: 61;
+  }
+  .ynd-modal .ynd-modal-content img {
+    width: 100%;
+  }
+  .ynd-modal .button-group {
+    width: 100%;
+    overflow: hidden;
+  }
+  .ynd-modal .button-group button {
+    float: left;
+    outline: none;
+    width: 50%;
+    padding: 1em 0;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-right: 1px solid #ddd;
+    background-color: #f0f0f0;
+    color: #151515;
+    letter-spacing: -1px;
+  }
+  .ynd-modal .button-group button + button {
+    border-right: 0;
+  }
+  .ynd-modal .ynd-close {
+    width: 5%;
+    height: 5%;
+  }
+}
+
+/* header */
+header {
+  position: relative;
+  width: 100%;
+  height: 8.8rem;
+  font-size: 1.5rem;
+  background-color: #fff;
+  border-bottom: 1px solid #e7e7f0;
+  transition: all 0.3s;
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-size: 1.5rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 20;
+}
+
+/* gnb-main */
+header .gnb-main {
+  padding: 3.6rem 0;
+}
+header .gnb-main > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4.2rem;
+  box-sizing: border-box;
+}
+header h1 {
+  width: 16rem;
+  height: 3.9rem;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/img_logo_474x113.png)
+    no-repeat 0 0 / 100%;
+}
+header h1 a {
+  display: block;
+  height: 100%;
+  text-indent: -9999rem;
+}
+header h1 + ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 0 10%;
+}
+header h1 + ul > li {
+  padding: 0 0 0 8.8rem;
+}
+header h1 + ul > li:first-child {
+  padding: 0;
+}
+header h1 + ul > li button,
+header h1 + ul > li a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: left;
+}
+header h1 + ul > li button span,
+header h1 + ul > li a span {
+  display: block;
+  margin: 4px 0 0;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #717188;
+}
+header h1 + ul > li strong {display:inline-block; position:relative}
+header h1 + ul > li strong:after {content: ""; position: absolute; bottom: 0.2rem; left: 0px; width: 100%; border-bottom:0px solid transparent; transition: all 0.2s ease 0s; opacity: 0.5; z-index: -1;}
+header h1 + ul > li:hover strong:after {border-width:0.5rem;}
+
+header h1 + ul > li:first-child strong:after  {border-bottom-color: #FFB900;}
+header h1 + ul > li:nth-child(2) strong:after  {border-bottom-color: #ff5647;}
+header h1 + ul > li:nth-child(3) strong:after  {border-bottom-color: #00cc66;}
+@media screen and (max-width: 1024px) {
+  header .gnb-main {
+    padding: 4.6rem 0 3.6rem;
+  }
+  header h1 + ul > li button,
+  header h1 + ul > li a {
+    font-size: 2.8rem;
+  }
+  header h1 + ul > li button span,
+  header h1 + ul > li a span {
+    display: none;
+  }
+}
+/* side-menu */
+header .side-menu {
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  margin-left: 40rem;
+  text-align:right;
+}
+header .side-menu ul li > a {
+  display: block;
+  padding: 0.6rem 2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-align: right;
+}
+header .side-menu ul li > a:hover {
+  background-color: #ececf6;
+}
+header .side-menu .btn-event {
+  margin-top: -2.8rem;
+  padding: 2.8rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+header .side-menu .btn-event:hover + ul,
+header .side-menu .btn-event + ul:hover {
+  display: block;
+}
+header .side-menu .btn-event:after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 0 0 4px;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_gnb_arrow_36x21.png)
+    91% 50% / 100% no-repeat;
+}
+header .side-menu .btn-login {
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  border: 1px solid #ffb900;
+  border-radius: 4px;
+  background: #ffb900;
+}
+header .side-menu button + ul {
+  display: none;
+  position: absolute;
+  top: 3rem;
+  right: 4.5rem;
+  width: max-content;
+  padding: 1.4rem 0;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px #00000033;
+  box-sizing: border-box;
+  z-index: 5;
+}
+header .side-menu.active {
+  top: 5.4rem;
+}
+header .side-menu.active .btn-login {
+  border: 1px solid #cfcfda;
+  background: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  header .side-menu {
+    right: 4%;
+    left: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header .side-menu {
+    display: flex;
+    top: 4rem;
+    right: 0px;
+    left: auto;
+    margin-left: auto;
+  }
+  header .side-menu ul li > a:hover {
+    background-color: transparent;
+  }
+}
+/* gnb-bar */
+header .gnb-bar .flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+header .gnb-bar {
+  background-color: transparent;
+  transition: 0.2s;
+}
+header .gnb-bar > div {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.8rem;
+  box-sizing: border-box;
+}
+header .gnb-bar.active {
+  display: block;
+}
+header .gnb-bar strong {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #000;
+  opacity: 0.6;
+}
+header .gnb-bar ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+header .gnb-bar ul li {
+  position: relative;
+}
+header .gnb-bar ul li:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background: #000;
+  opacity: 0.2;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+header .gnb-bar ul button,
+header .gnb-bar ul a {
+  display: inline-block;
+  padding: 1rem 1.6rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #000;
+  opacity: 0.6;
+}
+header .gnb-bar ul button:hover,
+header .gnb-bar ul a:hover {
+  font-weight: 700;
+}
+header .gnb-bar ul button.active,
+header .gnb-bar ul a.active {
+  font-weight: 700;
+  opacity: 1;
+}
+header .gnb-bar ul li:first-child:before {
+  display: none;
+}
+
+/* gnb-list */
+header .gnb-list > div {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+header .gnb-list h2 {
+  position: relative;
+  width: 13.3rem;
+  height: 2rem;
+  margin-right: 2.6rem;
+}
+header .gnb-list h2 a {
+  display: block;
+  height: 100%;
+  text-indent: -9999rem;
+}
+header .gnb-list .gnb-box > ul {
+  display: block;
+}
+header .gnb-list .gnb-box > ul > li {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 1.4rem;
+}
+header .gnb-list .gnb-box > ul > li:last-child {
+  margin-right: 6rem;
+}
+header .gnb-list .gnb-box li a {
+  display: block;
+  height: auto;
+  padding: 2.8rem 0;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: unset;
+  opacity: unset;
+}
+header .gnb-list a + ul {
+  display: none;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  width: max-content;
+  padding: 1.6rem 0;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px #00000033;
+  box-sizing: border-box;
+  z-index: 2;
+}
+header .gnb-list a:hover + ul,
+.gnb-list a + ul:hover {
+  display: block;
+}
+header .gnb-list .gnb-box a + ul a {
+  position: relative;
+  padding: 0.8rem 2.4rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+header .gnb-list .gnb-box a + ul a:hover {
+  font-weight: 700;
+  background-color: #ececf6;
+}
+
+header .gnb-list .gnb-box a + ul li.active a {
+  font-weight: 700;
+}
+header .gnb-list .gnb-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  height: 6rem;
+  padding: 0 2.8rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+header .gnb-list:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 30rem;
+  width: calc(50% - 35rem);
+  height: calc(100% - 4.5rem);
+  background-color: #fff;
+  transition: 0.3s;
+  z-index: 2;
+}
+header .gnb-list:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-width: 20rem;
+  width: calc(50% - 40rem);
+  height: calc(100% - 4.5rem);
+  background-color: #fff;
+  transition: 0.3s;
+}
+header .gnb-list .gnb-box a + ul li.new a:after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_gnb_new_60x30.png) 0
+    50% / auto 100%;
+  vertical-align: bottom;
+}
+header .gnb-list .gnb-box a + ul li.hot a:after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_gnb_hot_60x30.png) 0
+    50% / auto 100%;
+  vertical-align: bottom;
+}
+header .gnb-list .gnb-box a + ul li.best a:after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_gnb_best_60x30.png) 0
+    50% / auto 100%;
+  vertical-align: bottom;
+}
+header .gnb-list .gnb-box a + ul li.premium a:after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 5.4rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_gnb_premium_102x28.png)
+    0 50% / auto 100%;
+  vertical-align: bottom;
+}
+header .gnb-list .gnb-box a + ul li.event a:after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 3.5rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_gnb_event_70x30.png)
+    0 50% / auto 100%;
+  vertical-align: bottom;
+}
+/* mypage-box */
+header .mypage-box {
+  display: inline-block;
+  padding: unset;
+}
+header .mypage-box button {
+  display: inline-block;
+  vertical-align: middle;
+}
+header .mypage-box button span {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 3rem;
+  height: 3rem;
+  background-size: cover;
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+header .mypage-box button:hover + ul,
+header .mypage-box button + ul:hover {
+  display: block;
+}
+header .mypage-box button + ul li a,
+header .mypage-box button + ul li button {
+  width: 100%;
+  height: unset;
+  padding: 0.6rem 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: right;
+  box-sizing: border-box;
+}
+header .mypage-box .btn-mypage:hover span {
+  border: 1px solid #28284b;
+}
+header .mypage-box button + ul {
+  display: none;
+  position: absolute;
+  top: 3rem;
+  right: 0rem;
+  width: 12.5rem;
+  padding: 1.4rem 0;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px #00000033;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+header .gnb-list .gnb-box li a:hover span:after {
+  border-width: 0.5rem;
+}
+header .gnb-list .gnb-box li a span {
+  display: inline-block;
+  position: relative;
+}
+header .gnb-list .gnb-box li a span:after {
+  content: '';
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0;
+  width: 100%;
+  border-bottom: 0 solid transparent;
+  transition: 0.2s;
+  opacity: 0.5;
+  z-index: -1;
+}
+header .gnb-list .gnb-box li a span.eng:after {
+  border-bottom-color: #ffb900;
+}
+header .gnb-list .gnb-box li a span.yu:after {
+  border-bottom-color: #ff5647;
+}
+header .gnb-list .gnb-box li a span.yafit:after {
+  border-bottom-color: #00cc66;
+}
+
+@media screen and (max-width: 1024px) {
+  header h1 {
+    width: 12.8rem;
+    height: 3.4rem;
+    margin: 0 0 4.9rem;
+    background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/logo_gnb_ynd_226x60.png)
+      no-repeat 0 0 / 100%;
+  }
+  header h1 + ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0 0 13.8rem;
+    margin: 0;
+  }
+  header h1 + ul > li button span {
+    display: none;
+  }
+  header h1 + ul > li button {
+    font-size: 2.8rem;
+  }
+  header .gnb-main .flex {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    -webkit-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+  }
+
+  header .gnb-list:before {
+    height: calc(100% - 9rem);
+    z-index: -1;
+  }
+  header .gnb-list:after {
+    height: calc(100% - 9rem);
+    z-index: -1;
+  }
+
+  /* gnb-bar */
+  header .gnb-bar {
+    padding: 2.1rem 0;
+  }
+  header .gnb-bar ul li button,
+  header .gnb-bar ul li a {
+    font-size: 2.4rem;
+  }
+  header .gnb-bar strong {
+    display: none;
+  }
+  header .gnb-bar .flex {
+    -webkit-box-pack: end !important;
+    -webkit-justify-content: flex-end !important;
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+  }
+
+  /* gnb-list */
+  header .gnb-list .gnb-box {
+    display: block;
+    height: 12.2rem;
+    padding: 3.5rem 0;
+  }
+
+  header .gnb-list .gnb-box a + ul a:hover {
+    background-color: transparent;
+  }
+
+  header .gnb-list .gnb-box li a span:after {
+    border-bottom: 0;
+  }
+
+  header .gnb-list .gnb-box > ul {
+    margin: 1rem 0 0 0;
+    padding-left: 4.2rem;
+    -webkit-scroll-snap-type: x mandatory;
+    -moz-scroll-snap-type: x mandatory;
+    -ms-scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  header .gnb-list .gnb-box li a {
+    position: relative;
+    padding: 2.8rem 0 2.3rem;
+    font-size: 2.8rem;
+    border-bottom: 0;
+    line-height: unset;
+    opacity: unset;
+  }
+  header .gnb-list .gnb-box li a:hover + ul {
+    display: none;
+  }
+  header .gnb-list .gnb-box li a.active,
+  header .gnb-list .gnb-box li a.actived {
+    border-bottom: 0.6rem solid transparent;
+  }
+  header .gnb-list h2:first-child {
+    width: 40rem;
+    height: 5.6rem;
+    margin: 0 0 1rem 4.2rem;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% auto;
+  }
+  header .gnb-list .gnb-box:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 6rem;
+    height: 10rem;
+    background: linear-gradient(to right, rgba(255, 255, 255), rgb(255, 255, 255, 0));
+    z-index: 2;
+  }
+  header .gnb-list .gnb-box:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 6rem;
+    height: 10rem;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+    z-index: 2;
+  }
+  /* side-menu */
+  header .side-menu.active {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    top: 12rem;
+    right: 0;
+    left: auto;
+  }
+  header .side-menu .btn-event {
+    display: none;
+  }
+  header .nav-close {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.7;
+    z-index: 3;
+  }
+  header .nav-close span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 7rem;
+    height: 7rem;
+    background: #000
+      url(https://english.yanadoocdn.com/upload/yanadoo/new/common/logo_gnb_close_201x201.png)
+      no-repeat center / 100%;
+  }
+  header .gnb-list .gnb-box > ul {
+    margin: 1rem 0 0 0;
+    white-space: nowrap;
+  }
+  header .gnb-list .gnb-box > ul::-webkit-scrollbar {
+    display: none;
+  }
+  header .gnb-list .gnb-box > ul > li {
+    position: unset;
+    padding: 0 4.4rem 0 0;
+  }
+  header .gnb-list a + ul {
+    width: 100vw;
+    top: 100%;
+    padding: 2rem 0;
+    background: #f7f7fc;
+    border-radius: 0;
+    box-shadow: unset;
+  }
+  header .lnb-m {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    padding: 16rem 0 8rem;
+    font-size: 3rem;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    z-index: 4;
+  }
+  header .lnb-m .logo {
+    position: absolute;
+    top: 7rem;
+    left: 4rem;
+    width: 14rem;
+    height: 4rem;
+  }
+  header .lnb-m .depth1 {
+    margin: 5rem 0 0;
+    padding: 0 4.2rem;
+    border-bottom: 1px solid #ddd;
+  }
+  header .lnb-m .btn-app-download {
+    margin: 16.5rem 0 0;
+    padding: 0 4.2rem 0;
+    text-align: left;
+  }
+  header .lnb-m .btn-app-download .title {
+    display: block;
+    margin: 0 0 2.5rem;
+  }
+  header .lnb-m .btn-app-download button {
+    display: inline-block;
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    margin: auto 4.5rem auto 0;
+  }
+  header .gnb-list .gnb-box a + ul li.new a:after {
+    width: 6rem;
+    height: 3rem;
+    margin-left: 1rem;
+  }
+  header .gnb-list .gnb-box a + ul li.hot a:after {
+    width: 6rem;
+    height: 3rem;
+    margin-left: 1rem;
+  }
+  header .gnb-list .gnb-box a + ul li.best a:after {
+    width: 6rem;
+    height: 3rem;
+    margin-left: 1rem;
+  }
+  header .gnb-list .gnb-box a + ul li.premium a:after {
+    width: 10.6rem;
+    height: 3rem;
+    margin-left: 1rem;
+  }
+  header .gnb-list .gnb-box a + ul li.event a:after {
+    width: 7rem;
+    height: 3rem;
+    margin-left: 1rem;
+  }
+}
+
+/* etc */
+header {
+  min-height: 10rem;
+  background-color: #fff;
+}
+header .side-menu.active {
+  display: block;
+  text-align: right;
+}
+header .mypage-box .btn-logout span {
+  display: block;
+  width: 100%;
+  height: auto;
+  text-align: right;
+}
+header .gnb-bar ul button.active {
+  font-weight: 700;
+}
+header .gnb-list h2 {
+  /* flex-basis: 16.6rem; */
+  flex-basis: 22rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 100%;
+  z-index: 3;
+}
+header .gnb-list .gnb-box > ul {
+  white-space: nowrap;
+  transition: 0.3s;
+}
+header .gnb-list h2 {
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 100% auto;
+}
+header .gnb-list h2.logo-eng {
+  background-image: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/logo_gnb_eng_540x83.png);
+  background-size: 18rem auto;
+}
+header .gnb-list h2.logo-yu {
+  background-image: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/logo_gnb_university_1111x168.png);
+  background-size: 21.2rem auto;
+}
+header .gnb-list h2.logo-yafit {
+  background-image: url(https://yafitcdn.yanadoo.co.kr/logo/logo_yafit.png);
+  background-size: 50%;
+}
+header .gnb-list h2.logo-ynd {
+  background-image: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/logo_gnb_ynd_226x60.png);
+  background-size: 8.8rem auto;
+}
+header .nav-group:hover:after {
+  display: none;
+}
+header .nav-group.active .nav-close {
+  display: block;
+}
+header .lnb-m {
+  display: none;
+}
+.fixed .landing {
+  margin-top: 11.3rem;
+}
+header .side-menu {
+  min-width: 15rem;
+}
+#mobileDimed {
+  display: none;
+}
+.btn-gnb-prev {
+  display: none;
+  position: absolute;
+  bottom: 0.2rem;
+  left: 23rem;
+  width: 5rem;
+  height: calc(100% - 0.4rem);
+  background-color: transparent;
+  text-indent: -999rem;
+  z-index: 5;
+}
+.btn-gnb-prev:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 1.1rem;
+  height: 2rem;
+  margin: auto;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_gnb_arrow_22x40.png)
+    no-repeat 50% 50% / 100% auto;
+  transform: rotate(180deg);
+}
+.btn-gnb-prev:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  margin: auto;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 80%, rgb(255, 255, 255, 0) 100%);
+  z-index: -1;
+}
+.btn-gnb-next {
+  display: none;
+  position: absolute;
+  bottom: 0.2rem;
+  right: 19rem;
+  width: 5rem;
+  height: calc(100% - 0.4rem);
+  background-color: transparent;
+  text-indent: -999rem;
+  z-index: 5;
+}
+.btn-gnb-next:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 1.1rem;
+  height: 2rem;
+  margin: auto;
+  background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_gnb_arrow_22x40.png)
+    no-repeat 50% 50% / 100% auto;
+}
+.btn-gnb-next:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  margin: auto;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 1) 80%, rgb(255, 255, 255, 0) 100%);
+  z-index: -1;
+}
+
+@media screen and (max-width: 1024px) {
+  header .side-menu.active {
+    top: 11rem;
+  }
+  header .side-menu .btn-login {
+    display: none;
+  }
+  header .nav-group {
+    display: inline-block;
+  }
+  header .mypage-box {
+    display: none;
+  }
+  header .gnb-bar ul button {
+    font-size: 2.4rem;
+  }
+  header .gnb-list h2.logo-eng {
+    background-size: 32.9rem auto;
+  }
+  header .gnb-list h2.logo-yu {
+    background-size: 37rem auto;
+  }
+  header .gnb-list h2.logo-yafit {
+    background-size: 14.4rem auto;
+  }
+  header .gnb-list h2.logo-ynd {
+    background-size: 13.3rem auto;
+  }
+  header .gnb-list .gnb-box > ul {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0s;
+  }
+  header .gnb-list .gnb-box > ul > li:last-child {
+    padding-right: 4.2rem;
+    margin-right: 0;
+  }
+  header .ico-user {
+    background: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_gnb_mypage_84x84.png)
+      no-repeat 50% 50% / 100% auto;
+  }
+  header .side-menu {
+    right: 0;
+    left: auto;
+    margin-left: auto;
+  }
+  header .side-menu .btn-mypage {
+    display: inline-block;
+  }
+  header .side-menu .btn-mypage span {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    box-sizing: border-box;
+    border-radius: 100%;
+  }
+  header .side-menu .btn-mypage .ico-hamburger {
+    background-image: url(https://english.yanadoocdn.com/upload/yanadoo/new/common/ico_hamburger_100x100.png) !important;
+  }
+  header .nav-group.active nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    padding: 16rem 0 8rem;
+    font-size: 3rem;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    z-index: 4;
+  }
+  header .nav-group.active nav .logo {
+    position: absolute;
+    top: 7rem;
+    left: 4rem;
+    width: 21rem;
+    height: 5rem;
+  }
+  header .side-menu nav .depth1 ul {
+    display: flex;
+    text-align: left;
+  }
+  header .lnb-m button {
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 3.3rem 0 2.9rem;
+    color: #000;
+  }
+  header .lnb-m .depth1 ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 4.8rem 0 0;
+    font-weight: 500;
+    font-size: 2.8rem;
+    border-bottom: 0 solid transparent;
+    box-sizing: border-box;
+  }
+  header .lnb-m .depth1 ul li.active {
+    border-bottom-width: 0.4rem;
+  }
+  header .lnb-m .depth2 {
+    min-height: calc(100% - 26rem);
+  }
+  header .lnb-m .depth2 > li {
+    display: block;
+    width: 100%;
+  }
+  header .lnb-m .depth2 > li.active > a {
+    font-weight: 700;
+  }
+  header .lnb-m .depth2 > li.nochild a:after {
+    display: none;
+  }
+  header .lnb-m .depth2 > li a {
+    padding: 3.5rem 6rem;
+    font-size: 3.2rem;
+    text-align: left;
+  }
+  header .lnb-m .depth2 > li.active ul {
+    display: block;
+    position: static;
+    left: unset;
+    transform: unset;
+    width: 100%;
+    margin: 0;
+    padding: 2rem 7rem;
+    border: 0;
+    box-sizing: border-box;
+    background: #f7f7fc;
+  }
+  header .lnb-m .depth2 > li.active li {
+    display: block;
+  }
+  header .lnb-m .depth2 > li li.active a {
+    font-weight: 700;
+  }
+
+  header .lnb-m .depth2 > li li {
+    padding: 0;
+  }
+  header .lnb-m .depth2 > li li a {
+    padding: 2rem 0;
+    font-size: 2.8rem;
+    text-align: left;
+  }
+
+  header .lnb-m .btn-group-bottom {
+    width: 80%;
+    padding: 4.2rem;
+    background-color: #fff;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  header .lnb-m .btn-group-bottom button {
+    display: inline-block;
+    padding: 2rem;
+  }
+  header .gnb-list a + ul,
+  header .gnb-list a + ul:hover {
+    display: none;
+  }
+  header .gnb-list a.active + ul {
+    display: block !important;
+  }
+  header .gnb-list a.active + ul li a {
+    padding: 2.8rem 4.2rem;
+    font-size: 2.8rem;
+    line-height: 1;
+  }
+  header .gnb-list a.active + ul li.active a {
+    font-weight: 700;
+  }
+  #mobileDimed {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+  }
+  #mobileDimed.active {
+    display: block;
+  }
+
+  header .lnb-m .btn-app-download {
+    display: none !important;
+  }
+
+  /* header nav li.depth3-menu.new a::after {width: 2.8rem; height: 2.8rem; margin: 0 0 0 1rem; font-size: 1.5rem; line-height: .95; text-align: center; box-sizing: border-box; vertical-align: middle;} */
+}

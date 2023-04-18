@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>야핏사이클</title>
+    <link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/reset_1.css" />
+    <style>
+    /* 가로모드일때 폰트 사이즈 자동 조정 금지 */
+    html {-webkit-text-size-adjust: none;  -moz-text-size-adjust: none;  -ms-text-size-adjust: none; }
+    html,body{width:100%;height:100%;background: linear-gradient(#191919,#17222C);}
+    .wrap {display: flex; width: 100%; height: 100vh; align-items: center; justify-content: center;}
+    .tutorial  .inner-col {max-width: 1026px; margin: 0 auto; padding: 30px; background-color: #000;}
+    .tutorial h3 {padding: 32px 0 46px; font-weight: 500; text-align: center;  color: #fff; font-size: 28px;} 
+    .tutorial ul {display: flex; }
+    .tutorial ul li:nth-child(2) {padding: 0 20px;}
+    .modal-bg {position: absolute; top:0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,1);}
+    .modal-content { display: none; position: absolute; top: 0%; left: 0%; width: 100%; height: 100vh; z-index: 10; align-items: center; justify-content: center;}
+    video {width: 90%; height: 90%;}
+    .vod-modal-close {position: absolute; top: 0; right: 5%; width: 100px; height: 40px; font-size: 15px; color: #fff; background-color: #8242bf; font-weight: 600;}
+    #modalBackDrop {display: none;}
+
+    @media screen and (max-width: 899px) {
+        .tutorial  .inner-col {padding: 3.34vw; }
+        .tutorial h3 {padding: 3.56vw 0 5.12vw; font-size: 3.34vw;} 
+        .tutorial ul li:nth-child(2) {padding: 0 2.22vw;}
+        .vod-modal-close {width: 10vw; height: 4.45vw; font-size: 1.7vw; right: 13%; }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="tutorial">
+            <h3><span>튜토리얼</span></h3>
+            <div class="inner-col">
+                <ul>
+                    <li>
+                        <a class="thumbnail" href="https://yafitcdn.yanadoo.co.kr/app/assets/vod/tutorial/tutorial_1.mp4">
+                            <img src="https://yafit.yanadoocdn.com/app/assets/images/tutorial/tutorial_video_1_thumbnail.jpg" class="thumbnail-img" alt="달리는 호랑이 썸네일">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail" href="https://yafitcdn.yanadoo.co.kr/app/assets/vod/tutorial/tutorial_2.mp4">
+                            <img src="https://yafit.yanadoocdn.com/app/assets/images/tutorial/tutorial_video_2_thumbnail.jpg" class="thumbnail-img" alt="달리는 호랑이 썸네일">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="thumbnail" href="https://yafitcdn.yanadoo.co.kr/app/assets/vod/tutorial/tutorial_3.mp4">
+                            <img src="https://yafit.yanadoocdn.com/app/assets/images/tutorial/tutorial_video_3_thumbnail.jpg" class="thumbnail-img" alt="달리는 호랑이 썸네일">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-warp">
+            <!-- vod-modal -->
+            <div class="modal-content vod-modal">
+                <video src="https://yafitcdn.yanadoo.co.kr/app/assets/vod/tutorial_1.mp4"  id="vod" muted autoplay loop playsinline controls></video>
+                <!--iframe src="https://yafitcdn.yanadoo.co.kr/app/assets/vod/tutorial_1.mp4" id="vod" allowfullscreen autoplay></iframe-->
+                <button type="button" class="vod-modal-close">그만보기</button>
+            </div>
+            <div id="modalBackDrop" class="modal-bg"></div>
+        </div>
+    </div>
+
+    <script>
+
+    document.querySelector(".vod-modal-close").addEventListener("click", () => { onClickBntVodModalClose(); });
+
+    // youtube-slide On Click
+	const thumbnail = document.querySelectorAll(".thumbnail");
+	for ( let i = 0; i < thumbnail.length; i++ )
+		thumbnail[i].addEventListener("click", function (event) {
+			event.preventDefault();
+			document.querySelectorAll(".vod-modal").forEach(item => item.style.display = 'flex');
+			document.querySelectorAll("#modalBackDrop").forEach(item => item.style.display = 'block');
+			document.getElementById("vod").setAttribute("src", this.getAttribute("href"));
+	});
+	function onClickBntVodModalClose() {
+		document.querySelectorAll(".modal-content").forEach(item => item.style.display = 'none');
+		document.querySelectorAll("#modalBackDrop").forEach(item => item.style.display = 'none');
+		document.getElementById("vod").setAttribute("src", '');
+		document.body.style.overflow = 'auto';
+	}
+    </script>
+</body>
+</html>

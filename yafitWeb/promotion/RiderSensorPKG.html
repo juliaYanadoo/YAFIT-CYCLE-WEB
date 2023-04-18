@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>R1 센서 무료패키지</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<link rel="favicon" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico">
+	<link rel="shortcut icon" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico" />
+	<link rel="apple-touch-icon-precomposed" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="R1 센서 무료패키지"/>
+    <meta property="og:site_name" content="야핏"/>
+    <meta property="og:description" content="착- 달기만 하면 끝. 세상의 모든 사이클이 야핏이 되는 패키지 "/>
+    <meta property="og:image" content="https://yafit.yanadoocdn.com/yanadoo/images/web/common/og_yafit_1.jpg">
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="R1 센서 무료패키지">
+    <meta name="twitter:description" content="착- 달기만 하면 끝. 세상의 모든 사이클이 야핏이 되는 패키지 ">
+    <meta name="twitter:image" content="https://yafit.yanadoocdn.com/yanadoo/images/web/common/og_yafit_1.jpg">
+    <meta name="nate:image" content="https://yafit.yanadoocdn.com/yanadoo/images/web/common/og_yafit_1.jpg">
+    <meta name="naver-site-verification" content="dcf4d5cf8e610163fe7bbc07a29e21f98c503792"/>
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/reset_1.css" />
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/edu/common.css?v=1.6" />
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/edu/promotion.css?v=1.1" />
+	<link rel="stylesheet" href="https://yafit.yanadoocdn.com/yanadoo/library/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/assets/style/package/common-package.css">
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/library/beusable.js"></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/library/channel.js"></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/env.js" ></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/common.js"></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/comm.js"></script>
+	<script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/headscript.js"></script>
+	<script src="https://yafit.yanadoocdn.com/yanadoo/library/swiper-bundle.min.js"></script>
+</head>
+<style>
+	body.scrollUp header {transform: translateY(-100%)}
+	.text-bold {color: #000; font-weight: 600 !important;}
+	.package-detail-col .inner {width: 720px; padding: 0;}
+	.package-thumbnail {width: 100%;}
+	.package-detail-col {padding-top: 0; justify-content: center;}
+	.package-detail .package-app-pass .price-area .flex-col {padding: 0;}
+	.price-area-rider .percent {color: red; margin-right: 10px;}
+	.price-area-rider em {color: #999; margin-left: 10px; font-size: 18px; font-weight: 300; text-decoration: line-through;}
+	.package-name {font-size: 35px;}
+	.buy-banner .package-benefits h5 {margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #ddd;}
+	.buy-banner .package-benefits .title {font-size: 17px;}
+	.buy-banner .real-price {margin-top: 20px;font-weight: 600; color: #000;}
+	.buy-banner .real-price p {font-weight: 600;}
+	.buy-banner .real-price .title {color: #000;}
+	.buy-banner .text-line {color: #999; text-decoration: line-through; font-weight: 300;}
+	.small-text {display: block; margin-top: 10px; color: #999; font-size: 12px;}
+	.buy-banner select {opacity: 0; position: absolute; left: -9999px;}
+	.package-detail-col .package-btn-area .btn-buy {width: 100%}
+	.package-name span {font-weight: 300; letter-spacing: -1px;}
+	.package-configuration em {color: #a9a9a9;text-decoration: line-through; }
+	.discount-price-area {display: none !important;}
+	.package-detail .package-app-pass .price-area {border: none;}
+	.cycle-partners__slide__wrap {position: absolute; top:978px; left: 0; width: 720px;}
+	.cycle-partners__slide__wrap:before {content: '';position: absolute;left: 0;top: 0;width: 110px;height: 100%;background-image: url(https://yafit.yanadoocdn.com/yanadoo/images/web/package/detail/sensor/bf/dim.svg);z-index: 10;}
+	.cycle-partners__slide__wrap:after {content: '';position: absolute;right: 0;top: 0;width: 110px;height: 100%;background-image: url(https://yafit.yanadoocdn.com/yanadoo/images/web/package/detail/sensor/bf/dim.svg);z-index: 10; transform: rotate(180deg);}
+	.cycle-partners__slide {overflow: hidden; }
+	.cycle-partners__slide .swiper-slide {transform: scale(.9);}
+	.cycle-partners__slide .swiper-slide-active {transform: scale(1);}
+	.ico-cycle-partners_plus {position: absolute; top: -10px; left: 50%; z-index: 5;width: 80px;height: 80px;margin-left: -40px;}
+	.ico-cycle-partners_plus span {display: block; width: 100%; height: 100%; background-color: #02cc66; border-radius: 50%;opacity: .4; animation: moveScale 0.8s infinite;}
+	.ico-cycle-partners_plus:after {content: '';position: absolute;top: 11px;left: 11px;width: 58px;height: 58px; background-image: url(https://yafit.yanadoocdn.com/yanadoo/images/web/package/detail/sensor/bf/ico_cycle_partners_plus.svg); background-size: cover}
+	.ico-cycle-partners_plus img {width: 58px; height: 58px;}
+	.step-slide-wrap {overflow: hidden; padding: 143px 0 185px;}
+	.step-slide-wrap .title {display: block; width: 375px; margin: 0 auto;}
+	.step-slide-wrap .step-slide {margin-top: 130px; padding: 0 60px}
+	.step-slide-wrap .swiper-pagination {bottom: 110px;}
+	.step-slide-wrap .swiper-pagination-bullet {width: 13px; height: 13px; background-color:#D3D3D3;}
+	.step-slide-wrap .swiper-pagination-bullet-active {background-color: #848484;}
+	.rider_content2_btn_01 {position: absolute; width:550px; left: 50%; bottom: 265px; transform: translateX(-50%); -webkit-transform: translateX(-50%);}
+	.rider_content2_btn_02 {position: absolute; width:550px; left: 50%; bottom: 133px; transform: translateX(-50%); -webkit-transform: translateX(-50%);}
+	.rider_content5_btn {position: absolute; width:550px; left: 50%; bottom: 148px; transform: translateX(-50%); -webkit-transform: translateX(-50%);}
+	.vod-box {position: absolute; width:550px; left: 50%; bottom: 444px; transform: translateX(-50%); -webkit-transform: translateX(-50%);}
+	.yafit-garminSensor ul li {margin-bottom: 30px; color: #434343; font-size: 18px; font-weight: 300;line-height: 1.5em;}
+	.yafit-garminSensor ul li strong {display: block; margin-bottom: 7px; color: #000; font-size: 20px; font-weight: 400;}
+	/* modal */
+	.vod-modal-content {overflow: inherit; display: none;position: fixed;left: 50%;top:50%;background-color: #fff;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-moz-transform: translate(-50%, -50%);-o-transform: translate(-50%, -50%); z-index: 1002;}
+	.vod-modal-bg {display: none;position: fixed;left: 0;right: 0;top: 0;bottom: 0;width: 100%;height: 100vh;background-color: #000;opacity: .3;z-index: 1001;}
+	.vod-modal {background: none;}
+	.vod-modal iframe {width: 640px; height: 360px;}
+	.vod-modal .vod-modal-close {position: absolute; top:-60px; right: 20px; width: 60px; height: 60px; }
+	.ynd-modal-content {width: 550px;}
+	@keyframes moveScale { 0% {transform: scale(0);} 100% {transform: scale(1);} }
+	@media screen and (max-width: 720px) {
+		.package-detail-info {display: none;}
+		.floating-banner {display: block;}
+		.buy-banner {background-color: #fff;}
+		.buy-banner .package-name {padding: 6.94vw 5% 1.39vw; font-size: 7vw;}
+		.buy-banner .left-area .package-configuration {padding-top: 0;}
+		.buy-banner .left-area .package-app-pass {padding: 0 5%;}
+		.buy-banner .package-benefits h5 {margin-bottom: 3vw; padding-bottom: 2vw; border-bottom: 1px solid #ddd;}
+		.buy-banner .package-benefits > div {border:1px solid #eee;}
+		.buy-banner .package-benefits .title {color: #000;}
+		.buy-banner .package-benefits .real-price {margin-top: 5vw; padding-top: 5vw;align-items: center; font-weight: 600; border-top: 1px solid #eee;}
+		.buy-banner .package-benefits .real-price p {font-size: 5vw; font-weight: 600;}
+		.buy-banner .package-benefits .real-price p span { font-size: 2.5vw;}
+		.package-benefits p {font-weight: 400;}
+		.price-area-rider {padding: 0;}
+		.price-area-rider .percent {color: red; margin-right: 10px;}
+		.price-area-rider em {color: #999; margin-left: 10px; font-size: 4vw; font-weight: 300; text-decoration: line-through;}
+		.small-text {display: block; margin-top: 1.5vw; color: #999; font-size: 2.5vw;}
+		.floating-banner .package-btn-area button.btn-buy {width: 100%;}
+		.package-detail-col .package-btn-area .btn-buy {width: 100%}
+		.step-slide-wrap { padding: 19.86vw 0 25.69vw;}
+		.step-slide-wrap .title { width: 52.08vw; margin: 0 auto;}
+		.step-slide-wrap .step-slide {margin-top: 18.06vw; padding: 0 8.33vw}
+		.step-slide-wrap .swiper-pagination {bottom: 15.28vw;}
+		.step-slide-wrap .swiper-pagination-bullet {width: 1.81vw; height: 1.81vw; }
+		.yafit-garminSensor ul li {margin-bottom: 4.17vw;  font-size: 2.50vw; line-height: 1.5em;}
+		.yafit-garminSensor ul li strong { margin-bottom: 0.97vw;  font-size: 2.78vw; }
+		.package-name span {font-weight: 300; letter-spacing: -0.1389vw;}
+		.cycle-partners__slide__wrap {position: absolute; top:135.8333vw; left: 0; width: 100.0000vw;}
+		.cycle-partners__slide__wrap:before {content: '';position: absolute;left: 0;top: 0;width: 15.2778vw;z-index: 10;}
+		.cycle-partners__slide__wrap:after {content: '';position: absolute;right: 0;top: 0;width: 15.2778vw;}
+		.cycle-partners__slide {overflow: hidden; }
+		.cycle-partners__slide .swiper-slide {transform: scale(.9);}
+		.cycle-partners__slide .swiper-slide-active {transform: scale(1);}
+		.ico-cycle-partners_plus {position: absolute; top: -1.3889vw; left: 50%; z-index: 5;width: 11.1111vw;height: 11.1111vw;margin-left: -5.5556vw;}
+		.ico-cycle-partners_plus:after {content: '';position: absolute;top: 50%;left: 50%;width: 8.0556vw;height: 8.0556vw; margin: -4.0228vw 0 0 -4.0228vw;  background-size: 100%; background-repeat: no-repeat;}
+		.ico-cycle-partners_plus img {width: 8.0556vw; height: 8.0556vw;}
+		.rider_content2_btn_01 { width:76.39vw; left: 50%; bottom: 36.81vw; transform: translateX(-50%); -webkit-transform: translateX(-50%);}
+		.rider_content2_btn_02 { width:76.39vw; left: 50%; bottom: 18.47vw; transform: translateX(-50%); -webkit-transform: translateX(-50%);}
+		.rider_content5_btn { width:76.39vw; left: 50%; bottom: 20.56vw; transform: translateX(-50%); -webkit-transform: translateX(-50%);}
+		.vod-box { width:76.39vw; left: 50%; bottom: 61.67vw; transform: translateX(-50%); -webkit-transform: translateX(-50%);}
+		/* modal */
+		.vod-modal-content {left: 50%;top:50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);-ms-transform: translate(-50%, -50%);-moz-transform: translate(-50%, -50%);-o-transform: translate(-50%, -50%); }
+		.vod-modal-bg {left: 0;right: 0;top: 0;bottom: 0;width: 100%;height: 100vh;opacity: .3;}
+		.vod-modal iframe {width: 88.89vw; height: 50.00vw;}
+		.vod-modal .vod-modal-close { top:-8.33vw; right: 2vw; width: 8.33vw; height: 8.33vw; }
+	}
+</style>
+<body>
+<header></header>
+<section class="package-detail-page landing" id="yafitCycle">
+	<!-- 패키지 상세 상단 영역 -->
+	<article class="package-detail-col">
+		<div class="inner">
+			<!-- 좌측 썸네일 슬라이드 -->
+			<div class="package-thumbnail">
+				<div class="package-thumbnail-slide">
+					<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/sensor_rider_thumb_1.png" alt="센서 패키지">
+				</div>
+			</div>
+			<!-- 우측 패키지 상세 정보-->
+			<div class="package-detail-info" style="display: none;">
+				<div class="top">
+					<h3 class="package-name">R1 센서 <span>패키지</span></h3>
+					<a class="btn-copy-link"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/common/copy_link.svg" alt="URL 복사하기"></a>
+				</div>
+				<div class="package-detail">
+					<div class="package-configuration flex-col">
+						<strong class="title">기본 구성</strong>
+						<div class="right-area">
+							<span>야핏 R1 센서 <em id="cycleBasicPrice1"></em> 0</span>
+							<span style="display: none;">앱 이용권 <em id="iPadBasicPrice1"></em> 29,700</span>
+						</div>
+					</div>
+					<div class="m-grey-box">
+						<div class="package-app-pass flex-col">
+							<strong class="title">앱 이용권</strong>
+							<div class="right-area">
+								<select name="voucherType1" id="voucherType1" onchange='changeVoucherType1()'>
+									<!-- <option value="">골드 3개월</option> -->
+								</select>
+								<div class="discount-price-area">
+									<span class="badge badge-discount__20" id="discountBadge1">20% 할인가</span>
+									<!--span class="badge badge-discount__25">25% 할인가</span-->
+									<p class="discount-price"><span id="discountPrice1">119,000</span> 원<p>
+								</div>
+								<div class="price-area">
+									<div class="flex-col">
+										<span class="title">정가</span>
+										<strong id="allPrice1">1,189,700원</strong>
+									</div>
+									<div class="flex-col">
+										<span class="title">할인가(월)</span>
+										<strong id="realPrice1" class="point-color">1,115,900원</strong>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="package-benefits">
+							<div class="package-benefits__mileage flex-col">
+								<span class="title">최대 지급 마일리지</span>
+								<strong class="right-area">+ <em id="mileage1">73,800</em>원</strong>
+							</div>
+							<div class="package-benefits__gift flex-col">
+								<span class="title">특별 사은 혜택</span>
+								<p class="right-area">홈트VOD</p>
+							</div>
+						</div>
+						<div class="package-btn-area">
+							<button type="button" type="button" class="btn-buy" onclick="voucherOrder1();">구매하기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<!-- 패키지 상세 정보 이미지 영역 -->
+	<article class="package-detail-contents">
+		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/sensor_rider_content_01.png" alt="본 페이지는 야핏 라이더에 한해 제공되는 시크릿 페이지 입니다.">
+		<div class="contents-wrap">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/sensor_rider_content_02.png" alt="일 330원으로 겨울 라이딩 기적을 만나세요.">
+			<a href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/yafitCycle.html" class="rider_content2_btn_01" target="_blank"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/btn_sensor_rider_content2_01.svg" alt="야핏 알아보기"></a>
+			<a href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/yafitNoCycle.html" class="rider_content2_btn_02" target="_blank"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/btn_sensor_rider_content2_02.svg" alt="자전거 구경하기"></a>
+		</div>
+		<div class="contents-wrap">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/sensor_rider_content_03.png" alt="사이클은 있는데 아직 야핏이 없다면 10만명이 선택한 야핏 사이클">
+			<div class="cycle-partners__slide__wrap">
+				<div class="ico-cycle-partners_plus"><span></span></div>
+				<div class="cycle-partners__slide">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/package/detail/sensor/bf/cycle_partners_01.png" alt="사이클 파트너스"></div>
+						<div class="swiper-slide"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/package/detail/sensor/bf/cycle_partners_02.png" alt="사이클 파트너스"></div>
+						<div class="swiper-slide"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/package/detail/sensor/bf/cycle_partners_03.png" alt="사이클 파트너스"></div>
+						<div class="swiper-slide"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/package/detail/sensor/bf/cycle_partners_04.png" alt="사이클 파트너스"></div>
+						<div class="swiper-slide"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/package/detail/sensor/bf/cycle_partners_05.png" alt="사이클 파트너스"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contents-wrap">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/sensor_rider_content_04.png" alt="지금까지 없었던 놀라운 혜택을 야핏라이더에게만 제공합니다.">
+			<div class="vod-box">
+				<a class="thumbnail" href="https://www.youtube.com/embed/WnrrpuncARU">
+					<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/sensor_rider_vod_1.png" alt="농구천재 허형제가 떴다!">
+				</a>
+			</div>
+			<a href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/yafitCycle.html" class="rider_content2_btn_01" target="_blank"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/btn_sensor_rider_content4_01.svg" alt="야핏 알아보기"></a>
+			<a href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/yafitNoCycle.html" class="rider_content2_btn_02" target="_blank"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/btn_sensor_rider_content4_02.svg" alt="자전거 구경하기"></a>
+		</div>
+		<div class="contents-wrap step-slide-wrap">
+			<img class="title" src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/content_3_title.png" alt="노잼 사이클이 꿀잼 사이클로 변신">
+			<div class="step-slide">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/step_slide_1.png" alt="step1"></div>
+					<div class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/step_slide_2.png" alt="step2"></div>
+					<div class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/step_slide_3.png" alt="step3"></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<div class="contents-wrap">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/sensor_rider_content_05.png" alt="겨울 라이딩에 필요한 R1 센서 사용 방법">
+			<button type="button" class="rider_content5_btn" onclick="$('#modalYafitGarminSensor').addClass('modal-open');"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/btn_sensor_rider_content5.svg" alt="야핏 R1 센서 RPM 속도 측정 안내"></button>
+		</div>
+		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/content_4.png" alt="온 가족이 함께 쓰는 갓성비 야핏 센서 패키지">
+		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/allinone/contents_6.png" alt="따라하기만 하면 핏 완성">
+		<a href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/yafitCycle.html"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/common/banner_cycle_intro.png" alt="야핏 사이클 소개"></a>
+	</article>
+	<!-- 플로팅 배너 영역 -->
+	<div class="floating-banner fade-top bottom-bar-banner active">
+		<div class="inner flex-col">
+			<p>고민은 구매를 늦출 뿐! 지금 바로 <strong>야핏</strong>을 만나보세요!</p>
+			<div class="package-btn-area">
+				<button type="button" type="button" class="btn-buy" onclick="buyBannerBottomToggle();">구매하기</button>
+			</div>
+		</div>
+	</div>
+	<!-- 구매하기 하단 배너 -->
+	<div class="bottom-banner-bg" onclick="buyBannerBottomClose()"></div>
+	<div class="buy-banner bottom-banner">
+		<button type="button" class="btn-bnr-down" onclick="buyBannerBottomClose();">
+			닫기
+		</button>
+		<div class="inner flex-col">
+			<div class="left-area package-detail">
+
+				<h3 class="package-name">R1센서 무료<span>패키지</span></h3>
+				
+				<div class="package-configuration flex-col">
+					<strong class="title">R1 센서 + 앱이용권 골드 3개월 (+ 홈트 VOD) </strong>
+				</div>
+				<div class="package-configuration flex-col" style="display: none;">
+					<strong class="title">기본 구성</strong>
+					<div class="right-area">
+						<span>야핏 R1 센서 <em id="cycleBasicPrice2"></em> 0</span>
+						<span style="display: none;">앱 이용권 <em id="iPadBasicPrice2"></em> 29,700</span>
+					</div>
+				</div>
+				<div class="package-app-pass flex-col">
+					<div>
+						<select name="voucherType2" id="voucherType2" onchange="changeVoucherType2()">
+							<!-- <option value="">골드 3개월</option> -->
+						</select>
+						<div class="discount-price-area">
+							<span class="badge badge-discount__20" id="discountBadge2">20% 할인가</span>
+							<!--span class="badge badge-discount__25">25% 할인가</span-->
+							<p class="discount-price"><span id="discountPrice2">119,000</span> 원<p>
+						</div>
+
+						<div class="price-area price-area-rider">
+							<div class="flex-col">
+								<strong class="percent">81%</strong>
+								<strong><span class="title">월</span> 9,900<span class="title">원</span><em>159,700원</em></strong>
+							</div>
+						</div>
+						<div class="price-area" style="display: none;">
+							<div class="flex-col">
+								<span class="title">정가</span>
+								<strong id="allPrice2">1,189,700원</strong>
+							</div>
+							<div class="flex-col" style="display: none;">
+								<span class="title">할인가(월)</span>
+								<strong class="point-color" id="realPrice2">1,115,900원</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="package-benefits">
+				<div>
+					<h5>야핏 라이더 전용 혜택 정보</h5>
+					<div class="package-benefits__mileage flex-col" style="display: none;">
+						<span class="title">최대 지급 마일리지</span>
+						<strong class="right-area">+ <em id="mileage2">73,800</em>원</strong>
+					</div>
+					<div class="package-benefits__gift flex-col">
+						<span class="title text-bold">판매가</span>
+						<p class="right-area text-bold">29,700원 <span class="text-line">159,700원</span></p>
+					</div>
+					<div class="package-benefits__gift flex-col">
+						<span class="title">R1 센서</span>
+						<p class="right-area">무료</p>
+					</div>
+					<div class="package-benefits__gift flex-col">
+						<span class="title">홈트 VOD</span>
+						<p class="right-area">특별 혜택</p>
+					</div>
+					<div class="package-benefits__gift flex-col">
+						<span class="title">배송비</span>
+						<p class="right-area">0원 <spen class="text-line">3,000원</spen></p>
+					</div>
+					<span class="small-text">* 결제페이지에서 '쿠폰다운 &gt; 적용' 시 배송비 0원!</span>
+					<div class="real-price flex-col">
+						<span class="title">혜택가</span>
+						<p class="right-area"><span>월</span> 9,900원</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-bar-banner">
+			<div class="inner flex-col">
+				<p>고민은 구매를 늦출 뿐! 지금바로 <strong>야핏</strong>을 만나보세요!</p>
+				<div class="package-btn-area">
+					<button type="button" type="button" class="btn-buy-submit btn-submit" onclick="voucherOrder2();">바로구매</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 모달 -->
+	<div class="modal-wrap" id="modalYafitGarminSensor">
+		<div class="modal-inner modal-more">
+			<div class="modal-header">
+				<strong>R1 센서</strong>
+				<button type="button" class="btn-modal__close" onclick="$('.modal-wrap').removeClass('modal-open')"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/common/close_btn_modal_dark.svg" alt="닫기"></button>
+			</div>
+			<div class="modal-content yafit-garminSensor">
+				<ul>
+					<li>
+						<strong>1. RPM 측정이 가능한 R1 센서</strong>
+						패키지 구성품인 R1 센서는, 크랭크축의 회전을 인식하여 RPM으로 변환한 뒤 데이터를 앱으로 보내는 기능을 합니다.
+						사이클 기기에 기어값을 조정할 수 있는 기능이 있어도, 앱에서는 RPM값만을 인식하여 시스템에 반영됩니다.
+					</li>
+					<li>
+						<strong>2. 앱 화면에 기어값이 고정되어 노출되지만,<br>플레이에는 영향을 미치지 않습니다.</strong>
+						센서와 앱 연동 후, 플레이 모드로 진입 시 나의 RPM, 속력, 기어값 등을 확인할 수 있습니다. 기어값은 플레이하는 동안 ‘2’로 고정되어 노출 및 반영됩니다.
+						다만 기어를 변경하여 달릴 수 있는 플레이어와의 격차 해소를 위해 실제 기어값보다 가중치를 부여하여, 기어 ‘2’ 상태일 때보다 높은 속력을 계산하도록 설계되어 있습니다.
+					</li>
+					<li>
+						<strong>3. 고정된 기어값은 마일리지에 영향을<br>미치지 않습니다.</strong>
+						앱 내 콘텐츠 이용 시 획득하는 모든 마일리지는 기어값과 상관없이 적립이 가능하며, 일부 모드의 플레이어 순위는 마일리지에 영향을 미치지 않습니다. 월 최대 2만 마일리지는 충분히 수령하실 수 있습니다. 기어값의 고정은 RPM을 인식하는 케이던스 센서 특성 상 나타나는 현상으로, 구매 후 환불 사유에 해당하지 않습니다.
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="vod-modal-warp">
+		<!-- vod-modal -->
+		<div class="vod-modal-content vod-modal">
+			<iframe src="" id="vod" frameborder="0" allowfullscreen></iframe>
+			<button type="button" class="vod-modal-close"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/brandStory/btn_modal_close.png" alt="닫기"></button>
+		</div>
+		<div id="modalBackDrop" class="vod-modal-bg"></div>
+	</div>
+
+	<!--  FAQ -->
+	<article class="faq">
+		<div class="inner">
+			<h4>FAQ</h4>
+			<ul class="faq-list">
+				<li>
+					<div class="faq-title"><strong class="buy">구매 필수</strong> 구성 상품 <i class="faq-arrow"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/package/faq_arrow.svg" alt="arrow"></i></div>
+					<div class="faq-contents">
+						<div>
+							<dl>
+								<dt>[센서 패키지]</dt>
+								<dd>
+									<strong class="tit">1) 센서 패키지 구성</strong>
+									<p><strong>R1 센서</strong> + 야핏 사이클 앱 이용권(3개월) + 특별 사은 혜택</p>
+
+									<strong class="tit">2) 제품 정보</strong>
+									<ul>
+										<li class="list-star"><strong>R1 센서(YAF_Sensor_R1)</strong></li>
+										<li class="list-star">센서 내 건전지는 사용자가 교체할 수 있으며 3V CR2032 코인형 배터리를 이용합니다.</li>
+									</ul>
+
+									<strong class="tit">3) 유의사항</strong>
+									<ul>
+										<li class="list-star">패키지에 포함된 센서 모델은 당사의 사정에 따라 사전 고지 없이 변경될 수 있습니다.</li>
+										<li class="list-star">특별 사은 혜택은 시기마다 달라질 수 있습니다.</li>
+										<li class="list-star">센서와 함께 이용 시 <strong>RPM 값만 측정이 가능</strong>하며, 앱 내 기어 값이 고정되어 노출됩니다.
+											<p>Q. 기어값이 고정되면 라이딩에는 어떤 영향이 있나요?</p>
+											<p>A. 패키지 구성품인 센서는, 사이클 크랭크축의 회전을 인식하여 RPM으로 변환한 뒤 데이터를 앱으로 전송합니다. 보유하고 계신 사이클 기기 자체에 기어 값 조정 기능이 있어도, 앱 에서는 RPM 값만 인식되기 때문에 기어 값은 '2'로 고정되어 노출되며, 실제로는 '2'보다 조금 더높은 속력으로 라이딩 할 수 있도록 가중치가 부여됩니다.</p>
+										</li>
+										<li class="list-star">기어 값의 고정은 RPM을 인식하는 케이던스 센서 특성상 나타나는 현상으로, <strong>구매 후 환불 사유에 해당하지 않습니다.</strong></li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="faq-title"><strong class="buy">구매 필수</strong> 배송 안내 사항 <i class="faq-arrow"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/package/faq_arrow.svg" alt="arrow"></i></div>
+					<div class="faq-contents">
+						<dl>
+							<dt>[센서 패키지]</dt>
+							<dd>
+								<ul>
+									<li>센서 패키지 구성품인 R1 센서는 결제일로 부터 영업일 기준 2일 이내 택배로 출고되며, 지역에 따라 배송 기간이 달라질 수 있습니다.<br>
+										1) 도서산간 지역의 경우 배송 기간이 길어질 수 있습니다.<br/>
+										2) 택배사 사정 등으로 인해 출고 및 배송이 지연될 수 있습니다.<br/>
+									</li>
+									<li>회원정보에서 정확한 배송 주소지와 연락처를 확인해 주시기 바랍니다.</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="faq-title"><strong class="use">사용필수</strong> A/S 안내 사항 <i class="faq-arrow"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/package/faq_arrow.svg" alt="arrow"></i></div>
+					<div class="faq-contents">
+						<dl>
+							<dt>[ 센서 ]</dt>
+							<dd>
+								<ul>
+									<li>센서에 대한 A/S 지원 및 안내는 A/S 전용 카카오톡 채널로 문의 바랍니다.
+										<p>a. 카카오톡 문의하기 :  <a href="https://pf.kakao.com/_xnxmxgrs">https://pf.kakao.com/_xnxmxgrs</a></p>
+										<p>b. 상담 가능시간 : 평일 10:00~18:00 (토·일·공휴일 제외)</p>
+									</li>
+									<li>교환/AS 신청·보증 기간은 제품 수령일로부터 1년입니다.</li>
+									<li>초기 불량으로 인한 교환/AS 진행 시 배송비는 발생하지 않습니다.</li>
+									<li>구입 후 영업일 기준 10일 이내 정상적인 상태에서 중요한 수리를 해야 할 경우 새제품으로 1:1 교환 해 드립니다.</li>
+									<li>보증기간 이내일지라도 사용자의 고의 또는 과실로 인하여 제품 수리 및 재생이 불가능한 경우에는 A/S가 불가합니다.</li>
+									<li>A/S 접수, 서비스 진행은 당사 사정에 따라 변경될 수 있으며, 변경 시 당사 홈페이지 등을 통해 사전에 알려 드립니다.</li>
+									<li>
+										R1 센서에 대한 품질보증기간은 설치 완료일로부터 1년이며, 이 기간 내에는 무상 보증 및 A/S가 가능합니다.
+										<p>a. 설치 완료일로부터 1년이 지난 제품은 유상 서비스로 진행됩니다.</p>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</li>
+				<li>
+					<div class="faq-title"><strong class="use">사용필수</strong> 환불 규정 <i class="faq-arrow"><img src="https://yafit.yanadoocdn.com/yanadoo/images/web/package/faq_arrow.svg" alt="arrow"></i></div>
+					<div class="faq-contents">
+						<ul>
+							<li>제품 구매 취소 및 환불을 원하는 경우 반드시 야핏사이클 고객센터를 통해 접수해 주셔야 합니다.</li>
+							<li>사용자의 과실에 의한 파손/하자 상품은 교환 및 환불이 불가합니다.</li>
+							<li>App 권장 사양 및 지원 기기에 부합하지 않은 모바일 기기를 사용하실 경우 App 이용이 불가할 수 있으며, 해당 사유로 인한 환불은 불가합니다.</li>
+							<li>교환 및 반품 환불은 상품 도착 및 상품상태 점검 후 이루어 집니다.
+								<p>a. 반품 상품 점검 시 교환/반품 불가 사유에 해당 될 경우 반품/환불은 불가합니다.</p>
+								<p>b. 구성품의 일부가 누락되거나 반품 입고가 되지 않았을 경우 환불이 지연 될 수 있습니다.</p>
+								<p>c. 지정된 택배사 외 타 업체 이용 시 반품/교환이 지연되거나 추가 비용이 발생될 수 있습니다.</p>
+							</li>
+							<li>환불 진행 시, 사은 혜택으로 제공된 홈트레이닝 VOD 및 야나두 기타 강의에 대한 이용도 중단됩니다.</li>
+							<li>결제 수단별 환불 프로세스는 아래와 같습니다.</li>
+							<li>가상계좌(무통장 입금) 결제 후 환불을 원하시는 경우 야핏 고객센터(1600–0563 /3번)나 카카오톡 문의 등으로 환불요청과 함께 환불 받으실 계좌명, 계좌번호, 입금자명, 예금주명을 전달해 주시길 바랍니다.
+							<p>a. 영업일 기준 7~14일 이내에 해당 계좌로 환불 금액이 입금됩니다.</p>
+							<p>b. 주문자명과 입금자명 그리고 환불 받으실 계좌의 예금주명이 다른 경우 환불이 지연될 수 있습니다.</p>
+							</li>
+							<li>신용카드 결제 후 환불을 원하는 경우
+								<p>a. 카드매출 취소는 즉시 접수되나, 카드사에 따라 매출 취소 기간이 영업일 기준 3~7일 가량 소요 될 수 있습니다.</p>
+								<p>b. 각 신용카드사 청구 작업이 끝난 이후에 신용카드 취소(환불) 하신 경우에는 카드 대금 납부 후 다음 달 카드 대금에서 상계 처리될 수 있습니다. </p>
+								<p>c. 카드 대금 결제일에 따라 청구 작업 기간이 다르며, 결제하신 해당 카드사에 문의 시 정확한 확인이 가능합니다.</p>
+							</li>
+							<li>환불 정책은 당사 사정에 따라 변경될 수 있으며, 변경 시 당사 홈페이지 등을 통해 사전에 알려 드립니다.</li>
+							<li>센서 택배 출고 전 환불 신청 시 전액 환불됩니다.</li>
+							<li>배송이 완료된 상품은 제품 수령일로부터 7일 이내, 개봉 전 상품에 한해 전액 환불이 가능합니다. 단, 반품 시에 발생하는 왕복배송비는 고객님 부담입니다.
+								<p>a. 전자상거래등에서의 소비자보호에 관한 법률 제17조</p>
+							</li>
+							<li>제품 구매일로부터 90일이 지난 경우에는 미개봉 상품이라 할지라도 환불이 불가합니다.</li>
+							<li>센서 제품 개봉 후 환불은 불가하며, 초기 제품 하자일 경우 새제품으로 1:1 교체해드립니다.</li>
+							<li>아래에 해당한 경우 교환 및 환불이 불가합니다.
+							<p>a. 소비자의 고의, 과실로 인한 상품 파손 및 훼손된 경우</p>
+							<p>b. 상품 구매 후 개봉 및 내/외부 포장 파손 시</p>
+							<p>c. 상품의 구조, 기능을 개조 또는 제품을 변조하여 문제가 발생된 경우</p>
+							<p>d. 기타 사유로 상품의 회수 또는 재판매가 불가능 할 경우</p>
+							<p>e. 천재지변에 의해 발생한 피해</p>
+							</li>
+						</ul>
+						<dl>
+							<dt>[소프트웨어(App) 이용권]</dt>
+							<dd>
+								<ul>
+									<li>
+										야핏사이클 최초 가입에 사용한 카카오톡 계정 탈퇴 시, 적립된 마일리지 및 운동 기록은 모두 소멸되며, 서비스 이용에 제한이 있을 수 있습니다. 카카오톡 계정 탈퇴 시, 반드시 주의 해 주시기 바랍니다.
+										<p>a. 당사는 회원의 귀책사유로 인해 삭제된 회원의 계정정보를 포함한 모든 정보에 대해서 일체의 책임을 지지 않습니다. 계정 관리의 소홀 또는 계정 공유로 인해 발생하는 손해에 대해서는 당사가 책임을 지지 않습니다.</p>
+									</li>
+									<li>회원 탈퇴를 원하는 경우 App 안에서 직접 진행이 가능합니다.</li>
+									<li>환불 또는 회원 탈퇴 시, 적립된 마일리지 및 운동 기록은 모두 소멸되며, 계정 신규 생성시에도 데이터 이관 또는 복구해 드리지 않습니다.</li>
+									<li>닉네임 변경 등의 개인 사유로 인한 데이터 이관 등은 지원이 불가능 합니다.</li>
+									<li>회원이 회원탈퇴를 할 경우 계정에 속한 모든 이용권한과 마일리지 포함한 재산가치는 즉시 소멸하며 복구되지 않습니다. 이는 계정 공유 및 계정 도용으로 인한 회원 탈퇴에도 적용됩니다.</li>
+									<li>환불 전 적립된 마일리지 통해 특정 물품, 상품권 등으로 교환한 경우 해당 물품, 이용권 소비자가격만큼 차감 후 환불됩니다.</li>
+									<li>이용권 등록 후 사용기간 중 적립한 마일리지는 환불 시 환불 금액에 포함되지 않습니다.</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="contact-btn-wrap">
+			<a href="https://pf.kakao.com/_emuvj"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/common/btn_kakao_yafit_app.svg" alt="야핏 이용권 & 앱 문의하기"></a>
+			<a href="https://pf.kakao.com/_xnxmxgrs"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/230110/btn_kakao_yafit_cycle.svg" alt="사이클 배송 및 AS 문의하기"></a>
+		</div>
+	</article>
+</section>
+
+<div data-include-path="https://yafit.yanadoocdn.com/yanadoo/web/layout/footer.html"></div>
+</body>
+<script src="https://yafitcdn.yanadoo.co.kr/yanadoo/web/assets/js/package/common-package-detail.js"></script>
+<script src="https://yafitcdn.yanadoo.co.kr/yanadoo/web/assets/js/package/voucher-setting.js"></script>
+<script src="https://yafitcdn.yanadoo.co.kr/yanadoo/web/assets/js/package/voucher-sensor-rider.js"></script>
+<script>
+	window.addEventListener('DOMContentLoaded', () => { stepSwipe(); cyclePartnersSwipe(); });
+	document.querySelector(".vod-modal-close").addEventListener("click", () => { onClickBntVodModalClose(); });
+	document.querySelector("#modalBackDrop").addEventListener("click", () => { onClickBntVodModalClose(); });
+
+	// youtube-slide On Click
+	const thumbnail = document.querySelectorAll(".vod-box .thumbnail");
+	for ( let i = 0; i < thumbnail.length; i++ )
+		thumbnail[i].addEventListener("click", function (event) {
+			event.preventDefault();
+			document.querySelectorAll(".vod-modal").forEach(item => item.style.display = 'block');
+			document.querySelectorAll("#modalBackDrop").forEach(item => item.style.display = 'block');
+			document.getElementById("vod").setAttribute("src", this.getAttribute("href"));
+			document.body.classList.add('scroll-hidden');
+		});
+	function onClickBntVodModalClose() {
+		document.querySelectorAll(".vod-modal-content").forEach(item => item.style.display = 'none');
+		document.querySelectorAll("#modalBackDrop").forEach(item => item.style.display = 'none');
+		document.getElementById("vod").setAttribute("src", '');
+		document.body.style.overflow = 'auto';
+		document.body.classList.remove('scroll-hidden');
+	}
+	function cyclePartnersSwipe() {
+		new Swiper(".cycle-partners__slide", {
+			slidesPerView: 1.5,
+			spaceBetween: 0,
+			centeredSlides: true,
+			autoplay: { delay: 2000,},
+			loop: true,
+		});
+	}
+	function stepSwipe() {
+		new Swiper(".step-slide", {
+			slidesPerView: 1.1,
+			spaceBetween: 15,
+			autoplay: { delay: 2000,},
+			loop: false,
+			pagination: {
+				el: ".swiper-pagination",
+			},
+		});
+	}
+	$('.faq-list .faq-title').on('click', function(e){
+		$(this).parent().siblings().children('.faq-contents').stop().slideUp();
+		$(this).next().stop().slideToggle();
+		$(this).parent().siblings().children('.faq-title').removeClass('active');
+		$(this).toggleClass('active');
+		e.preventDefault();
+	});
+	function buyBannerBottomToggle(buttonName) {
+		counselButtonName=buttonName;
+		$('.buy-banner').slideToggle();
+		$('.bottom-banner-bg').show();
+		$('.buy-banner').css('display', 'block');
+	}
+	function buyBannerBottomClose() {
+		$('.buy-banner').slideToggle();
+		$('.bottom-banner-bg').hide();
+		$('.buy-banner').find('input').blur();
+	}
+	/* 스크롤에 따른 헤더 액션 */
+	window.addEventListener("scroll", () => { if ( pageYOffset >= 1) {toggleMoveScroll();}  });
+	let lastScrollTop = 0;
+	function toggleMoveScroll() {
+		const scrollTop = window.pageYOffset;
+		(scrollTop < 1 || scrollTop > lastScrollTop) ? scrollUp() : scrollDown();
+		lastScrollTop = scrollTop;
+	}
+	function scrollUp() {
+		document.body.classList.add('scrollUp');
+		document.body.classList.remove('scrollDown');
+	}
+	function scrollDown() {
+		document.body.classList.add('scrollDown');
+		document.body.classList.remove('scrollUp');
+	}
+</script>
+</html>

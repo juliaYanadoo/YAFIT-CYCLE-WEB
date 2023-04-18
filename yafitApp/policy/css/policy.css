@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/* 가로모드일때 폰트 사이즈 자동 조정 금지 */
+html {
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+}
+.policy {max-width: 1024px; margin: 0 auto; padding: 5%; color: #777;line-height: 1.5em;}
+.policy .flex-col {display: flex;}
+.policy .text-center {text-align: center;}
+.policy a {color: #0A84FF; font-size: 13px;}
+.policy-title {padding: 20px 0; color: #333; font-size: 25px; font-weight:700; text-align: center; line-height: 1.2em;}
+.policy-title span {display: block; padding: 10px 0; font-size: 15px; font-weight: 400;}
+.policy-sub-title {display: block; padding: 20px 0; font-size: 22px; color: #333;}
+.policy article {padding: 10px 0; border-bottom: 1px solid #ddd;}
+.policy ol li {padding: 2px 0;}
+.policy ol > li em {margin-right: 7px; font-size: 13px;}
+.policy ol > li span {font-size: 13px;}
+.article-title {padding: 10px 0; font-size: 13px; color: #333;}
+.policy article p {padding: 10px 0; color: #444; font-weight: 400;}
+.policy article p, .policy article li {font-size: 13px;}
+.inner-list {padding: 10px;}
+.policy table {width: 100%; margin: 20px 0;}
+.policy table tr th {padding: 10px; font-size:13px; border-top: 1px solid #999; border-bottom: 2px solid #999;}
+.policy table tr td {padding: 10px; font-size:13px; vertical-align: middle; border-top: 1px solid #999; border-bottom: 1px solid #999;}
+

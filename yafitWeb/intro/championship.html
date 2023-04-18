@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>쟁탈전</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="favicon" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico">
+	<link rel="shortcut icon" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico">
+	<link rel="apple-touch-icon-precomposed" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="쟁탈전">
+    <meta property="og:site_name" content="야핏">
+    <meta property="og:description" content="Fit Your Riding, 어떤 상황에서도 Fit한 야핏">
+    <meta property="og:image" content="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/web/common/og_yafit_2.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="쟁탈전">
+    <meta name="twitter:description" content="Fit Your Riding, 어떤 상황에서도 Fit한 야핏">
+    <meta name="twitter:image" content="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/web/common/og_yafit_2.jpg">
+    <meta name="naver-site-verification" content="dcf4d5cf8e610163fe7bbc07a29e21f98c503792">
+	
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/reset_1.css">
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/edu/common.css">
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/edu/promotion.css">
+	<link rel="stylesheet" type="text/css" href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/assets/style/common-yafit.css">
+	<link rel="stylesheet" href="https://yafit.yanadoocdn.com/yanadoo/library/swiper.min.css">
+
+	<script src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/headscript.js"></script>
+	<script src="https://yafitcdn.yanadoo.co.kr/yanadoo/web/assets/js/common-yafit.js"></script>
+
+	<script src="https://yafit.yanadoocdn.com/yanadoo/library/beusable.js"></script>
+	<script src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/env.js" ></script>
+	<script src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/common.js"></script>
+	<script src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/jquery-2.2.4.min.js"></script>
+	<script src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/comm.js"></script>
+	<script src="https://yafit.yanadoocdn.com/yanadoo/library/swiper-bundle.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js"></script>
+	
+	<style>
+
+		@keyframes bgGradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+		@keyframes bgShadowPulse {from {box-shadow: 0 0 0 0px #32fa32;}to {box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);}}
+
+		.move-action {opacity: 0; transition: opacity .4s, transform .4s ease-in-out;}
+		.active .move-action {opacity: 1; transform: translate3d(0, 0, 0);}
+		.fade-top {transform: translate3d(0, 30px, 0);}
+		.text-hidden {overflow: hidden; position: absolute; z-index: -1; border: 0; width: 1px; height: 1px; clip: rect(1px 1px 1px 1px); clip-path: inset(50%);}
+	
+		.pc {display: block !important;}
+		.mo {display: none !important;}
+		.yafit_scramble {color: #fff; font-family: "Pretendard"; background-color: #000; letter-spacing: -1px;}
+		.inner {margin: 0 auto;}
+		.point_text__yellow {color: #FFD84D;}
+		.point_text__green {color: #00CC66;}
+		strong {font-weight: 600;}
+		.anmation__stiky {position: relative;}
+		
+		.btn_gradient {background-image: linear-gradient(to right, #ffbf1c, #fff, #ffbf1c, #fff, #ffbf1c, #fff); background-size:500%; animation: bgGradient 5s linear infinite;}
+		.btn_bgShadowPulse {animation: bgShadowPulse 1s infinite;}
+
+		.video_wrap, video {max-width: 800px; max-height: 450px; border-radius: 24px;}
+		.video_wrap {position: relative;}
+		.video_wrap .thumbnail {position: absolute; top: 0; bottom: 0; width: 100%; height: 100%; z-index: 1; cursor: pointer;}
+
+		.scroll_hidden {height:100%; min-height:100%; overflow:hidden !important; touch-action:none;}
+
+		section.key_visaul {position: relative; width: 100%;  margin: 0 auto; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_bg_main_visual.png); background-size: 100% 100%; background-position: 50% 50%;}
+		section.key_visaul .key_visaul__title__pc {width: 34vw;}
+		section.key_visaul .pc .inner {position: relative; max-width: 1400px; width: 80%; padding: 8vw 0 14vw;}
+		section.key_visaul .pc p {position: absolute; bottom: 20%; left: 0%; color: #FFFFFF; font-size: 1.5vw; font-weight: 300; z-index: 1;}
+
+		section.key_visaul .key_visaul__coin {position: absolute; transition: .3s;}
+		section.key_visaul .key_visaul__coin.active {transform: translateY(0);}
+		section.key_visaul .key_visaul__coin_1 {bottom: 5.2vw; left: -4vw; max-width: 120px; width: 6vw;}
+		section.key_visaul .key_visaul__coin_2 {top:4vw; right:15%; max-width: 125px; width: 6.3vw;}
+		section.key_visaul .key_visaul__coin_3 {bottom: -5vw; right:15%; max-width: 180px; max-height: 227px; width: 9vw; height: 11vw; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_img_main_visual__coin_3.svg); background-size: contain; background-repeat: no-repeat;}
+
+		section.reward {padding: 173px 0;}
+		section.reward .inner {max-width: 900px; padding: 80px 0; text-align: center; background: linear-gradient(180deg, #252525 0%, #161616 100%); border-radius: 30px;}
+		section.reward .reward_num span {font-size: 30px; font-weight: 600;}
+		section.reward .reward_num strong {display: block; text-align: center; font-size: 90px; font-weight: 600;}
+		section.reward .reward_img {max-width: 560px; padding: 28px 0 30px;}
+		section.reward .btn_move__app {display: block; width: 300px; height: 80px; margin: 0 auto; color: #000; font-size: 28px; font-weight: 700; background-color: #ffbf1c; border-radius: 15px;}
+
+		section.map {position: relative; height: 100vh;  padding: 115px 0 0;}
+		section.map h3 {font-size: 50px; font-weight: 600; text-align: center;}
+		section.map .text_desc {display: block; margin-bottom: 40px; color: #535353; font-size: 16px; font-weight: 300; text-align: center;}
+		section.map .inner {max-width: 1100px; height: 608px;}
+		section.map .anmation_mapActive {position: relative;}
+		section.map .anmation_mapActive img {position: absolute; left: 0; top: 0; width: 100%;}
+		section.map .map_active {opacity: 0;}
+		section.map .anmation__stiky {height: 25vh;}
+		section.map .text_stiky {position: absolute ; top: 30%; left: 50%; transform:translateX(-50%)}
+		section.map .text_stiky__02 {opacity: 0;}
+
+		section.map .map_explanation {position: absolute; top: 0; left: 0; display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh;}
+		section.map .map_explanation .map_name {opacity: 0; transform: translateY(20px);}
+		section.map .map_explanation .map_name li {margin-bottom: 25px; color:#7f7f7f; font-size: 32px; font-weight: 600; text-align: center;}
+		section.map .map_explanation .bg_text {opacity: 0; display: flex; position: absolute;bottom: 0;left: 0%; width: 95%; justify-content: center;} 
+		section.map .map_explanation .text_stiky__06 {opacity: 0; position: absolute; top: 30%; font-size: 50px; text-align: center; text-decoration: underline;}
+		section.map .map_explanation .text_stiky__06 p {margin-top: 40px;}
+
+		section.chapter1_mvp {padding-top: 153px; background-color: #fff; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/bg_chapter1_mvp.svg); background-position: 0 0; background-size: cover; background-repeat: no-repeat;}
+		section.chapter1_mvp .inner {position: relative; max-width: 1400px; padding: 0 3%;}
+		section.chapter1_mvp .inner:after {content: ''; position: absolute; left: 5vw; top:-2vw; max-width: 240px; max-height: 240px; width: 12vw; height: 12vw; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_mvp_emblem.svg); background-size: cover;}
+		section.chapter1_mvp .mvp_img {display: block; width: 750px; }
+
+		section.chapter1_mvp .mvp__info {position: absolute; top:40%; right: 3%; transform: translateY(-40%);}
+		section.chapter1_mvp .mvp__info__box {background-color: #fff; box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1); border-radius: 20px;}
+		section.chapter1_mvp .mvp__info h3 {display: flex; align-items: center; justify-content: center; color: #000; font-size: 50px; font-weight: 600;}
+		section.chapter1_mvp .mvp__info h3 span {padding-right: 13px; color: #666; font-size: 30px;}
+		section.chapter1_mvp .mvp__info .text_desc {padding: 25px 0 60px; color:#1E1D1D; font-size: 20px; font-weight: 300; text-align: center; line-height: 1.5em;}
+		section.chapter1_mvp .mvp__info .text_desc strong {font-weight: 600;}
+		section.chapter1_mvp .mvp__info__box {display: flex; width: 600px; align-items: center; justify-content: space-between;}
+		section.chapter1_mvp .mvp__info__box li {width: 33.3%; margin: 22px 0; text-align: center;}
+		section.chapter1_mvp .mvp__info__box span {display: block; padding: 15px 0 10px; color: #666; font-size: 16px;}
+		section.chapter1_mvp .mvp__info__box strong {display: block; font-size: 40px; padding-bottom: 15px;}
+		section.chapter1_mvp .mvp__info__box li:nth-child(2) {border-left: 1px solid #ddd; border-right: 1px solid #ddd;}
+		section.chapter1_mvp .mvp__info__box li:nth-child(1) strong {color: #1A99F5;}
+		section.chapter1_mvp .mvp__info__box li:nth-child(2) strong {color: #2373FE;}
+		section.chapter1_mvp .mvp__info__box li:nth-child(3) strong {color: #0047B8;}
+
+		section.behind {padding: 150px 0 170px; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_bg_behind.png); background-size: cover;}
+		section.behind h3 {font-size: 50px; font-weight: 600; text-align: center; line-height: 1.3em;}
+		section.behind h3 span {display: block; font-size: 30px; font-weight: 300;}
+		section.behind h3 span strong {font-weight: 600;}
+		section.behind ul {max-width: 546px; margin: 64px auto 0;}
+		section.behind ul li {display: flex; margin-bottom: 20px; align-items: center; justify-content: center; width: 100%; height: 70px; color: #212121; font-size: 24px; font-weight: 600; background-color: #fff; border-radius: 35px;}
+		section.behind ul li img {width: 30px; height: 30px; margin-right: 12px;}
+		
+		section.behind.active .behind_ani {opacity: 1; transform: translateY(0);}
+		.behind_ani_1 {transition-delay: 0s;}
+		.behind_ani_2 {transition-delay: .3s;}
+		.behind_ani_3 {transition-delay: .6s;}
+		.behind_ani_4 {transition-delay: .9s;}
+		.behind_ani_5 {transition-delay: 1.2s;}
+		.behind_ani_6 {transition-delay: 1.4s;}
+
+		section.behind .dot {margin: 20px 0;}
+		section.behind .dot span {display: block; width: 8px; height: 8px; margin: 0 auto; border-radius: 50%; background-color: #1AF572;}
+		section.behind .dot span:nth-child(1) {opacity: .3;}
+		section.behind .dot span:nth-child(2) {opacity: .7; margin: 8px auto;}
+		section.behind .dot span:nth-child(3) {opacity: 1;}
+
+		section.behind .btn_move__app {display: block; width: 546px; height: 70px; margin: 0 auto; color: #fff; font-size: 24px; font-weight: 600; background-color: #00CC66; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/arrow_btn_move.svg); background-position: 95% 50%; background-repeat: no-repeat; border-radius: 35px;}
+		section.behind .behind_video {margin: 223px 0 0;}
+		section.behind .behind_video h3 {padding-bottom: 64px;}
+		section.behind .video_wrap, section.behind video {margin: 0 auto;}
+
+		section.banner_line {position: relative; width: 100%; height: 90px; background-color: #00CC66;}
+		section.banner_line .inner {max-width: 1028px;}
+		section.banner_line a {position: absolute; left: 0; top: 0; width: 100%; height: 100%; text-indent: -9999px;}
+
+		section.mission {position: relative; padding: 100px 0 270px; background: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/bg_mission.svg), linear-gradient(180deg, #DAFFD1 0%, #CAEAFF 100%);}
+		section.mission h3 {color: #000; font-size: 50px; font-weight: 600; text-align: center;}
+		section.mission h3 strong {display: inline-block; margin-bottom: 20px; padding: 10px 20px; color: #fff; font-size: 20px; font-weight: 600; background-color: #00CC66; border-radius: 23px;}
+		section.mission h3 span {font-size: 30px;}
+		section.mission .calendar_slides {position: relative; margin: 85px 0 0;}
+		section.mission .calendar_slides .inner {display: flex; max-width: 1200px;}
+		section.mission .calendar_slide__left , .calendar_slide__right {overflow: hidden; width: 50%;}
+		section.mission .lottie_calendar {position: absolute; left: 50%; top: 50%; width: 378px; height: 378px; z-index: 4; transform: translate(-50%, -50%);}
+		section.mission .btn_move_cafe {display: block; position: absolute; bottom: 80px; left: 50%; width: 300px; height: 80px; margin: 100px auto 0; color: #fff !important; font-size: 28px; font-weight: 600; text-align: center; line-height: 80px; background-color: #000; border-radius: 15px; z-index: 5; transform: translateX(-50%);}
+
+		section.about {display: flex; justify-content: center; padding: 260px 0; background-color: #fff; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/bg_about.png); background-size: cover;}
+		section.about .inner {display: flex; max-width: 1280px;}
+		section.about h3 {color: #000; font-size: 46px; font-weight: 600;}
+		section.about h3 strong {display: inline-block; margin-bottom: 20px; padding: 10px 20px; color: #fff; font-size: 20px; font-weight: 600; background-color: #00CC66; border-radius: 23px;}
+		section.about .right_text {margin-left: 45px;}
+		section.about p {margin-top: 30px; color: #000; font-size: 18px; font-weight: 300;}
+
+		section.about .video_wrap, section.about video {width: 40.00vw; height: 22.50vw; border-radius: 1.20vw;}
+
+		section.rank {padding: 200px 0 145px; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/bg_rank.svg); background-size: cover;}
+		section.rank .inner {display: flex; max-width: 1250px; padding: 0 1%;}
+		section.rank h3 {font-size: 46px; font-weight: 600;}
+		section.rank .tab {padding: 30px 0 43px;}
+		section.rank .tab button {width: 152px; height: 54px; margin-right: 10px; color: #fff; font-size: 24px; font-weight: 600; border: 1px solid #fff; border-radius: 27px;}
+		section.rank .tab button.btn_tab__rpm.active {color: #000; background-color: #FC6B6D; border: 1px solid #FC6B6D;}
+		section.rank .tab button.btn_tab__speed.active {color: #000; background-color: #FFB226; border: 1px solid #FFB226;}
+		.mondEmblem {width: 300px; height: 300px;}
+
+		section.rank .left_wrap {width: 35%;} 
+		section.rank .rank_table {max-width: 800px; width: 70%; margin-left: auto;}
+		section.rank .rank_table .rank_table__head {display: flex; padding: 25px 0; background-color: #000; border-radius: 30px 30px 0 0;}
+		section.rank .rank_table__head span {width: 30%; font-size: 24px; font-weight: 600; text-align: center;}
+		section.rank .rank_table__head span:first-child {width: 20%;}
+		section.rank .rank_table__head span:nth-child(3) {width: 25%;}
+		section.rank .rank_table__head span:last-child {width: 25%;}
+		section.rank .rank_table__body {overflow: hidden; display: none; width: 100%; height: 400px; border-radius: 0 0 30px 30px;}
+		section.rank .rank_table__body.active {display: block;}
+		section.rank .rank_table__body ul li {display: flex; background: #fff; border-bottom: 1px solid #ddd;}
+		section.rank .rank_table__body ul li:last-child {border-bottom: none;}
+		section.rank .rank_table__body ul li span {width: 30%; padding: 25px 0; color: #000; font-size: 24px; font-weight: 300; text-align: center; background-position: 50% 55%; background-repeat: no-repeat;}
+		section.rank .rank_table__body ul li span:first-child {width: 20%;}
+		section.rank .rank_table__body ul li span:nth-child(3) {width: 25%;}
+		section.rank .rank_table__body ul li span:last-child {width: 25%;}
+		section.rank .rank_table__body ul li.rank_01 {background: linear-gradient(90.39deg, #FFEE94 10.62%, #F9F9F9 116.12%);}
+		section.rank .rank_table__body ul li.rank_02 {background: linear-gradient(90.39deg, #DCDCDC 10.62%, #FFFFFF 116.12%);}
+		section.rank .rank_table__body ul li.rank_03 {background: linear-gradient(90.39deg, #FEE8D9 10.62%, #FFFFFF 116.12%);}
+
+		section.rank .rank_table__body ul li.rank_01 span,
+		section.rank .rank_table__body ul li.rank_02 span,
+		section.rank .rank_table__body ul li.rank_03 span {font-weight: 600;}
+
+		section.rank .rank_table__body ul li.rank_01 span:first-child {background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_rank_01.svg);}
+		section.rank .rank_table__body ul li.rank_02 span:first-child {background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_rank_02.svg);}
+		section.rank .rank_table__body ul li.rank_03 span:first-child {background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_rank_03.svg);}
+		section.rank .rank_nicName {overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-break: break-all;}
+
+		section.rank .rank_table_caption {display: flex; padding: 16px 30px 0; color: #A3A3A3; font-size: 16px;}
+		section.rank .rank_table_caption strong {width: 50%; margin-right: auto;}
+		section.rank .rank_table_caption span {width: 50%; margin-left: auto; text-align: right;}
+
+		section.rank .rank_fluctuation {display: inline-flex; align-items: center; justify-content: center;}
+		section.rank .rank_table__body .rank_fluctuation i {width: 24px; height: 24px; margin-right: 2px; background-size: cover;}
+		section.rank .rank_fluctuation.up i {background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/ico_rank_up.svg);}
+		section.rank .rank_fluctuation.down i {background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/ico_rank_down.svg);}
+		section.rank .rank_fluctuation.same i {background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/ico_rank_same.svg);}
+		section.rank .rank_fluctuation.new i {display: none;}
+		section.rank .rank_fluctuation.new {color: #00CC66; font-size: 24px;}
+
+		.mondEmblem_speed {display: none;}
+		.tool_mark {position: relative;}
+		.tool_mark > img {width: 25px; height: 25px; margin-left: 5px;}
+		.tool_mark em {display: none;align-items: center; position: absolute; left: -350%; top: -60px; min-width: 215px; padding: 10px; color: #000; font-size: 14px; font-weight: 600; background-color: #fff; border-radius: 6px; letter-spacing: -1px;}
+		.tool_mark em button {width: 16px; height: 16px; margin-left: auto;}
+		.tool_mark em:after {content: ''; position: absolute; left: 50%; bottom: -5px; width: 10px; height: 10px; margin-left: 5px; background-color: #fff; transform: rotate(45deg);}
+
+		.bottom_banner { text-align: center; background-color: #0D0D0D;}
+		.bottom_banner img {max-width: 2000px; width: 100%; margin: 0 auto;}
+
+		.floting_btn_appMove {position: fixed; bottom: 10%; right: 8%; z-index: 11;}
+		.floting_btn_appMove button {display: flex; align-items: center; justify-content: center; width: 192px; height: 70px; color: #000; background: linear-gradient(90deg, #04E072 -0.05%, #5FE2FE 99.95%); border-radius: 35px;}
+		.floting_btn_appMove button span {width: 100%; font-size: 20px; font-weight: 600; border-radius: 35px; line-height: 70px;}
+		
+		.floting_btn_appMove button span img {display: inline-block; width: 23px; margin: 23px 8px 0 0;}
+
+		.modal_content {display: none; position: fixed; top:50%; left: 50%; width: 24.00vw; transform: translate(-50%, -50%); z-index: 21;}
+		.modal_content .modal_head {display: flex; justify-content: end; padding: 1.25vw 0; background-color: #F2F2F4; border-radius: 2.00vw 2.00vw 0 0;}
+		.modal_content .modal_head button {width: 2vw; margin-right: 1.60vw;}
+		.modal_content .modal_body {text-align: center; background-color: #fff; border-radius: 0 0 2.00vw 2.00vw;}
+		.modal_content .modal_body  h4 {padding: 3.20vw 0 1.90vw; font-size: 1.70vw;}
+		.modal_content .modal_body  h4 strong {color: #00CC66; font-weight: 600;}
+		.modal_content .modal_body .qr_box {display: flex; align-items: center; justify-content: center; width: 13.50vw; height: 13.50vw; margin: 0 auto; background: #FFFFFF; border-radius: 1.50vw; box-shadow: 0.00vw 0.64vw 1.92vw rgba(0, 0, 0, 0.12);}
+		.modal_content .modal_body p {padding: 3.45vw 0 4.00vw; color: #666; font-size: 1.20vw;}
+
+		.modal_bg {display: none; position: fixed; left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,.7); z-index: 20; cursor: pointer;}
+
+		.top-line-banner {position: fixed;; top:0; left: 0; width: 100%; height: 40px; background-color: #1B212A; z-index: 20;}
+		.top-line-banner p {width: 100%; color: #fff; font-size: 15px; font-weight: 600; text-align: center; line-height: 40px; letter-spacing: -1px;}
+		.top-line-banner p strong {color: #00CC66;}
+		.top-line-banner .move-page {position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 21; text-indent: -9999px;}
+		.top-line-banner .btn-close-today {position: absolute; right: 50%; left: auto; top: 1px; width: 40px; height: 40px; margin-right: -545px; z-index: 22; }
+		.top-line-banner .btn-close-today img {width: 16px; height: 16px;}
+
+
+		@media screen and (max-width: 1600px) {
+			section.key_visaul .pc .inner {max-width: 1200px;}
+
+		}
+		@media screen and (max-width: 1200px) {
+			.top-line-banner .btn-close-today {right: 2.5rem; margin-right: 0;}
+			section.key_visaul .pc .inner {padding: 8vw 2% 14vw;}
+			section.key_visaul .pc p {left: 3%; }
+			section.chapter1_mvp .mvp_img {display: block;  width: 37.5vw;}
+			section.about .inner {padding: 0 2%;}
+		}
+		@media screen and (max-width: 1024px) {
+			section.rank .inner {display: block;}
+			section.rank .left_wrap {width: 100%; text-align: center;}
+			.mondEmblem {display: none;}
+			.rank_table {width: 100%;margin: 0 auto; }
+		}
+		@media screen and (max-width: 768px) {
+			.pc {display: none !important;}
+			.mo {display: block !important;}
+
+			.video_wrap, video {width: 88.80vw; height: 51.04vw; border-radius: 4.17vw;}
+			
+			section.key_visaul {position: initial; max-width: 100%; max-height: 1322px; background: none;}
+
+			section.reward {padding: 27.34vw 0 0;}
+			section.reward .inner {max-width: 90%; padding: 11.07vw 0 11.72vw; border-radius: 4.17vw;}
+			section.reward .reward_num span {font-size: 4.43vw;}
+			section.reward .reward_num strong {font-size: 13.02vw;}
+			section.reward .reward_img {max-width: 72.92vw; padding: 3.65vw 0 3.91vw;}
+			section.reward .btn_move__app {width: 55.47vw; height: 14.84vw; font-size: 5.47vw; border-radius: 2.08vw;}
+
+			section.map {overflow: hidden; position: relative; width: 100%; height: 100vh;  padding: 20vh 0 0;}
+			section.map h3 {width: 100%; font-size: 8.85vw;}
+			section.map .text_desc {display: none;}
+			section.map .inner {max-width: 100%; height: auto; margin-top: 10vh;}
+			section.map .anmation_mapActive {left: 0%; top: 0; width: 100%;}
+			section.map .anmation_mapActive img {left: 0; top: 0; width: 100%;}
+			section.map .map_active {opacity: 0;}
+			section.map .anmation__stiky {height: 25vh;}
+			section.map .text_stiky {top: 30%; left: 50%; transform:translateX(-50%)}
+			section.map .text_stiky__02 {opacity: 0;}
+
+			section.map .map_explanation {width: 100%; height: 100vh;}
+			section.map .map_explanation .map_name {position: relative; margin-top: 10vh; z-index: 1}
+			section.map .map_explanation .map_name li {margin-bottom: 4.43vw; font-size: 4.7vh;}
+
+			section.map .map_explanation .text_stiky__06 {top: 40%; font-size: 10.42vw;  z-index: 1}
+			section.map .map_explanation .text_stiky__06 p {margin-top: 40px;}
+
+			section.chapter1_mvp {padding: 16.54vw 0 12.89vw; background-position: 79% 0; background-size: 229%;}
+			section.chapter1_mvp .inner {max-width: 100%; padding: 0 3%;}
+			section.chapter1_mvp .inner:after {left: 3%; top: 0; width: 29.43vw; height: 29.43vw;}
+			section.chapter1_mvp .mvp_img {max-width: 100%; width: 100vw;}
+			section.chapter1_mvp .mvp__info {position: inherit; top:inherit; right: inherit; margin-top: 8.59vw; transform: translateY(0);}
+			section.chapter1_mvp .mvp__info__box {box-shadow: 5.56vw 5.56vw 16.67vw rgba(0, 0, 0, 0.1); border-radius: 5.47vw;}
+			section.chapter1_mvp .mvp__info h3 {font-size: 8.33vw;}
+			section.chapter1_mvp .mvp__info h3 span {padding-right: 1.56vw; font-size: 5.73vw;}
+			section.chapter1_mvp .mvp__info .text_desc {padding: 4.95vw 0 4.95vw; font-size: 3.91vw; }
+			section.chapter1_mvp .mvp__info__box {width: 100%;}
+			section.chapter1_mvp .mvp__info__box li {width: 33.3%; margin: 6.77vw 0;}
+			section.chapter1_mvp .mvp__info__box span {padding: 0 0 2.34vw 0; font-size: 3.78vw;}
+			section.chapter1_mvp .mvp__info__box strong {font-size: 8.33vw; padding-bottom: 0;}
+
+			section.behind {padding: 27.34vw 0 29.95vw; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/mo_bg_behind.png);}
+			section.behind h3 {font-size: 8.85vw;}
+			section.behind h3 span {font-size: 5.21vw;}
+			section.behind ul {max-width: 88.80vw; width: 88.80vw; margin: 11.72vw auto 0;}
+			section.behind ul li {margin-bottom: 3.26vw; width: 100%; height: 12.24vw; font-size: 3.91vw; border-radius: 6.12vw;}
+			section.behind ul li img {width: 4.43vw; height: 4.43vw; margin-right: 1.56vw;}
+			section.behind .dot {margin: 3.26vw 0;}
+			section.behind .dot span {width: 1.82vw; height: 1.82vw;}
+			section.behind .dot span:nth-child(2) {margin: 1.30vw auto;}
+			section.behind .btn_move__app {width: 88.80vw; height: 12.24vw; font-size: 4.43vw; border-radius: 6.12vw;}
+			section.behind .behind_video {margin: 32.55vw 0 0;}
+			section.behind .behind_video h3 {padding-bottom: 11.72vw;}
+
+			section.banner_line {height: 15.10vw;}
+			section.banner_line .inner {max-width: 100.00vw;}
+
+			section.mission {padding: 27.34vw 0 70vw; background: linear-gradient(180deg, #DAFFD1 0%, #CAEAFF 100%);}
+			section.mission h3 {font-size: 8.85vw;}
+			section.mission h3 strong {margin-bottom: 6.77vw; padding: 1.30vw 3.26vw; font-size: 3.91vw; border-radius: 3.65vw;}
+			section.mission h3 span {display: inline-block; padding-top: 3.65vw; font-size: 5.47vw; font-weight: 300; line-height: 1.2em;}
+			section.mission .calendar_slides {margin: 16.15vw 0 0;}
+			section.mission .calendar_slides .inner {max-width: 100%}
+			section.mission .lottie_calendar {width: 74.22vw; height: 74.22vw;}
+			section.mission .btn_move_cafe {bottom: 26.82vw; width: 55.47vw; height: 14.84vw; margin: 18.11vw auto 0; font-size: 5.47vw; line-height: 14.84vw; border-radius: 2.08vw;}
+
+			section.about {padding: 27.34vw 0 30.60vw; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/bg_about.png); background-size: 250%; background-position: 50% 100%; background-repeat: no-repeat;}
+			section.about .inner {display: block; max-width: 96%; padding: 0 4%;}
+			section.about h3 {margin-top: 14.06vw; font-size: 8.85vw; text-align: center;}
+			section.about h3 strong {margin-bottom: 6.77vw; padding: 1.30vw 3.26vw; font-size: 3.91vw; border-radius: 3.65vw;}
+			section.about .right_text {margin-left: 0;}
+			section.about p {margin-top: 3.95vw; font-size: 4.95vw; text-align: center;}
+			section.about .video_wrap, section.about video {width: 88.80vw; height: 51.04vw; border-radius: 4.17vw;}
+
+			section.rank {padding: 26.04vw 0 25.13vw; background-image: url(https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/bg_rank.svg); background-size: cover;}
+			section.rank .left_wrap {width: 100%;}
+			section.rank .inner {display: block; max-width: 100%; padding: 0 5%;}
+			section.rank h3 {font-size: 8.85vw; text-align: center;}
+			section.rank .tab {display: flex; padding: 6.38vw 0 11.72vw; justify-content: center;}
+			section.rank .tab + img {display: none;}
+			section.rank .tab button {width: 33.33vw; height: 13.28vw; margin-right: 1.30vw; font-size: 5.47vw; border-radius: 6.64vw;}
+			section.rank .rank_table {max-width: 100%; width: 100%; margin-left: 0;}
+			section.rank .rank_table .rank_table__head {padding: 5.86vw 0; background-color: #000; border-radius: 5.47vw 5.47vw 0 0;}
+			section.rank .rank_table__head span {width: 30%; font-size: 3.91vw;}
+
+			section.rank .rank_table__body { width: 100%; height: 83.33vw; border-radius: 0 0 5.47vw 5.47vw;}
+			section.rank .rank_table__body ul li span {padding: 5.99vw 0; font-size: 3.91vw;}
+
+			section.rank .rank_table_caption {padding: 3.13vw 3.91vw 0; font-size: 3.13vw;}
+			section.rank .rank_table_caption strong {width: 50%; margin-right: auto;}
+			section.rank .rank_table_caption span {width: 50%; margin-left: auto; text-align: right;}
+
+			section.rank .rank_table__body .rank_fluctuation i {width: 3.91vw; height: 3.91vw; margin-right: 1.04vw;}
+
+			.tool_mark > img {width: 4vw; height: 4vw; margin-left: 0.78vw;}
+			.tool_mark em {left: -550%; top: inherit; bottom: -380%; min-width: 40.36vw; align-items:flex-start; padding: 3.26vw; color: #000; font-size: 3.65vw; text-align: left; border-radius: 1.56vw; z-index: 8;}
+			.tool_mark em button, .tool_mark em button img {width: 3.26vw; height: 3.26vw;}
+			.tool_mark em:after {content: ''; position: absolute; left: 69%; top: -0.65vw; width: 1.30vw; height: 1.30vw; margin-left: 0.65vw; background-color: #fff; transform: rotate(45deg);}
+
+			.floting_btn_appMove {right: 3%; bottom: 15%;}
+			.floting_btn_appMove button {position: absolute; right: 0; top: 0; width: 50.13vw; height: 15.63vw; line-height: 15.63vw; border-radius: 9.11vw; z-index: 12; transition: all .5s;}
+			.floting_btn_appMove button span {width: 47.53vw; height: 13.02vw; font-size: 5.34vw; line-height: 13.02vw; border-radius: 9.11vw;}
+			.floting_btn_appMove button span img {width: 5.99vw; margin: 3.17vw 2.34vw 0 0;}
+			.floting_btn_appMove button.mo {display: flex !important; width: 15.63vw; height: 15.63vw; border-radius: 9.11vw; z-index: 11; background: linear-gradient(180deg, #04E072 0%, #3AEEAD 100%);}
+			.floting_btn_appMove button.mo img {width: 5.99vw;}
+
+			.btn_down_bottom__wrap button {width: 100%; height: 19.53vw; color: #000; font-size: 5.73vw; font-weight: 700; background: linear-gradient(90deg, #00CC66 0%, #5FE2FE 100%);}
+			.btn_down_bottom__wrap button img {width: 5.99vw; height: 6.90vw; margin-top: 1.30vw;}
+			
+			.bottom_banner img {max-width: 100%;}
+
+			.top-line-banner {height: 46px;}
+			.top-line-banner .btn-close-today img {width: 20px; height: 20px;}
+			.top-line-banner p {font-size: 14px; line-height: 46px;}			
+		}
+	</style>
+</head>
+<body>
+<header></header>
+<div class="yafit_scramble landing" id="yafitCycle">
+
+	<aside class="floting_btn_appMove">
+		<button type="button" class="btn_floting_app_move" onclick="onClickBtnAppMove();">
+			<span><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/ico_floating_appDown.svg" alt="아이콘"> 앱 다운로드</span>
+		</button>
+		<button type="button" class="mo" onclick="onClickBtnAppMove();">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/ico_floating_appDown.svg" alt="아이콘"> 
+		</button>
+	</aside>
+
+	<div id="topBanner1" class="top-line-banner">
+		<a class="move-page" href="#" onclick="onClickBtnAppMove()">사이클 앱 이동</a>
+		<p class="pc">👉 지금 바로 앱 설치하고 <strong>총상금 700만의 주인공</strong>이 되어보세요</p>
+		<p class="mo">앱 설치하고 <strong>총상금 700만의 주인공</strong>이 되어보세요</p>
+		<button type="button" class="btn-close-today" onclick="todaycloseWin();"><img src="https://english.yanadoocdn.com/upload/yanadoo/new/promotion/bestawards/2023/jan/ico_bestawards_top_close_16x16.png" alt="닫기"></button>
+	</div>
+
+	<!-- Key Visaul -->
+	<section class="key_visaul">
+		<h2 class="text-hidden">메인 비쥬얼 영역</h2>
+		<div class="pc">
+			<div class="inner">
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_main_visual_text.svg" alt="쟁탈전 챕터 2 땅의 주인이 되어라!" class="key_visaul__title__pc">
+				<p>쟁탈전의 주인공이 되어보세요.</p>
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_img_main_visual__coin_1.svg" alt="" class="key_visaul__coin key_visaul__coin_1 fade_action fade_left">
+			</div>
+		
+		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_img_main_visual__coin_2.svg" alt="" class="key_visaul__coin key_visaul__coin_2 fade_action fade_right">
+		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_img_main_visual__coin_3.svg" alt="" class="key_visaul__coin key_visaul__coin_3 fade_action">
+		</div>
+		
+		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/mo_img_main_visual.png" alt="쟁탈전 챕터 2 땅의 주인이 되어라! 쟁탈전의 주인공이 되어보세요." class="mo">
+	</section>
+
+	<!-- sec01: 총 상금 영역 -->
+	<section class="reward">
+		<h2 class="text-hidden">총 상금 안내 영역</h2>
+		<div class="inner">
+			<p class="reward_num">
+				<span>총 상금</span>
+				<strong id="rewardCountUp" class="anmation__textCount point_text__yellow">7,000,000</strong>
+			</p>
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_reward.svg" alt="리워드 이미지" class="reward_img">
+			<button type="button" class="btn_move__app btn_gradient" onclick="onClickBtnAppMove();">쟁탈전 도전하기</button>
+		</div>
+	</section>
+
+	<!-- sec02: 챕터1 땅의 주인 -->
+	<section class="map">
+		<div class="anmation__stiky">
+			<h3 class="text_stiky text_stiky__01">
+				챕터1 <strong class="point_text__yellow">땅의 주인</strong>을<br> 확인하세요
+			</h3>
+			<h3 class="text_stiky text_stiky__02">
+				3번을 우승한<br>사람이 있어요
+			</h3>
+		</div>
+		<span class="text_desc">*운영 이벤트 우승자 기준입니다.</span>
+		<div class="anmation_mapActive inner">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_map.png" alt="맵">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_map_active.png" alt="맵" class="map_active">
+		</div>
+
+		<div class="map_explanation">
+			<ul class="map_name">
+				<li class="text_stiky__03">오사카</li>
+				<li>경주</li>
+				<li class="text_stiky__04">시드니</li>
+				<li>카이로</li>
+				<li>서울</li>
+				<li class="text_stiky__05">멕시코시티</li>
+				<li>방콕&파타야</li>
+			</ul>
+			<div class="text_stiky__06">
+				<i><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/arrow_map_explanation.svg" alt="arrow"></i>
+				<p>우승 3회의 <br class="mo">주인공은?</p>
+			</div>
+			<p class="bg_text">
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_bg_map_explanation.svg" alt="Be the land of master" class="pc">
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/m_bg_map_explanation.svg" alt="Be the land of master" class="mo">
+			</p>
+		</div>
+	</section>	
+
+	<!-- sec03: 챕터1 MVP 강유 77 -->
+	<section class="chapter1_mvp">
+		<div class="inner">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_chapter1_mvp.png" alt="강유77" class="mvp_img">
+			<div class="mvp__info">
+				<h3><span>야핏 프로 출석러</span> 강유77</h3>
+				<p class="text_desc">
+					“중도비만 경계에, 경계성 고혈압이라는 진단을 받고<br>
+					운동할 필요성을 느껴 <strong>야핏을 시작하게 됐어요.</strong>”
+				</p>
+				<ul class="mvp__info__box">
+					<li>
+						<span>쟁탈전 우승</span>
+						<strong>3회</strong>
+					</li>
+					<li>
+						<span>체중변화</span>
+						<strong>-8kg</strong>
+					</li>
+					<li>
+						<span>마일리지 획득</span>
+						<strong>40만</strong>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- sec04: 성공의 맛 비하인드 -->
+	<section class="behind">
+		<div class="behind_list">
+			<h3>
+				<span><strong>강유77</strong>님이 야핏과 함께</span>
+				조금씩 꾸준히 이뤄낸 <br class="mo"><strong class="point_text__green">'성공의 맛'</strong>
+			</h3>
+			<ul class="behind_ani__wrap">
+				<li class="behind_ani behind_ani_1 move-action fade-top"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_checkbox.png" alt="아이콘"> 야핏 이용기간 313일 동안 282일 출석했어요</li>
+				<li class="behind_ani behind_ani_2 move-action fade-top"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_person_biking.png" alt="아이콘">  하루 평균 2회, 레이싱에 총 556회 도전했어요</li>
+				<li class="behind_ani behind_ani_3 move-action fade-top"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_chicken.png" alt="아이콘">  하루 30분 치킨 반마리의 칼로리를 불태웠어요</li>
+				<li class="behind_ani behind_ani_4 move-action fade-top"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_flexed_biceps.png" alt="아이콘">  -8kg 감량하고, 쟁탈전 우승기록도 내고있어요</li>
+			</ul>
+			<div class="dot behind_ani behind_ani_5 move-action fade-top">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<button type="button" class="btn_move__app btn_bgShadowPulse behind_ani behind_ani_6 move-action fade-top" onclick="onClickBtnAppMove();">당신도 한 번 도전해보세요</button>
+		</div>
+
+		<div class="behind_video">
+			<h3>MVP 달성 비하인드가 <br class="mo">궁금하다면?</h3>
+			<div class="video_wrap">
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_behind_video_thumbnail.png" alt="behind 썸네일" class="thumbnail thumbnail_behind" onclick="onClickBehindThumbnail();">
+				<video controls playsinline poster="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_behind_video.png" class="vod_behind">
+					<source src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/interview_c1.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+	</section>
+
+	<!-- sec05: 라인 배너 -->
+	<section class="banner_line">
+		<h2 class="text-hidden">라인 배너 영역</h2>
+		<a href="https://www.youtube.com/@yafit_videos/featured" target="_blank">유튜브로 이동</a>
+		<div class="inner">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_img_line_banner.png" alt="영상에서 본 강유77 사이클 둘러보기" class="pc">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/mo_img_line_banner.png" alt="영상에서 본 강유77 사이클 둘러보기" class="mo">
+		</div>
+	</section>
+
+	<!-- sec06: 주간 미션 캘린더 -->
+	<section class="mission">
+		<h3>
+			<strong>CHAPTER 2 EVENT</strong><br>
+			매주 공개되는 <br class="mo">시크릿 주간 미션<br>
+			<span>추가 미션 확인하고 <br class="mo">특별한 보상을 받아보세요</span>
+		</h3>
+		<div class="calendar_slides">
+			<div class="inner">
+
+				<lottie-player class="lottie_calendar" src="https://yafitcdn.yanadoo.co.kr/yanadoo/test/lottie_calendar.json" background="transparent"  speed="1" loop autoplay></lottie-player>
+
+				<div class="calendar_slide__left" dir="rtl">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_mission.svg" alt="미션"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_mission.svg" alt="미션"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_mission.svg" alt="미션"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_mission.svg" alt="미션"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_mission.svg" alt="미션"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_mission.svg" alt="미션"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_mission.svg" alt="미션"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_mission.svg" alt="미션"></li>
+					</ul>
+				</div>
+				<div class="calendar_slide__right" dir="rtl">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_complete.svg" alt="미션 완료"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_complete.svg" alt="미션 완료"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_complete.svg" alt="미션 완료"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_complete.svg" alt="미션 완료"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_complete.svg" alt="미션 완료"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_complete.svg" alt="미션 완료"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_complete.svg" alt="미션 완료"></li>
+						<li class="swiper-slide"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_stamp_complete.svg" alt="미션 완료"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<button type="button" class="btn_move_cafe" onclick="onClickBtnCafeMove()">자세히보기</button>
+	</section>
+
+	<!-- sec07: about 쟁탈전 -->
+	<section class="about">
+		<div class="inner">
+			<div class="video_wrap">
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_about_video_thumbnail.png" alt="about 썸네일" class="thumbnail thumbnail_about" onclick="onClickAboutThumbnail()">
+				<video controls playsinline poster="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_about_video.png" class="vod_about">
+					<source src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/yafitScramble_c1.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div class="right_text">
+				<h3>
+					<strong>ABOUT 쟁탈전</strong><br>
+					빠르게 달리는<br class="pc">
+					SPEED 레이싱부터<br class="pc">
+					리듬에 맞춰 달리는<br class="pc">
+					RPM 레이싱까지!
+				</h3>
+				<p>
+					누구나 땅의 주인이 될 수 있는 기회를 잡아보세요.<br class="pc">
+					야핏에서만 누릴 수 있는 놀라운 혜택이 기다립니다.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- sec08: 랭킹 -->
+	<section class="rank">
+		<div class="inner">
+			<div class="left_wrap">
+				<h3>크루는 지금 쟁탈중</h3>
+				<div class="tab">
+					<button type="button" class="btn_tab__rpm active" data-tab="slide_rpm" onclick="onClickTab('Rpm')">RPM</button>
+					<button type="button" class="btn_tab__speed" data-tab="slide_speed" onclick="onClickTab('Speed')">SPEED</button>
+				</div>
+
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_rank_rpm.svg" alt="엠블럼" class="mondEmblem">
+
+			</div>
+			<div class="rank_table">
+				<div class="rank_table__head">
+					<span class="rank_num">순위</span>
+					<span class="rank_nicName">닉네임</span>
+					<span class="rank_rabTime">랩타임</span>
+					<span class="rank_fluctuation">등락 
+						<i class="tool_mark">
+							<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/ico_mark_rank.svg" alt="mark" class="btn_tooltip">
+							<em class="content_tooltip">전 시즌 순위 기준으로 <br class="mo">보여집니다. <button type="button"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/ico_mark_rank_close.svg" alt="툴팁 닫기"></button></em>
+						</i>
+					</span>
+				</div>
+				
+				<div class="slide_rpm rank_table__body active">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide rank_01">
+						<span class="rank_num">1</span>
+						<span class="rank_nicName">리미티드범</span>
+						<span class="rank_rabTime">03:01.390</span>
+						<span class="rank_fluctuation same"><i></i>  </span>
+						</li>
+						<li class="swiper-slide rank_02">
+						<span class="rank_num">2</span>
+						<span class="rank_nicName">찌니</span>
+						<span class="rank_rabTime">03:03.208</span>
+						<span class="rank_fluctuation up"><i></i> 5</span>
+						</li>
+						<li class="swiper-slide rank_03">
+						<span class="rank_num">3</span>
+						<span class="rank_nicName">동그리O</span>
+						<span class="rank_rabTime">03:03.606</span>
+						<span class="rank_fluctuation up"><i></i> 2</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">4</span>
+						<span class="rank_nicName">희망딴따라</span>
+						<span class="rank_rabTime">03:04.191</span>
+						<span class="rank_fluctuation down"><i></i> 1</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">5</span>
+						<span class="rank_nicName">라자달려</span>
+						<span class="rank_rabTime">03:04.241</span>
+						<span class="rank_fluctuation down"><i></i> 1</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">6</span>
+						<span class="rank_nicName">강쑤</span>
+						<span class="rank_rabTime">03:04.243</span>
+						<span class="rank_fluctuation same"><i></i>  </span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">7</span>
+						<span class="rank_nicName">회먹</span>
+						<span class="rank_rabTime">03:04.412</span>
+						<span class="rank_fluctuation up"><i></i> 1</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">8</span>
+						<span class="rank_nicName">하트서나</span>
+						<span class="rank_rabTime">03:04.827</span>
+						<span class="rank_fluctuation down"><i></i> 6</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">9</span>
+						<span class="rank_nicName">titimo</span>
+						<span class="rank_rabTime">03:05.052</span>
+						<span class="rank_fluctuation up"><i></i> 1</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">10</span>
+						<span class="rank_nicName">으네</span>
+						<span class="rank_rabTime">03:05.177</span>
+						<span class="rank_fluctuation new"><i></i> NEW</span>
+						</li>
+						</ul>
+				</div>
+
+				<div class="slide_speed rank_table__body">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide rank_01">
+						<span class="rank_num">1</span>
+						<span class="rank_nicName">감자몬</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation up"><i></i> 26</span>
+						</li>
+						<li class="swiper-slide rank_02">
+						<span class="rank_num">2</span>
+						<span class="rank_nicName">justride</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation up"><i></i> 15</span>
+						</li>
+						<li class="swiper-slide rank_03">
+						<span class="rank_num">3</span>
+						<span class="rank_nicName">강유77</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation up"><i></i> 1</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">4</span>
+						<span class="rank_nicName">다섯째</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation down"><i></i> 2</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">5</span>
+						<span class="rank_nicName">찬유지유</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation down"><i></i> 4</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">6</span>
+						<span class="rank_nicName">수의사김원장</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation same"><i></i>  </span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">7</span>
+						<span class="rank_nicName">여기가자</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation up"><i></i> 28</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">8</span>
+						<span class="rank_nicName">John</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation up"><i></i> 7</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">9</span>
+						<span class="rank_nicName">나른</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation up"><i></i> 1</span>
+						</li>
+						<li class="swiper-slide">
+						<span class="rank_num">10</span>
+						<span class="rank_nicName">인노인노</span>
+						<span class="rank_rabTime">01:24.532</span>
+						<span class="rank_fluctuation down"><i></i> 1</span>
+						</li>
+						</ul>
+				</div>
+				<div class="rank_table_caption" style="display: none;">
+					<strong>시즌13 MAP 다낭&호이안</strong>
+					<span>2023.03.22</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="bottom_banner">
+		<h2 class="text-hidden">하단 배너 영역</h2>
+		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/pc_img_bottom_banner.png" alt="지금 바로 앱 설치하고 총 상금 700만의 주인공이 되어보세요! QR코드를 찍으면 바로 다운로드 가능합니다." class="pc">
+		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/m_img_bottom_banner.png" alt="지금 바로 앱 설치하고 총 상금 700만의 주인공이 되어보세요! QR코드를 찍으면 바로 다운로드 가능합니다." class="mo">
+	</section>
+
+	<div class="btn_down_bottom__wrap">
+		<button type="button" class="btn_move_app btn_down_bottom mo" onClick="onClickBtnAppMove();">앱 다운로드 <img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/ico_floating_appDown.svg" alt="아이콘"></button>
+	</div>
+	
+</div>
+
+<div class="modal_wrap pc">
+	<div class="modal_content">
+		<div class="modal_head">
+			<button type="button" class="btn_modal_close"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/btn_modal_close.svg" alt=""></button>
+		</div>
+		<div class="modal_body">
+			<h4>
+				지금 바로 앱 설치하고<br>
+				<strong>총 상금 700만의 주인공</strong>이<br>
+				되어보세요
+			</h4>
+			<div class="qr_box">
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/QR_app_move.png" alt="QR">
+			</div>
+			<p>QR코드를 찍으면 바로 다운 가능합니다.</p>
+		</div>
+	</div>
+	<div class="modal_bg"></div>
+</div>
+
+<div data-include-path="https://yafit.yanadoocdn.com/yanadoo/web/layout/footer.html"></div>
+
+<script>
+	window.addEventListener('DOMContentLoaded', () => {
+		sectionMapAnimation();
+		calendarSlide();
+	});
+	window.addEventListener("scroll", () => { onScrollWindow(); });
+	document.querySelector(".btn_modal_close").addEventListener("click", () => { onClickBnAppMovedModalClose(); });
+	document.querySelector(".modal_bg").addEventListener("click", () => { onClickBnAppMovedModalClose(); });
+
+	document.querySelector(".btn_tooltip").addEventListener("click", () => { onClickToolMark(); });
+	document.querySelector(".tool_mark button").addEventListener("click", () => { onClickCloseToolMark(); });
+
+	// 야나두 팝업 가리기
+	window.addEventListener("load", () => {
+		document.getElementById('adn_closed_wrap_contents').style.display = "none";
+		document.getElementById('adn_panel_').style.display = "none";
+	});
+
+	function onClickToolMark() {
+		document.querySelector('.content_tooltip').style.display = "flex";
+	}
+	function onClickCloseToolMark() {
+		
+		document.querySelector('.content_tooltip').style.display = "none";
+	}
+
+	function sectionMapAnimation() {
+		
+		gsap.timeline({
+			scrollTrigger: {
+			trigger: ".map",
+			pin: true,
+			start: "top top",
+			end: "+=3000",
+			scrub: 2,
+			}
+		})
+		.to('.text_stiky__01', {duration: 0.5, opacity: 0, y: -20})
+		.to('.text_stiky__02', {duration: 0.3, opacity: 1, y: -20})
+		.to('.map_active', {duration: 1, opacity: 1})
+		
+		.addLabel('a')
+		.to('.map_active', {duration: 0.5, opacity: 0}, 'a')
+		.to('.anmation_mapActive', {duration: 0.5, opacity: .1, y:-250}, 'a')
+		.to('.text_stiky__02', {duration: 0.5, opacity: 0, y:-20}, 'a')
+		.to('section.map .text_desc', {duration: 0.5, opacity: 0, y:-20}, 'a')
+
+		.to('.map_name', {duration: 0.3, opacity: 1, y: 0})
+		.to('.bg_text', {duration: 0.3, opacity:.3})
+		.to('.text_stiky__03', {duration: 0.3, color: '#FFD84D'})
+		.to('.text_stiky__04', {duration: 0.3, color: '#FFD84D'})
+		.to('.text_stiky__05', {duration: 1, color: '#FFD84D'})
+
+		.to('.map_name', {duration: 0.3, opacity: 0, y: -100})
+		.to('.text_stiky__06', {duration: 1, opacity: 1, delay:1})
+	}
+
+	function onClickBtnAppMove() {
+		const innerWidth = window.innerWidth;
+		if (innerWidth <= 768) {
+			window.open('https://yafitcycle.onelink.me/bOUu/68ntru5l'); // 모바일 이동 원링크
+		} else {
+			document.querySelectorAll(".modal_content").forEach(item => item.style.display = 'block');
+			document.querySelectorAll(".modal_bg").forEach(item => item.style.display = 'block');
+			document.body.classList.remove('scroll_hidden');
+		}
+	}
+
+	function onClickBtnCafeMove() {
+		const innerWidth = window.innerWidth;
+		if (innerWidth <= 768) {
+			window.open('https://m.cafe.naver.com/ca-fe/web/cafes/30811973/menus/17', '_blank'); // 모바일 카페 이동 링크
+		} else {
+			window.open('https://cafe.naver.com/yanadoofit?iframe_url=/ArticleList.nhn%3Fsearch.clubid=30811973%26search.menuid=17%26search.boardtype=L', '_blank'); // PC 카페 이동 링크
+		}
+	}
+
+	function onClickBnAppMovedModalClose() {
+		document.querySelectorAll(".modal_content").forEach(item => item.style.display = 'none');
+		document.querySelectorAll(".modal_bg").forEach(item => item.style.display = 'none');
+
+		document.body.classList.remove('scroll_hidden');
+	}
+
+
+	function onClickBehindThumbnail() {
+		document.querySelector('.video_wrap .thumbnail_behind').style.display = 'none';
+		document.querySelector('.vod_behind').play();
+	}
+
+	function onClickAboutThumbnail() {
+		document.querySelector('.video_wrap .thumbnail_about').style.display = 'none';
+		document.querySelector('.vod_about').play();
+	}
+
+	rankSwiperRpm();
+	const tabItem = document.querySelectorAll(".tab button");
+	const tabContent = document.querySelectorAll(".rank_table__body");
+
+	tabItem.forEach((item) => {
+	item.addEventListener("click", tabHandler);
+	});
+
+	function tabHandler(item) {
+
+	const tabTarget = item.currentTarget;
+	const target = tabTarget.dataset.tab;
+
+	tabItem.forEach((title) => { title.classList.remove("active"); });
+	tabContent.forEach((target) => { target.classList.remove("active"); });
+
+	document.querySelector("." + target).classList.add("active");
+	tabTarget.classList.add("active");
+
+	}
+
+	function onClickTab(tabName) {
+
+		let ramkImg = document.querySelector('.mondEmblem');
+
+		if ( tabName == 'Rpm' ) {
+
+			document.querySelector('.slide_rpm .swiper-wrapper').style.display = 'block';
+			document.querySelector('.slide_speed .swiper-wrapper').style.display = 'none';
+
+			rankSwiperRpm(); 
+			ramkImg.setAttribute("src", "https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_rank_rpm.svg");
+
+		}
+		if ( tabName == 'Speed' ) {
+
+			rankSwiperSpeed();
+			ramkImg.setAttribute("src", "https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/championship/img_rank_speed.svg");
+
+			document.querySelector('.slide_rpm .swiper-wrapper').style.display = 'none';
+			document.querySelector('.slide_speed .swiper-wrapper').style.display = 'block';
+
+			}
+		}
+
+	function rankSwiperRpm() {
+		const rankSwiperRpm = new Swiper(".slide_rpm", {
+				direction: "vertical",
+				slidesPerView: 5,
+				slidesPerGroup: 1,
+				allowTouchMove: false,
+				autoplay: {
+					delay: 700,
+					disableOnInteraction: false,
+				},
+				//loop: true,
+				observer: true,
+				observeParents: true,
+		});
+	}
+
+	function rankSwiperSpeed() {
+	const rankSwiperSpeed = new Swiper(".slide_speed", {
+				direction: "vertical",
+				slidesPerView: 5,
+				slidesPerGroup: 1,
+				allowTouchMove: false,
+				autoplay: {
+					delay: 700,
+					disableOnInteraction: false,
+				},
+				//loop: true,
+				observer: true,
+				observeParents: true,
+		});
+	}
+	
+	let flag1 = true;
+		// scroll event
+		function onScrollWindow() {
+			const innerWidth = window.innerWidth;
+			const rewardTop = document.querySelector('.reward').offsetTop;
+			const behindTop = document.querySelector('.behind').offsetTop;
+			if ( pageYOffset >= rewardTop -300 ) {
+				if (!flag1)
+				{
+					animateCountUp(document.querySelector("#rewardCountUp"), 7000000);
+					flag1 = true;
+				}
+			} else {
+				flag1 = false;
+			}
+
+			if ( pageYOffset >= behindTop -300 ) { 
+				document.querySelector('.behind').classList.add('active');
+			}
+
+			if ( innerWidth <= 768 && pageYOffset >= 1 ) {
+				document.querySelector('.btn_floting_app_move').style.display = "none";
+				
+			} else {
+				document.querySelector('.btn_floting_app_move').style.display = "flex";
+			}
+		}
+
+	function calendarSlide() {
+		new Swiper(".calendar_slide__left", {
+			slidesPerView: 2,
+			slidesPerGroup: 1,
+			spaceBetween: 10,
+			loop: true,
+			autoplay: { delay: 2000},
+			centeredSlides: true,
+			breakpoints: {
+				769: {
+					slidesPerView: 6,
+				}
+			}
+		});
+
+		new Swiper(".calendar_slide__right", {
+			slidesPerView: 2,
+			slidesPerGroup: 1,
+			spaceBetween: 10,
+			loop: true,
+			autoplay: { delay: 2000},
+			centeredSlides: true,
+			breakpoints: {
+				769: {
+					slidesPerView: 6,
+				}
+			}
+		});
+	}
+
+	// 카운트 업
+	function numberWithCommas(num)
+	{
+		return isEmpty(num) ? 0 : num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	const easeOutQuad = t => t * ( 2 - t );
+	function animateCountUp(targetEl, targetNumber)
+	{
+		const animationDuration = 1500;
+		const frameDuration = 1000 / 60;
+		const totalFrames = Math.round( animationDuration / frameDuration );
+
+		let frame = 0;
+		const countTo = parseInt( targetNumber, 10 );
+		const counter = setInterval( () => {
+			frame++;
+			const progress = easeOutQuad( frame / totalFrames );
+			const currentCount = Math.round( countTo * progress );
+			targetEl.textContent = `${numberWithCommas(currentCount)}`;
+			if ( frame === totalFrames ) {
+				clearInterval( counter );
+			}
+		}, frameDuration );
+	}
+
+	//띠배너
+	cookiedata = document.cookie;
+	if ( cookiedata.indexOf("ncookie=done") < 0 ){
+		document.getElementById('topBanner1').style.display = "block";    //  팝업창 아이디
+	} else {
+		document.getElementById('topBanner1').style.display = "none";    // 팝업창 아이디
+	}
+	function setCookie( name, value, expiredays ) {
+		let todayDate = new Date();
+		todayDate.setDate( todayDate.getDate() + expiredays );
+		document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+	}
+
+	function todaycloseWin() {
+		setCookie( "ncookie", "done" , 1 );     // 저장될 쿠키명 , 쿠키 value값 , 기간( ex. 1은 하루, 7은 일주일)
+		document.getElementById('topBanner1').style.display = "none";    // 팝업창 아이디
+	}
+	
+
+
+//fade animation
+function animateFrom(elem, direction) {
+	direction = direction || 1;
+	var x = 0, y = direction * 100;
+	if(elem.classList.contains("fade_left")) {
+		x = -100;
+		y = 0;
+	} else if (elem.classList.contains("fade_right")) {
+		x = 100;
+		y = 0;
+	}
+	elem.style.transform = "translate(" + x + "px, " + y + "px)";
+	elem.style.opacity = "0";
+	gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+		duration: 1.25,
+		x: 0,
+		y: 0,
+		autoAlpha: 1,
+		ease: "expo",
+		overwrite: "auto"
+	});
+}
+
+function hide(elem) {
+	gsap.set(elem, {autoAlpha: 0});
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+	
+
+	gsap.utils.toArray(".fade_action").forEach(function(elem) {
+		hide(elem); // assure that the element is hidden when scrolled into view
+
+		ScrollTrigger.create({
+			trigger: elem,
+			//markers: true,
+			onEnter: function() { animateFrom(elem) },
+			onEnterBack: function() { animateFrom(elem, -1) },
+			onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+		});
+	});
+});
+
+
+</script>
+</body>
+</html>

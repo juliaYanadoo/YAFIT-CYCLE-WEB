@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>야핏사이클</title>
+    <link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/reset_1.css" />
+</head>
+<style>
+    /* 가로모드일때 폰트 사이즈 자동 조정 금지 */
+    html {-webkit-text-size-adjust: none;  -moz-text-size-adjust: none;  -ms-text-size-adjust: none; }
+    html,body{width:100%;height:100%;background: #333;}
+    /* ios 스크롤 바운드 금지 */
+    .wrap{position:fixed;width:100%;height:100vh;overflow: hidden; overflow-y:hidden;}
+    .guide {display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; font-family: 'Pretendard'; letter-spacing: -0.32px;}
+    .guide  .inner-col {max-width: 1026px; margin: 0 auto; padding: 0 90px;}
+   
+    .guide h3 {padding: 32px 0 0; font-weight: 500; text-align: center; color: #fff; font-size: 28px;} 
+    .desc {color: #6CBF8D; font-size:15px; text-align: center; padding: 20px 0;}
+
+    .guide .content {overflow-y: scroll; width: 100%; height: 400px; padding: 10px 20px; color:#fff; text-align:left; background-color: #000; border-radius: 5px; opacity: .7;}
+    .guide .content strong {position:relative; display:block; margin: 10px 0; padding-left: 10px; font-size:14px; font-weight:600;}
+    .guide .content strong:after {content: '·'; position:absolute; top:0; left:0;}
+    .guide .content strong:first-of-type {padding-top:0;}
+    .guide .content ul {margin-bottom: 20px;}
+    .guide .content ul li {position:relative; margin-bottom: 5px; padding-left: 20px; color: #fff; text-align: left; font-size: 13px;}
+    .guide .content ul li:after {content: '-'; position:absolute; top:0; left:10px;}
+
+    .text_wrap {color: #fff; font-size: 13px;}
+    .text_wrap span {display: block; margin-bottom:5px; color: #F6DF0E;}
+
+    .bottom_text {padding: 20px 0; color: #fff; text-align: center;}
+
+    @media screen and (max-width: 1180px) {
+        .guide {background: linear-gradient(#191919,#17222C); letter-spacing: -0.03vw;}
+        .guide .inner-col {width: 100%; max-width: 100%; margin: 0 auto; padding: 0 8.79vw;}
+
+        .guide h3 {font-size: 2.5vw;}
+        .guide .content ul li {font-size: 1.46vw;}
+
+        .desc { font-size: 1.67vw; padding: 2.22vw 0 1.55vw;}
+        .guide .content strong {font-size: 1.67vw;}
+
+        .title_wrap {display: flex; align-items: center; justify-content: center; height: 25vh; }
+        .text_wrap {font-size: 1.46vw;}
+        .guide .content {width: 100%; height: 60vh;}
+        .bottom_text {display: flex; align-items: center; justify-content: center; height: 15vh; font-size: 1.67vw;}
+        
+    }
+</style>
+<body>
+    <div class="wrap">
+        <section class="guide">
+            <div class="inner-col">
+
+                <div class="title_wrap">
+                    <div>
+                        <h3>마일리지 적립 방법</h3>
+                        <p class="desc">
+                            하루에 적립 가능한 마일리지의 제한이나 조건은 없으며, 등급에 따라 월 최대 적립 가능한 마일리지가 상이합니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="content">
+
+                    <div class="content-inner">
+                        <strong>출석 마일리지</strong>
+                        <ul>
+                            <li>매일 접속하기만 해도 마일리지가 지급됩니다.</li>
+                            <li>28일 기준 매일 접속 시, 월 최대 9,200M 까지 적립할 수 있습니다.</li>
+                            <li>연속으로 출석하지 않아도 누적 출석 체크 일자에 따라 마일리지가 적립됩니다.</li>
+                        </ul>
+
+                        <strong>핫타임 마일리지</strong>
+                        <ul>
+                            <li>내가 설정한 핫타임에 트레이닝 모드를 완주하면 보너스 마일리지가 지급됩니다.</li>
+                            <li>설정한 시간에 따라 지급되는 마일리지가 다르며, 매일 연속으로 핫타임 달성 시 연속 달성 마일리지가 추가로 지급됩니다.</li>
+                            <li>하루에 1회만 지급받을 수 있습니다.</li>
+                        </ul>
+                    
+                        <strong>땀방울 (운동 마일리지)</strong>
+                        <ul>
+                            <li>내가 사이클을 탄 거리의 100m 당 1M 씩 적립됩니다.</li>
+                            <li>멤버십 별로 적립할 수 있는 마일리지가 다르며, 등급에 따라 매 월 최대 1만 마일리지까지 적립 가능합니다.</li>
+                        </ul>
+                    </div>
+                    
+
+                    <div class="text_wrap">
+                        <span>⭐️ Tip ⭐ </span> 
+                        출석 마일리지 9,200M + 땀방울 10,000M = 19,200M로 핫타임 마일리지를 꼭 적립하셔야 월 20,000M 이상 달성이 가능합니다.
+                    </div>
+                    
+                </div>
+
+                <p class="bottom_text">
+                    마일리지 적립 방법 관련하여 궁금한 사항은  야핏사이클 고객센터(1600-0563)로 문의해주세요.
+                </p>
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>

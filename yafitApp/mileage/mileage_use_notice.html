@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>야핏사이클</title>
+    <link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/reset_1.css" />
+</head>
+<style>
+    /* 가로모드일때 폰트 사이즈 자동 조정 금지 */
+    html {-webkit-text-size-adjust: none;  -moz-text-size-adjust: none;  -ms-text-size-adjust: none; }
+    html,body{width:100%;height:100%;background: #333;}
+    /* ios 스크롤 바운드 금지 */
+    .wrap{position:fixed;width:100%;height:100vh;overflow: hidden; overflow-y:hidden;}
+    .guide {display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; font-family: 'Pretendard'; letter-spacing: -0.32px;}
+    .guide  .inner-col {max-width: 1026px; margin: 0 auto; padding: 0 90px;}
+   
+    .guide h3 {padding: 32px 0 0; font-weight: 500; text-align: center; color: #fff; font-size: 28px;} 
+    .desc {color: #6CBF8D; font-size:15px; text-align: center; padding: 20px 0;}
+
+    .guide .content {overflow-y: scroll; width: 100%; height: 400px; padding: 10px 20px; color:#fff; text-align:left; background-color: #000; border-radius: 5px; opacity: .7;}
+    .guide .content strong {position:relative; display:block; margin: 10px 0; padding-left: 10px; font-size:14px; font-weight:400;}
+    .guide .content strong:after {content: '·'; position:absolute; top:0; left:0;}
+    .guide .content strong:first-of-type {padding-top:0;}
+    .guide .content ul {margin-bottom: 20px;}
+    .guide .content ul li {position:relative; margin-bottom: 5px; padding-left: 20px; color: #fff; text-align: left; font-size: 13px;}
+    .guide .content ul li:after {content: '-'; position:absolute; top:0; left:10px;}
+
+    .text_wrap {color: #fff; font-size: 13px;}
+    .text_wrap span {display: block; margin-bottom:5px; color: #F6DF0E;}
+
+    .bottom_text {padding: 20px 0; color: #fff; text-align: center;}
+    .bottom_text a {text-decoration: underline;}
+
+    @media screen and (max-width: 1180px) {
+        .guide {background: linear-gradient(#191919,#17222C); letter-spacing: -0.03vw;}
+        .guide .inner-col {width: 100%; max-width: 100%; margin: 0 auto; padding: 0 8.79vw;}
+
+        .guide h3 {font-size: 2.5vw;}
+        .guide .content ul li {font-size: 1.46vw;}
+
+        .desc { font-size: 1.67vw; padding: 2.22vw 0 1.55vw;}
+        .guide .content strong {font-size: 1.67vw;}
+
+        .title_wrap {display: flex; align-items: center; justify-content: center; height: 25vh; }
+        .text_wrap {font-size: 1.46vw;}
+        .guide .content {width: 100%; height: 60vh;}
+        .bottom_text {display: flex; align-items: center; justify-content: center; height: 15vh; font-size: 1.67vw;}
+        
+    }
+</style>
+<body>
+    <div class="wrap">
+        <section class="guide">
+            <div class="inner-col">
+
+                <div class="title_wrap">
+                    <div>
+                        <h3>마일리지 상점 이용 안내</h3>
+                        <p class="desc">
+                            적립한 마일리지는 마일리지 상점에서 원하는 기프티콘으로 교환이 가능합니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="content">
+                    <div class="content-inner">
+                        <strong>마일리지 상점에서 교환 신청 후 영업일 기준 5일 이내 입력해 주신 연락처로 발송되며, 당사 사정에 의해 발송이 지연될 수 있습니다.</strong>
+                        <ul>
+                            <li>신청 후 7일 이내 미수신된 기프티콘은 고객센터로 문의하시는 건에 한해서 확인 후 1회 재발송이 가능합니다. </li>
+                            <li>발송된 기프티콘은 일부 스마트폰의 MMS 버전 및 통신환경에 따라 수신이 지연될 수 있습니다. </li>
+                        </ul>
+                        <strong>발급 완료된 모바일 기프티콘(상품권)은 마일리지로 환불이 불가능하며, 다른 상품으로 변경 및 교환/취소가 불가합니다.</strong>
+                        <strong>연락처(휴대폰 번호) 오기재 및 고객 과실로 인해 미수신 된 기프티콘 재발송은 불가합니다.</strong>
+                        <strong>마일리지 상점에서 교환된 모바일 기프티콘은 유효기간 연장 및 환불이 불가합니다.</strong>
+                        <strong>마일리지 상점에서 교환된 모바일 기프티콘의 유효기간은 상품별로 상이하며 교환처의 정책에 따릅니다.</strong>
+                        <strong>야핏사이클 멤버십 이용권 기간이 종료된 경우 마일리지 적립 및 마일리지 상점 이용이 불가능합니다.</strong>
+                        <strong>마일리지 사용처는 당사의 및 교환처의 사정에 따라 사전 고지 없이 변경될 수 있습니다.</strong>
+                    </div>
+                </div>
+
+                <p class="bottom_text">
+                    <a href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/yafitCycle.html" target="_blank">
+                        마일리지 이용 방법 관련하여 더 자세한 사항은 야핏사이클 홈페이지의 FAQ를 참조해주세요.
+                    </a>
+                </p>
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>SCROLL ANIMTION
+	</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/reset_1.css" />
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js"></script>
+</head>
+
+<style>
+
+	body {background-color: #000;}
+	h2 {font-size: 80px; font-weight: 800;}
+	h2 span{font-size: 15px;}
+	h3 {font-size: 40px; line-height: 1.3em; letter-spacing: -1px;}
+	p {padding: 15px 0; font-size: 20px; line-height: 1.3em;}
+
+	.scroll_section_0 {height: 100vh;background: #000;}
+	.scroll_section_0 .scroll_section__inner {height: 100%;background: #000;}
+	.scroll_section  .text_stiky {position: absolute;text-align: center;top:50%;left: 50%;color: #fff;z-index: 100;transform: translate(-50%, -50%);}
+
+	.scroll_section_0 canvas {position: fixed;left: 50%;top: 50%;transform: translate(-50%, -50%);max-width: 100vw;max-height: 100vh;}
+
+	.scroll_section_1 {height: 100vh; background-color: #fff;}
+
+	.text_stiky {width: 100%;}
+
+	.text_stiky__1 {opacity: .5;}
+	.text_stiky__2 {opacity: 0;}
+	.text_stiky__3 {opacity: 0; color: #000;}
+	.text_stiky__4 {opacity: 0}
+
+	.lottie-dance {position: absolute; bottom: 0; left: 43%; z-index: 10; opacity: 0;}
+
+	.scroll_section_3 {position: relative; width: 100%;height: 100vh;padding: 50px;background-color: #fff;}
+	.content {display: flex;background: #fff;width: 100%;height: 100%;justify-content: center;align-items: center;}
+
+	.scroll_section_4 { width: 100%;padding: 50px 20px;background-color: #fff;}
+	.scroll_section_4 .scroll_section__inner {max-width: 768px; margin: 0 auto }
+	.scroll_section_4 .lottie-bg {width: 100vw;}
+	.scroll_section_4 p {color: #999; font-weight: 600; font-size: 30px;}
+
+	.scroll_section_4 .text_gr {
+		display: inline-block;
+		color: transparent;
+		-webkit-background-clip: text;
+		background-clip: text;
+		background-image: linear-gradient(90deg,#2ca2b4,#5598de 24%,#7f87ff 45%,#f65aad 76%,#ec3d43);
+		will-change: transform;
+		background-color: #2ca2b4 0%;
+		}
+
+		.scroll_section_5 {position: relative; height: 100vh; background-attachment: fixed; background-image: url(https://images.samsung.com/kdp/static/pd/watches/galaxy-watch/galaxy-watch5-pro/feature/galaxy-watch5-pro-sleep-bg.jpg); background-position: 50% 50%;}
+		.scroll_section_5 img {position: absolute; top: 50%; left: 50%;}
+		.scroll_section_5 .galaxywatch {width: 350px; opacity: 0; transform: translate(-50% ,-50%); -webkik-transform: translate(-50%, -50%);}
+		.galaxywatch_display_01 {width: 320px; opacity: 0; transform: scale(5); -webkik-transform: scale(5); margin:-160px 0 0 -160px;}
+		.galaxywatch_display_02, .galaxywatch_display_03 {display: block; width: 320px; opacity: 0;transform: translate(-50% ,-50%); -webkik-transform: translate(-50%, -50%);}
+		.scroll_section_5 h2 {color: #fff; padding: 300px 50px;}
+		article {width: 1020px; margin: 0 auto;}
+
+		.scroll_section_6 {position: relative; display: flex; align-items: center; justify-content: center; height: 100vh; background-color: #fff;}
+		.scroll_section_6 h3 {position: absolute;top: 40%; left: 43%; opacity: 0;}
+		.scroll_section_6 .lottie-sensor {position: absolute; top:20%; left: 45%; transform: scale(20); opacity: 0; z-index: 10;}
+
+		.scroll_section_6 .svg-target-3 {position: absolute; bottom: 50px; left: 38%; width: 500px; margin: 0 auto; opacity: .2;}
+		.map {position: absolute; width: 100%; height: 100%; left: 0; top: 0; padding: 20px; z-index: 11; opacity: 1; transform: translateY(500px) scale(0);}
+		.map_inner {display: flex; align-items: center; height: 100%; justify-content: center; background-color: #999;}
+		
+
+</style>
+<body> 
+
+	<section class="scroll_section scroll_section_0" id="scroll_section_0">
+		<div class="text_stiky">
+			<h2 class="text_stiky__1"><span>NEW INTERACTION 01</span><br>CANVAS</h2>
+			<p class="text_stiky__2">
+				이미지 시퀀스 파일로 전달주시면 구현 가능합니다.<br>
+				프레임을 약100~300장정도로 나누어 HTML CANVAS 태그안에 삽입,<br>
+				1 프레임 당 스크립트 상 스크롤 1 값으로 계산하여 구현됩니다.
+			</p>
+		</div>
+	
+		<lottie-player class="lottie-dance" src="https://assets2.lottiefiles.com/packages/lf20_7zyl4dlw.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+
+		<div class="scroll_section__inner">
+			<canvas id="hero-lightpass"></canvas>
+		</div>
+	</section>
+
+	<section class="scroll_section scroll_section_3">
+
+		<div class="content">
+			<div>
+				<h2 class="text_stiky__3"><span>NEW INTERACTION 02</span><br>LOTTIE</h2>
+				<p class="text_stiky__4">LOTTIE 파일을 SVG로 렌더하여 구현하며,<br>위 구현 방법과 유사합니다.<br>LOTTIE JSON 파일 or 링크로 전달해주시면 구현 가능합니다.</p>
+			</div>
+			<div class="svg-container">
+				<div class="svg-target-2"></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="scroll_section scroll_section_4">
+		<div class="scroll_section__inner">
+			<div style="padding-bottom: 50px; text-align:center; transform: translate3d(-12px, 48px, -271px) rotateY(37deg) rotate(18deg) skewX(13deg) scale(1.2);">
+				<h2 class="fade_action">텍스트 <em class="text_gr">그라데이션.</em></h2>
+				<p class="fade_action">컬러 순서대로 -<br>#2ca2b4,#5598de,#7f87ff,#f65aad,#ec3d43</p>
+			</div>
+
+
+			<div class="fade_action fade_left">
+				<div class="card">
+					<img width="600" src="https://www.apple.com/kr/iphone-14/d/images/overview/hero/hero_purple__folu9o3eqn2i_large_2x.png" alt="">
+				</div>
+			</div>
+		</div>
+		<article style="padding: 150px 0">
+			<div style="display: flex; width: 1024px; margin: 0 auto;">
+				<img class="fade_action fade_left" style="width: 50%; margin-right: auto;" width="400"  src="https://images.samsung.com/kdp/static/pd/watches/galaxy-watch/galaxy-watch5-pro/feature/galaxy-watch5-pro-colormaterial-vusial-1.jpg" alt="">
+				<h3 style="width: 50%; margin-left: auto; text-align: right; padding-top: 100px;" class="fade_action fade_right">러닝도, 런웨이도 완벽 소화<br>일반 스크롤 영역</h3>
+			</div>
+		</article>
+	</section>
+
+	<section class="scroll_section scroll_section_5">
+		<div class="scroll_section__inner">
+			<img src="https://images.samsung.com/kdp/static/pd/watches/galaxy-watch/galaxy-watch5-pro/feature/galaxy-watch5-pro-sleep-watch.png" alt="" class="galaxywatch">
+			<img src="https://images.samsung.com/kdp/static/pd/watches/galaxy-watch/galaxy-watch5-pro/feature/galaxy-watch5-pro-sleep-watch-display01-v2.png" alt="" class="galaxywatch_display_01">
+			<img src="https://images.samsung.com/kdp/static/pd/watches/galaxy-watch/galaxy-watch5-pro/feature/galaxy-watch5-pro-sleep-watch-display02-v2.png" alt="" class="galaxywatch_display_02">
+			<img src="https://images.samsung.com/kdp/static/pd/watches/galaxy-watch/galaxy-watch5-pro/feature/galaxy-watch5-pro-sleep-watch-display03-v2.png" alt="" class="galaxywatch_display_03">
+		</div>
+	</section>
+
+	<section class="scroll_section scroll_section_6">
+
+		<div class="scroll_section__inner">
+			<h3 class="text_stiky__5">나 센서야</h3>
+			<lottie-player class="lottie-sensor" src="https://assets10.lottiefiles.com/packages/lf20_xedgcnvz.json" background="transparent"  speed="1"  style="width: 100px; height: 300px;" loop autoplay></lottie-player>
+			<div class="svg-target-3"></div>
+
+			<div class="map">
+				<div class="map_inner"><h2>눈앞에 펼쳐지는 쟁탈전</h2></div>
+			</div>
+		</div>
+
+	</section>
+
+		
+	
+	</main>
+
+	
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
+<script>
+
+
+/*
+window.addEventListener('DOMContentLoaded', () => { 
+	setTimeout(animationsText, 500);
+  });
+
+function animationsText() {
+	document.querySelector('.motion_fill__text').classList.add('active');
+}*/
+
+
+
+
+
+scrollSection0();
+scrollSection1();
+scrollSection2();
+scrollSection3();
+
+function scrollSection0() {
+
+	const html = document.documentElement;
+	const canvas = document.getElementById("hero-lightpass");
+	const context = canvas.getContext("2d");
+
+	const frameCount = 148;
+	const currentFrame = index => (
+	`https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${index.toString().padStart(4, '0')}.jpg`
+	)
+
+	const preloadImages = () => {
+	for (let i = 1; i < frameCount; i++) {
+		const img = new Image();
+		img.src = currentFrame(i);
+	}
+	};
+	const img = new Image()
+	img.src = currentFrame(1);
+	canvas.width=1158;
+	canvas.height=770;
+	img.onload=function(){
+	context.drawImage(img, 0, 0);
+	}
+
+	const updateImage = index => {
+	img.src = currentFrame(index);
+	context.drawImage(img, 0, 0);
+	}
+
+	window.addEventListener('scroll', () => {  
+	const scrollTop = html.scrollTop;
+	const maxScrollTop = html.scrollHeight - document.getElementById("scroll_section_0").clientHeight;
+	const scrollFraction = scrollTop / maxScrollTop;
+	const frameIndex = Math.min(
+		frameCount - 1,
+		Math.ceil(scrollFraction * frameCount)
+	);
+	requestAnimationFrame(() => updateImage(frameIndex + 1))
+	});
+	preloadImages();
+
+	gsap.timeline({  
+  scrollTrigger: {
+    trigger: ".scroll_section_0", // 객체기준범위
+    pin: true, // 고정
+    start: "top top", // 시작점
+	end:"+=500%",
+    scrub: 0.5, // 모션바운스
+	onLeave: function(){ // 끝나는지점 callback함수
+      
+    }
+  }
+})
+.to('.lottie-dance', {duration: 0.3, opacity: 1}) 
+.to('.text_stiky__1', {duration: 0.3, opacity: 1, y: 20}) 
+.to('.text_stiky__1', {duration: 0.3, opacity: 0, y: -20}) 
+.to('.text_stiky__2', {duration: 0.3, opacity: 0, y: 20}) 
+.to('.text_stiky__2', {duration: 0.3, opacity: 1, y: -100}) 
+.to('.text_stiky__2', {duration: 0.3, opacity: 0, y: -150}) 
+.to('.lottie-dance', {duration: 0.3, scale: 5, opacity: 0}) 
+
+}
+
+
+function scrollSection1() {
+
+	const animation_1 = lottie.loadAnimation({
+	container: document.querySelector(".svg-target-2"),
+	renderer: "svg",
+	loop: false,
+	autoplay: false,
+	path: "https://assets4.lottiefiles.com/packages/lf20_aeen0onm.json"
+	});
+
+	const lottiePlayhead_1 = { frame: 0 };
+	animation_1.addEventListener("data_ready", () => {
+
+
+		gsap.to(lottiePlayhead_1, {
+			frame: animation_1.totalFrames - 1,
+			ease: "none",
+			onUpdate: () => animation_1.goToAndStop(lottiePlayhead_1.frame, true),
+
+			scrollTrigger: {
+				trigger: ".scroll_section_3",
+				pin: true,
+				start: "top top",
+				end: "+=3000",
+				scrub: 2,
+				//markers: true
+			}
+
+		})
+
+	})
+
+	const tl1 = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".scroll_section_3",
+			pin: true,
+			start: "top top",
+			end: "+=3000",
+			scrub: 2,
+			//markers: true
+		}
+	})
+	tl1.to('.text_stiky__3', {duration: 0.3, opacity: 1, y: -20})
+	.to('.text_stiky__3', {duration: 0.3, opacity: 0, y: -20})
+	.to('.text_stiky__4', {duration: 0.3, opacity: 1, y: -100})
+	.to('.text_stiky__4', {duration: 0.3, opacity: 0, y: -120})
+	.to('.svg-target-2', {duration: 0.3, opacity: 0, y: -100})
+	
+}
+
+function scrollSection2() {
+
+	gsap.timeline({  
+		scrollTrigger: {
+		trigger: ".scroll_section_5", // 객체기준범위
+		pin: true, // 고정
+		start: "top top", // 시작점
+		end:"+=500%",
+		scrub: 0.5, // 모션바운스
+		}
+	})
+.to('.galaxywatch_display_01', {duration: 0.3, scale:1, opacity: 1}) 
+.to('.galaxywatch', {duration: 0.3, opacity: 1}) 
+.to('.galaxywatch_display_02', {duration: 0.3, opacity: 1}) 
+.to('.galaxywatch_display_03', {duration: 1, opacity: 1}) 
+
+}
+
+function scrollSection3() {
+	const animation = lottie.loadAnimation({
+	container: document.querySelector(".svg-target-3"),
+	renderer: "svg",
+	loop: false,
+	autoplay: false,
+	path: "https://assets8.lottiefiles.com/packages/lf20_t1oxo4c1.json"
+	});
+
+	const lottiePlayhead = { frame: 0 };
+	animation.addEventListener("data_ready", () => {
+
+
+
+		const tl2 = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".scroll_section_6",
+				pin: true,
+				start: "top top",
+				end: "+=5000",
+				scrub: 2,
+				//markers: true
+				}
+	})
+
+
+	tl2.to('.lottie-sensor', {duration: 0.3, scale:5, opacity:1})
+	tl2.to('.text_stiky__5', {duration: 1, y:-250, opacity:1})
+	.to('.text_stiky__5', {duration: 0.5, y:-250, opacity:0})
+	.to('.lottie-sensor', {duration: 0.3, scale:1, y:400, x:200})
+	.to('.svg-target-3', {duration: 0.3, opacity:1})
+		.to(lottiePlayhead, {
+			frame: animation.totalFrames - 1,
+			ease: "none",
+			onUpdate: () => animation.goToAndStop(lottiePlayhead.frame, true),
+				
+		})
+		.to('.map', {duration: 0.3, opacity:1, scale:1, y:0})
+
+
+	});
+}
+
+//fade animation
+function animateFrom(elem, direction) {
+	direction = direction || 1;
+	var x = 0, y = direction * 100;
+	if(elem.classList.contains("fade_left")) {
+		x = -100;
+		y = 0;
+	} else if (elem.classList.contains("fade_right")) {
+		x = 100;
+		y = 0;
+	}
+	elem.style.transform = "translate(" + x + "px, " + y + "px)";
+	elem.style.opacity = "0";
+	gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+		duration: 1.25,
+		x: 0,
+		y: 0,
+		autoAlpha: 1,
+		ease: "expo",
+		overwrite: "auto"
+	});
+}
+
+function hide(elem) {
+	gsap.set(elem, {autoAlpha: 0});
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+	
+
+	gsap.utils.toArray(".fade_action").forEach(function(elem) {
+		hide(elem); // assure that the element is hidden when scrolled into view
+
+		ScrollTrigger.create({
+			trigger: elem,
+			//markers: true,
+			onEnter: function() { animateFrom(elem) },
+			onEnterBack: function() { animateFrom(elem, -1) },
+			onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+		});
+	});
+});
+
+
+
+
+
+</script>
+
+</html>
