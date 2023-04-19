@@ -1,7 +1,5 @@
 
-
-/* 스크롤에 따른 헤더 액션 */
-
+/* 스크롤에 따른 헤더 display 여부 */
 const innerWidth = window.innerWidth;
 let lastScrollTop = 0;
 

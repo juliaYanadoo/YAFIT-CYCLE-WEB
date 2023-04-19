@@ -1,3 +1,19 @@
 @charset "UTF-8";
 
+/* 스크롤에 따른 헤더 display 여부 */
 body.scrollUp header {transform: translateY(-100%)}
+
+/* 웹 접근성 */
+.text-hidden {overflow: hidden; position: absolute; z-index: -1; border: 0; width: 1px; height: 1px; clip: rect(1px 1px 1px 1px); clip-path: inset(50%);}
+
+.pc {display: block !important;}
+.mo {display: none !important;}
+
+/* Button animation */
+@keyframes bgGradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+@keyframes bgShadowPulse {from {box-shadow: 0 0 0 0px #32fa32;}to {box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);}}
+
+@media screen and (max-width: 768px) {
+    .pc {display: none !important;}
+    .mo {display: block !important;}
+}
