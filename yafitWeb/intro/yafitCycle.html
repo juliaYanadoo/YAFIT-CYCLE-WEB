@@ -556,14 +556,16 @@
         .about__faq__tab__btn__caption {width: 16%;}
         .about__advantage06 .swiper-button-next, .about__advantage06 .swiper-button-prev {top: 60%;}
         .about__advantage06__slide__link {line-height: 1.8;}
+
+        .top-line-banner p {font-size: 11px; text-align: left; padding-left: 10px;}
     }
 </style>
 <body>
 <header></header>
 <section class="about landing" id="yafitCycle">
 	<div id="topBanner1" class="top-line-banner">
-		<a class="move-page" href="https://yafitcdn.yanadoo.co.kr/yanadoo/promotion/yafitAllInOne.html">올인원 패키지로 이동</a>
-		<p>🚴지금 바로 자전거로‍ <strong>세계 일주 가기 🚴</strong></p>
+		<a class="move-page" href="#" onClick="onClickBtnCafeMove();">해당 이벤트 상세내용으로 이동</a>
+		<p>🚴 <strong>총 상금 200만원</strong> 웰킵스와 함께하는 짜릿한 레이싱! 🚴</p>
 		<button type="button" class="btn-close-today" onclick="todaycloseWin();"><img src="https://english.yanadoocdn.com/upload/yanadoo/new/promotion/bestawards/2023/jan/ico_bestawards_top_close_16x16.png" alt="닫기"></button>
 	</div>
 
@@ -1481,6 +1483,17 @@
 		setCookie( "ncookie", "done" , 1 );     // 저장될 쿠키명 , 쿠키 value값 , 기간( ex. 1은 하루, 7은 일주일)
 		document.getElementById('topBanner1').style.display = "none";    // 팝업창 아이디
 	}
+
+    function onClickBtnCafeMove() {
+		const innerWidth = window.innerWidth;
+		if (innerWidth <= 768) {
+			window.open('https://cafe.naver.com/yanadoofit/3089', '_blank'); // 모바일 카페 이동 링크
+		} else {
+			window.open('https://m.cafe.naver.com/ca-fe/web/cafes/30811973/articles/3089?fromList=true&menuId=17', '_blank'); // PC 카페 이동 링크
+		}
+	}
+
+
 
     // 메인 버튼 클릭시 해당 섹션 스크롤 이동
   /*  clickScrollMoveEvent();
