@@ -566,7 +566,7 @@
 	<div id="topBanner1" class="top-line-banner">
 		<a class="move-page" href="#" onClick="onClickBtnCafeMove();">해당 이벤트 상세내용으로 이동</a>
 		<p>🚴 <strong>총 상금 200만원</strong> 웰킵스와 함께하는 짜릿한 레이싱! 🚴</p>
-		<button type="button" class="btn-close-today" onclick="todaycloseWin();"><img src="https://english.yanadoocdn.com/upload/yanadoo/new/promotion/bestawards/2023/jan/ico_bestawards_top_close_16x16.png" alt="닫기"></button>
+		<button type="button" class="btn-close-today" onclick="closeWin();"><img src="https://english.yanadoocdn.com/upload/yanadoo/new/promotion/bestawards/2023/jan/ico_bestawards_top_close_16x16.png" alt="닫기"></button>
 	</div>
 
     <div class="about__main">
@@ -1466,7 +1466,7 @@
 
 
 
-
+/*
 	cookiedata = document.cookie;
 	if ( cookiedata.indexOf("ncookie=done") < 0 ){
 		document.getElementById('topBanner1').style.display = "block";    //  팝업창 아이디
@@ -1483,6 +1483,12 @@
 		setCookie( "ncookie", "done" , 1 );     // 저장될 쿠키명 , 쿠키 value값 , 기간( ex. 1은 하루, 7은 일주일)
 		document.getElementById('topBanner1').style.display = "none";    // 팝업창 아이디
 	}
+*/
+
+    function closeWin() {
+		document.getElementById('topBanner1').style.display = "none";    // 팝업창 아이디
+	}
+	
 
     function onClickBtnCafeMove() {
 		const innerWidth = window.innerWidth;
