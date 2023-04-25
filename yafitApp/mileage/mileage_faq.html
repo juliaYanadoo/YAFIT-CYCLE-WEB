@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>야핏</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="favicon" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico">
+	<link rel="shortcut icon" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico" />
+	<link rel="apple-touch-icon-precomposed" href="https://yafit.yanadoocdn.com/yanadoo/images/web/common/favicon_yafit.ico">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="야핏사이클"/>
+    <meta property="og:site_name" content="야핏"/>
+    <meta property="og:description" content="세상이 기다려온 메타버스 라이딩, 야핏사이클 "/>
+    <meta property="og:image" content="https://yafit.yanadoocdn.com/yanadoo/images/web/common/og_yafit_1.jpg">
+    <meta property="og:image:width" content="400"/>
+    <meta property="og:image:height" content="210"/>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="야핏사이클">
+    <meta name="twitter:description" content="세상이 기다려온 메타버스 라이딩, 야핏사이클 ">
+    <meta name="twitter:image" content="https://yafit.yanadoocdn.com/yanadoo/images/web/common/og_yafit_1.jpg">
+    <meta name="nate:image" content="https://yafit.yanadoocdn.com/yanadoo/images/web/common/og_yafit_1.jpg">
+    <meta name="naver-site-verification" content="dcf4d5cf8e610163fe7bbc07a29e21f98c503792"/>
+	<link rel="stylesheet" type="text/css" href="https://yafit.yanadoocdn.com/yanadoo/web/assets/style/reset_1.css" />
+
+    <script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="https://yafit.yanadoocdn.com/yanadoo/web/assets/js/edu/headscript.js"></script>
+</head>
+<style>
+
+    /* FAQ */
+    .faq {width: 100%; margin: 0 auto; padding: 100px 0; background-color: #F2F2F4;}
+    .faq .inner {width: 90%; margin: 0 auto;}
+    .faq a {color: #0068fa;}
+    .faq h4 {padding: 0 0 50px; font-family: 'Inter', 'NotoSansCJKkr', sans-serif; font-size: 60px; font-weight: 600;}
+    .faq-list {margin-bottom: 70px; border-top: 1px solid #1B212A;}
+    .faq-list  > li .faq-title {display: flex;align-items: center; padding: 42px 12px; font-size: 24px; border-bottom: 1px solid #DADADA; cursor: pointer;}
+    .faq-list  > li .faq-title strong {width: 20%; margin-right: 24px; font-weight: 400;}
+    .faq-list  > li .faq-title .faq-arrow {width: 20px; height: 10px; margin-left: auto; transition: all .3s;}
+    .faq-list  > li .faq-title.active .faq-arrow {transform: rotate(-180deg);}
+    .faq-list  > li .faq-title strong.buy {color: #00CC66;}
+    .faq-list  > li .faq-title strong.use {color: #239EC3;}
+    .faq-list  > li .faq-title strong.etc {color: #808080;}
+    .faq-list  > li .faq-contents {display: none; padding: 30px 40px; font-size: 22px; font-weight: 300; line-height: 1.5em; border-bottom: 1px solid #1B212A;}
+    .faq-list  > li .faq-contents ul li {position: relative; margin-bottom: 10px; padding-left: 20px;}
+    .faq-list  > li .faq-contents ul li:before {position: absolute; top: 0px; left: 0; content: '•';}
+    .faq-list  > li .faq-contents table th {font-weight: 300;}
+    .faq-list  > li .faq-contents table caption {padding: 30px 0 10px; font-weight: 600;}
+    .faq-list  > li .faq-contents table th, .faq-list  > li .faq-contents table td {font-size: 18px;text-align: center; border: 1px solid #555;}
+    .faq-list  > li .faq-contents dl dt {font-weight: 600;}
+    .faq-list  > li .faq-contents dl dd {font-weight: 300;}
+    .faq-list  .example {margin-top: 3%; font-size: 85%}
+    .faq-list .table-wrap {margin: 4em 0;}
+
+    .contact-btn-wrap a {display: block;width: 500px;height: 90px;margin: 0 auto 20px;}
+
+    @media only screen and (max-width:900px){
+        /* faq */
+        .faq {width: 100.00vw; margin: 0 auto; padding: 5vw 0;}
+        .faq .inner {width: 90%; margin: 0 auto; padding: 0;}
+        .faq h4 {padding: 0 0 2vw;font-size: 5vw;}
+        .faq-list {margin-bottom: 9.72vw;}
+        .faq-list  > li .faq-title {padding: 3.5vw 1.67vw; font-size: 2.5vw; cursor: pointer;}
+        .faq-list  > li .faq-title strong {margin-right: 3.33vw; font-weight: 400;}
+        .faq-list  > li .faq-contents {padding: 4.17vw 5.56vw; font-size: 2vw;}
+        .faq-list  > li .faq-contents ul li {margin-bottom: 1.39vw; padding-left: 2.5vw;}
+        .faq-list  > li .faq-contents table caption {padding: 4.17vw 0 1.39vw;}
+        .faq-list  > li .faq-contents table th, .faq-list  > li .faq-contents table td {font-size: 2vw;}
+        .faq-list  > li .faq-title .faq-arrow {width: 2.78vw; height: 1.39vw;}
+        .contact-btn-wrap a {width: 69.44vw;height: 12.50vw;margin: 0 auto 2.78vw;}
+        .faq-list .table-wrap {margin: 2vw 0;}
+    }
+</style>
+<body>
+    <!--  FAQ -->
+    <article class="faq"></article>
+</body>
+<script>
+    //FAQ 불러오기
+    const faq = document.querySelector('.faq');
+    fetch('https://yafit.yanadoocdn.com/yanadoo/web/layout/faq.html')
+    .then(res => res.text())
+    .then(data => faq.innerHTML = data);
+
+    // faq 탭 클릭 이벤트
+    $(window).load(function(){
+        
+        $('.faq-list .faq-title').on('click', function(e){
+            $(this).parent().siblings().children('.faq-contents').stop().slideUp();
+            $(this).next().stop().slideToggle();
+            $(this).parent().siblings().children('.faq-title').removeClass('active');
+            $(this).toggleClass('active');
+            e.preventDefault();
+        });
+    })
+</script>
+</html>
+
+
+
