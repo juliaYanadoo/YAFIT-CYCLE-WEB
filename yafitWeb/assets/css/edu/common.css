@@ -759,12 +759,7 @@ footer .footer-link-area {
   position: absolute;
   top: 42.4rem;
   right: 3rem;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: start;
+  display: block;
 }
 footer .footer-link-area a {
   display: inline-block;
@@ -779,9 +774,7 @@ footer .footer-link-area a img {
 footer .footer-link-area a + a {
   margin-left: 1.1rem;
 }
-footer .footer-link-area .link-lists + .link-lists {
-  margin-left: 3rem;
-}
+
 footer .confirm-list-box h2 {
   margin-top: 3rem;
   font-size: 2.5rem;
@@ -821,6 +814,10 @@ footer .footer-notice {
   color: #28284b;
   text-align: center;
 }
+footer .footer-link-area .link-lists + .link-lists {
+  margin-top: 10px;
+}
+
 
 @media screen and (max-width: 1024px) {
   html {
@@ -1197,12 +1194,7 @@ footer .footer-notice {
   }
   footer .footer-link-area {
     position: static;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: start;
+    display: block;
     margin-top: 8rem;
   }
   footer .footer-link-area a {
@@ -1212,14 +1204,20 @@ footer .footer-notice {
   footer .footer-link-area a + a {
     margin-left: 1.5rem;
   }
+
   footer .footer-link-area .link-lists + .link-lists {
-    margin-left: 5rem;
+    margin-top: 10px;
   }
+
+  footer .footer-link-area .link-lists + .link-lists a {
+    width: 6rem;
+    height: 6rem;
+  }
+
   footer #footerSelect {
     position: static;
     display: block;
     width: 100%;
-    padding: 3rem 3rem 2.6rem;
     margin-top: 8rem;
     font-size: 2rem;
     background-size: 2rem auto;
