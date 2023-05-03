@@ -973,7 +973,7 @@
 		.banner-form .btn-counsel-submit{position:relative; width:100%; height:2.8em; margin:1.5em auto 0; border:0 !important; border-radius:10em; font-size:93%; background:#00f441; background-size:1.1em; color:#000; font-weight:700; text-align:center; letter-spacing:-0.05em; z-index:3;}
 		.banner-box{position:absolute; bottom:0; left:0; right:0; z-index:20; width:100%; margin:0 auto; padding:0.7em 0; box-sizing:border-box; color:#fff; background-color:#222;}
 		.banner-box > a{position:absolute; top:-.9em; left:0; right:0;}
-		.banner-box .btn-open-banner{display:inline-block; position:relative; width:45%; height:2.6em; margin-left:3%; border:0 !important;font-size:88%; background-color:#34f938; background-image: linear-gradient(to right, #34f938, #6edafa,#34f938, #6edafa,#34f938, #6edafa); background-size:800%; color:#000; font-weight:700; text-align:center; letter-spacing:-1px; z-index:3; vertical-align:middle; box-sizing:border-box; border-radius:10em; animation: bgGradient 5s linear infinite;}
+		.banner-box .btn-open-banner{display:inline-block; position:relative; width:45%; height:2.6em; margin-left:3%; border:0 !important;font-size:95%; background-color:#34f938; background-image: linear-gradient(to right, #34f938, #6edafa,#34f938, #6edafa,#34f938, #6edafa); background-size:800%; color:#000; font-weight:700; text-align:center; letter-spacing:-1px; z-index:3; vertical-align:middle; box-sizing:border-box; border-radius:10em; animation: bgGradient 5s linear infinite;}
 		.banner-box .btn-open-banner:after{content:'>'; display:inline-block; position:absolute; top:50%; right:0.9em; -webkit-transform:translateY(-50%); transform:translateY(-50%); color:#000;}
 		.banner-box .btn-bnr-up{position:absolute; top:-1.8em; left:0; width:100%; height:2em; background:url(https://english.yanadoocdn.com/upload/yanadoo/mobile/landing/yafit/official/btn_bnr_up.png) no-repeat 50% 100% / 100% auto; text-indent:-999em;}
 
@@ -1618,7 +1618,7 @@
 					<option value="사이클 없음">사이클 없음</option>
 					<option value="사이클 있음">사이클 있음</option>
 				</select>
-				<button type="button" class="event-btn btn_regist btn-counsel-submit" onclick="yafitCounsel('counselFormBottomBannerPC', '하단 버튼');">가격 인상 전 최저가 신청하기</button>
+				<button type="button" class="event-btn btn_regist btn-counsel-submit" onclick="yafitCounsel('counselFormBottomBannerPC', '하단 버튼');">홈트 1년 이용권 받기</button>
 				<p class="agree-check">
 					<label><input type="checkbox" id="agree" name="agree" checked="checked" /><span>[필수] 개인정보 수집·이용 동의</span></label>
 					<label><input type="checkbox" id="agree2" name="agree2" checked="checked" /><span>[선택] SMS 광고 및 마케팅 이용 동의</span></label>
@@ -1633,7 +1633,7 @@
 				<button type="button" class="btn-bnr-up" onclick="bannerBottomToggle('하단 버튼'); dataLayer.push({'event': 'Button_Bottom_M'});">열기</button>
 				<div class="flex-col">
 					<div class="banner-timer-col" id="balloonTimer2"></div>
-					<button type="button" class="btn-open-banner" onclick="bannerBottomToggle('하단 버튼'); dataLayer.push({'event': 'Button_Bottom_M'});">가격 인상 전 최저가 신청하기</button>
+					<button type="button" class="btn-open-banner" onclick="bannerBottomToggle('하단 버튼'); dataLayer.push({'event': 'Button_Bottom_M'});">홈트 1년 이용권 받기</button>
 				</div>
 
 			</div>
@@ -2413,7 +2413,6 @@
 		dateObj.setMinutes(0);
 		dateObj.setSeconds(0);
 		dateObj.setDate(dateObj.getDate() + 1);
-		
 		countDownTimer('balloonTimer2', dateObj);
 		countDownTimer('balloonTimer3', dateObj);
 		countDownTimer('balloonTimer4', dateObj);
