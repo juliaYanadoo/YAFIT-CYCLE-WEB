@@ -41,18 +41,18 @@
 <style>
 	.package-detail-col .package-btn-area .btn-buy {width: 100%}
 
-	.contents7_btn_1 {left: 50%; bottom: 170px; width: 500px; height: 90px;}
+	.contents7_btn_1 {left: 50%; bottom: 130px; width: 500px; height: 90px;}
 	.contents9_btn_1 {top: 1054px;left: 77%;width: 170px;height: 50px;text-indent: -9999px;}
-	.contents9_btn_2 {left:50%; bottom: 314px; width: 500px; height: 90px;}
+	.contents9_btn_2 {left:50%; bottom: 130px; width: 500px; height: 90px;}
 	.contents9_btn_3 {left:50%; bottom: 168px; width: 500px; height: 90px;}
 
 	@media screen and (max-width: 720px) {
 		.floating-banner .package-btn-area button.btn-buy {width: 100%;}
 		.package-detail-col .package-btn-area .btn-buy {width: 100%}
 
-		.contents7_btn_1 {left: 50%; bottom: 23.61vw; width: 69.44vw; height: 12.50vw;}
+		.contents7_btn_1 {left: 50%; bottom: 16.61vw; width: 69.44vw; height: 12.50vw;}
 		.contents9_btn_1 {top: 146.39vw;left: 77%;width: 23.61vw;height: 6.94vw;text-indent: -1388.75vw;}
-		.contents9_btn_2 {left:50%; bottom: 43.61vw; width: 69.44vw; height: 12.50vw;}
+		.contents9_btn_2 {left:50%; bottom: 19.61vw; width: 69.44vw; height: 12.50vw;}
 		.contents9_btn_3 {left:50%; bottom: 23.33vw; width: 69.44vw; height: 12.50vw;}
 	}
 </style>
@@ -105,7 +105,7 @@
 								<div class="discount-price-area">
 									<span class="badge badge-discount__20" id="discountBadge1">20% 할인가</span>
 									<!--span class="badge badge-discount__25">25% 할인가</span-->
-									<p class="discount-price"><span id="discountPrice1">119,000</span> 원<p>
+									<p class="discount-price"><span id="discountPrice1">119,000</span> 원</p>
 								</div>
 
 								<div class="price-area">
@@ -156,18 +156,23 @@
 	<!-- 패키지 상세 정보 이미지 영역 -->
 	<article class="package-detail-contents">
 		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/app/content_1.png" alt="세상의 모든 사이클이  야핏이 되는 센서 패키지">
-		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/content6.png" alt="내가 선택하는 맞춤 앱 이용권">
+
+
+		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/content6_1.png" alt="내가 선택하는 맞춤 앱 이용권">
 		<div class="contents-wrap">
-			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/content7.png" alt="내가 선택하는 맞춤 앱 이용권">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/content7_1.png" alt="내가 선택하는 맞춤 앱 이용권">
 			<button type="button" class="contents_btn contents7_btn_1" onclick="$('#modalYafitMileage').addClass('modal-open');"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/allinone/content5_btn_1.svg" alt=""></button>
 		</div>
+
+
 		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/allinone/contents_6.png" alt="따라하기만 하면 핏 완성">
+
 		<div class="contents-wrap">
-			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/app/content_5.png" alt="센서 하나로 집에서 전세계 라이딩 시작!">
+			<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/app/content_5_1.png" alt="센서 하나로 집에서 전세계 라이딩 시작!">
 			<button type="button" class="contents_btn contents9_btn_1" onclick="$('#modalYafitDiscount').addClass('modal-open');">할인율 확인하기</button>
 			<button type="button" class="contents_btn contents9_btn_2" onclick="buyBannerBottomToggle();"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/content9_btn_2.png" alt="지금 바로 핏 시작"></button>
-			<a href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/package/yafitPackage.html" class="contents_btn contents9_btn_3"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/app/content5_btn_3.svg" alt="패키지 리스트 보기"></a>
 		</div>
+
 		<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/content_10.png" alt="잠재력을 깨우는 습관의 기적 Yanadoo University가 무료!">
 		<a href="https://yafitcdn.yanadoo.co.kr/yanadoo/web/yafitCycle.html"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/common/banner_cycle_intro.png" alt="야핏 사이클 소개"></a>
 	</article>
@@ -264,7 +269,7 @@
 				<button type="button" class="btn-modal__close" onclick="$('.modal-wrap').removeClass('modal-open')"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/common/close_btn_modal_dark.svg" alt="닫기"></button>
 			</div>
 			<div class="modal-content yafit-mileage">
-				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/pop_mileage.png" alt="올인원 패키지 마일리지">
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/pop_mileage_1.png" alt="올인원 패키지 마일리지">
 			</div>
 		</div>
 	</div>
@@ -276,7 +281,7 @@
 				<button type="button" class="btn-modal__close" onclick="$('.modal-wrap').removeClass('modal-open')"><img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/common/close_btn_modal_dark.svg" alt="닫기"></button>
 			</div>
 			<div class="modal-content yafit-mileage">
-				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/pop_app_1.png" alt="앱이용권 할얀율 확인하기">
+				<img src="https://yafitcdn.yanadoo.co.kr/yanadoo/images/web/package/detail/sensor/pop_app_2.png" alt="앱이용권 할얀율 확인하기">
 			</div>
 		</div>
 	</div>
